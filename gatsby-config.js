@@ -4,6 +4,7 @@ module.exports = {
     author: "Volusion, LLC",
     description: "Building the next generation of Volusion storefronts"
   },
+  pathPrefix: "/element",
   plugins: [
     'gatsby-plugin-react-helmet',
     {

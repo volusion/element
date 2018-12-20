@@ -6,10 +6,10 @@
 
 - Run `npm run develop` in the terminal to start the dev site.
 - Run `npm run build` to generate the static files in the `public/` directory.
-- Run `npm run serve` to view the built files.
+- Run `npm run serve` to view the built files. _cannot be running `npm run develop` at the same time_
 
 ### Deploying
 
-After committing the source code to `master`, run `npm run build` to generate the compiled code in the `public` directory. Switch to the `gh-pages` branch and copy the code from `public` into the root of the directory. Commit and push the changes to Github.
+Run `npm run deploy`. This builds the files and pushes them to the `gh-pages` branch for automagical deployment.
 
 _based on the starter from [here](https://github.com/codebushi/gatsby-starter-dimension)_
