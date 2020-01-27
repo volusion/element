@@ -1,10 +1,7 @@
-# Project dependencies
+public
 .cache
 node_modules
-yarn-error.log
-package-lock.json
-yarn.lock
+*DS_Store
+*.env
 
-# Build directory
-/public
-.DS_Store
+.idea/

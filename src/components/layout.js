@@ -1,61 +1,61 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+import { MDXProvider } from '@mdx-js/react'
+import ThemeProvider from './themeProvider'
+import mdxComponents from './mdxComponents'
+import Sidebar from './sidebar'
+import RightSidebar from './rightSidebar'
 
-import '../assets/scss/main.scss'
+const Wrapper = styled('div')`
+  display: flex;
+  justify-content: space-between;
 
-const Layout = ({ children, location }) => {
-
-  let content;
-
-  if (location && location.pathname === '/') {
-    content = (
-      <div>
-        {children}
-      </div>
-    )
-  } else {
-    content = (
-      <div id="wrapper" className="page">
-        <div>
-          {children}
-        </div>
-      </div>
-    )
+  @media only screen and (max-width: 767px) {
+    display: block;
   }
+`
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Volusion Element: Build the next generation of storefronts' },
-              { name: 'keywords', content: 'volusion, element' },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
-          {content}
-        </>
-      )}
-    />
-  )
-}
+const Content = styled('main')`
+  display: flex;
+  flex-grow: 1;
+  margin: 0px 88px;
+  margin-top: 3rem;
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  @media only screen and (max-width: 1023px) {
+    padding-left: 0;
+    margin: 0 10px;
+    margin-top: 3rem;
+  }
+`
+
+const MaxWidth = styled('div')`
+  @media only screen and (max-width: 50rem) {
+    width: 100%;
+    position: relative;
+  }
+`
+const LeftSideBarWidth = styled('div')`
+  width: 298px;
+`
+const RightSideBarWidth = styled('div')`
+  width: 224px;
+`
+const Layout = ({ children, location }) => (
+  <ThemeProvider location={location}>
+    <MDXProvider components={mdxComponents}>
+      <Wrapper>
+        <LeftSideBarWidth className={'hiddenMobile'}>
+          <Sidebar location={location} />
+        </LeftSideBarWidth>
+        <Content>
+          <MaxWidth>{children}</MaxWidth>
+        </Content>
+        <RightSideBarWidth className={'hiddenMobile'}>
+          <RightSidebar location={location} />
+        </RightSideBarWidth>
+      </Wrapper>
+    </MDXProvider>
+  </ThemeProvider>
+)
 
 export default Layout
