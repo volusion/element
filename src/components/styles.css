@@ -220,13 +220,14 @@ a:hover {
   font-size: 14px;
 }
 .headerTitle {
+  color: #fff;
   height: auto;
   font-size: 28px;
   line-height: 1.5;
   font-weight: 500;
 }
 .headerTitle a {
-  color: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 
 .headerTitle a:hover {
@@ -249,7 +250,6 @@ a:hover {
 
 /* Header section starts here */
 .navBarDefault {
-  background-color: #ffffff;
   border-radius: 0;
   border-top: 0;
   margin-bottom: 0;
@@ -260,6 +260,8 @@ a:hover {
   z-index: 1;
   padding: 15px;
   position: relative;
+  background-color: #311b6b;
+  background: linear-gradient(137.41deg,#221b43 10.41%,#3d0e91 85.37%);
 }
 .navBarHeader {
   min-width: 335px;
