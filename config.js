@@ -1,6 +1,6 @@
 const config = {
   gatsby: {
-    pathPrefix: '/',
+    pathPrefix: '/element',
     siteUrl: 'https://github.com/volusion/element',
     gaTrackingId: null,
   },
