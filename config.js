@@ -1,15 +1,15 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://learn.hasura.io',
+    siteUrl: 'https://github.com/volusion/element',
     gaTrackingId: null,
   },
   header: {
     logo:
       'https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/favicon.png',
-    logoLink: 'https://learn.hasura.io',
-    title: 'Gatsby Gitbook Boilerplate',
-    githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
+    logoLink: 'https://github.com/volusion/element',
+    title: 'Element / Docs',
+    githubUrl: 'https://github.com/volusion/element',
     helpUrl: '',
     tweetText: '',
     links: [{ text: '', link: '' }],
@@ -22,25 +22,25 @@ const config = {
     },
   },
   sidebar: {
-    forcedNavOrder: ['/introduction', '/codeblock'],
-    collapsedNav: ['/codeblock'],
-    links: [{ text: 'Hasura', link: 'https://hasura.io' }],
+    forcedNavOrder: ['/introduction', '/explanations', '/how-to', '/references', '/tutorials'],
+    collapsedNav: ['/explanations', '/how-to', '/references', '/tutorials'],
+    links: [{ text: 'Volusion', link: 'https://www.volusion.com/' }],
     frontline: false,
     ignoreIndex: true,
   },
   siteMetadata: {
-    title: 'Gatsby Gitbook Boilerplate | Hasura',
-    description: 'Documentation built with mdx. Powering learn.hasura.io ',
+    title: 'Element Documentation | Volusion',
+    description: 'Documentation built with mdx.',
     ogImage: null,
     docsLocation:
-      'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
+      'https://github.com/volusion/element',
     favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
     manifest: {
-      name: 'Gatsby Gitbook Starter',
-      short_name: 'GitbookStarter',
+      name: 'Element Documentation | Volusion',
+      short_name: 'VolusionElementDocs',
       start_url: '/',
       background_color: '#6b37bf',
       theme_color: '#6b37bf',

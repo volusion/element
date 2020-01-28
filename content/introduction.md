@@ -1,32 +1,36 @@
 ---
-title: "Introduction"
-metaTitle: "This is the title tag of this page"
-metaDescription: "This is the meta description"
+title: "What Is Element?"
+# metaTitle: "This is the title tag of this page"
+# metaDescription: "This is the meta description"
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+Element is a modern web design and hosting platform. It was designed from the ground up on these guiding principles:
 
-# Heading H1
-Heading 1 text
+- Incredible speed
+- Impeccable SEO
+- Amazing developer experience
 
-## Heading H2
-Heading 2 text
+**Site owners** will enjoy increased conversions due to Element's fast page load times and improved discoverability from our unmatched SEO. **Site visitors** will enjoy consistently fast experiences across all their devices, reducing wait times, frustration, and their tendanancy to bounce. And, **developers** will enjoy an amazingly fluid and straightforward experience designing and deploying their creative ideas.
 
-### Heading H3
-Heading 3 text
+Read more about how each of these principles benefits the entire ecosystem.
 
-#### Heading H4
-Heading 4 text
+### Speed
 
-##### Heading H5
-Heading 5 text
+We take speed seriously.
 
-###### Heading H6
-Heading 6 text
+- We developed state of the art Server Side Rendering (SSR) technologies to achieve the fastest experiences possible.
+- Content is automatically minified, cached, and populated in CDNs for you.
+- Our serving technology auto-scaled based on demand, ensuring consistently fast speeds even under heavy, spikey traffic.
+- Element is [Google AMP](https://developers.google.com/amp) ready, so you can build your sites to take [advantage of AMP](https://amp.dev/about/how-amp-works/) speed. Developers can progressively add AMP support to your page by making sure you follow some [simple techniques](http://simple-amp-techniques) when developing on Element. But no need to worry, if you don't want to be AMP ready by default your sites will still be [super fast](http://keeping-sites-fast).
 
-## Lists
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+### SEO
+
+As the full markup of the site is generated on the server, search engines will get all the content to rank your sites better. Developers have full control over all aspects of SEO custom tags and content.
+
+### Developer friendliness
+
+We give you the full power of Javascript and React. No need to learn a custom programming language or an antiquated templating system. Additionally, we handle for hosting, caching, and CDN delivery for you, so you can focus on building your sites.
+
+## Further Reading
+
+To learn more about Element, read the [Concepts](/explanations/element-concepts) explanation.
