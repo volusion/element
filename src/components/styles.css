@@ -228,6 +228,7 @@ a:hover {
 }
 .headerTitle a {
   color: #fff;
+  text-decoration: none;
 }
 
 .headerTitle a:hover {
@@ -410,9 +411,14 @@ pre {
   border: none;
   outline: none;
   position: absolute;
-  right: 20px;
+  padding: 12px 18px 11px;
+  right: 0;
   z-index: 1;
   cursor: pointer;
+}
+
+.hideFrontLine .collapser:hover {
+  background-color: #e3dfec;
 }
 
 .hideFrontLine  .active >a{
@@ -450,15 +456,15 @@ pre {
 }
 
 .sideBarUL .item>a:hover {
-  background-color: #FBFAFE;
+  background-color: #F4F2FA;
   color: #5F2EE9 !important;
 }
 .showFrontLine .item >a:hover {
-  background-color: #FBFAFE;
+  background-color: #F4F2FA;
 }
 .showFrontLine .active >a {
   color: #5F2EE9;
-  background-color: #F4F2FA;
+  background-color: #E8E6F2;
 }
 
 .sideBarUL  .item .item{
