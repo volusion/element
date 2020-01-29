@@ -36,17 +36,13 @@ element login
 
 ### New Block
 
-Creates a new starter block with the given block name. Always use the `-g` or `--git` if you intend to release your block to the public.
+Creates a new starter block with the given block name.
 
 #### New Block Usage
 
 ```shell
-element new BlockName --git
+element new BlockName
 ```
-
-#### New Block Options
-
-* **[-g, --git]** track your changes with git.
 
 ### Publish
 

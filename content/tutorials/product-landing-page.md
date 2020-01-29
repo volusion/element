@@ -9,7 +9,7 @@ We're going to build a new block to handle the display of an individual product 
 If you have built a block before, you can skip down to [Make the Block Fetch Data from an API](#5-get-a-product-based-on-the-slug-in-the-page-path) after running this command from the directory where you keep your blocks:
 
 ```shell
-element new Productlanding --git && cd Productlanding && npm install && npm start
+element new Productlanding && cd Productlanding && npm install && npm start
 ```
 
 ## Prerequisites
@@ -54,23 +54,24 @@ Logged in as your.name@example.com.
 After your login is successful, enter this command into your terminal to create the new block:
 
 ```shell
-element new Productlanding --git
+element new Productlanding
 ```
 
 You should see output that looks like this:
 
 ```shell
-blocks $ element new Productlanding --git
+blocks $ element new Productlanding
 Cloning boilerplate for Productlanding...
 Saved boilerplate to ./Productlanding; now updating...
 Updated files Productlanding/local/index.js!
-Initalized git repo.
 ```
 
 At this point, a new directory was created called `Productlanding`. Enter this command in your terminal to navigate into the Productlanding directory:
 
 ```shell
 cd Productlanding
+git init
+git commit -am "Initial commit"
 ```
 
 Type this command into your terminal to install the npm packages that your block needs:
@@ -105,7 +106,7 @@ You're going to use a **pageVar** to get the product slug from the page's url. T
 
 Open `src/configs.js` in your text editor and replace the entire code with this:
 
-```javascript
+```js
 export const getConfigSchema = ElementPropTypes => {};
 
 export const defaultConfig = {
@@ -119,7 +120,7 @@ Your `getDataProps` function needs to fetch the matching product.
 
 Open `src/getDataProps.js` and replace the entire source code with this:
 
-```javascript
+```js
 export const getDataProps = (utils, { productSlug }) => {
     const { client, isRendering } = utils;
     if (isRendering || productSlug !== "pageVar:pageUrlText") {
@@ -142,19 +143,19 @@ You will now set up your block so that it can simulate being inside of a theme a
 
 The first step is to find your Tenant ID. In your browser from Site Designer, click on the "View store" button. View source and search for "tenant". There are several instances, you might find something like this:
 
-```javascript
+```js
 window.ElementSdk.client.configure({tenant: "586aa7bc3e140400156259a5"
 ```
 
 Back in your IDE, open `local/index.js` and find this line:
 
-```javascript
+```js
 const tenantId = '$YOUR_TENANT_ID'
 ```
 
 Update it with your tenant from the browser source:
 
-```javascript
+```js
 const tenantId = '586aa7bc3e140400156259a5';
 ```
 
@@ -162,7 +163,7 @@ Next you'll find a product slug and pass it to the local preview of your block. 
 
 Now back in `local/index.js` again, find where `props` are defined:
 
-```javascript
+```js
 const props = {
   ...blockModule.defaultConfig,
   text: 'Custom prop value for local testing'
@@ -171,7 +172,7 @@ const props = {
 
 Replace the `text` prop with `productSlug`, and the value from the browser
 
-```javascript
+```js
 const props = {
   ...blockModule.defaultConfig,
   productSlug: 'water-bottle',
@@ -184,7 +185,7 @@ Your block's code needs to show the content of the product that it recieved from
 
 Open `src/Block.js` and replace `return <h1>{props.text}</h1>;` with this:
 
-```javascript
+```js
 const product = props.data;
 
 if (!product.id) {
@@ -195,11 +196,11 @@ if (!product.id) {
 return <h1>{product.name}</h1>;
 ```
 
-#### Test Block Spec
+#### Block Testing Spec
 
 For now you'll want to skip the tests. Open `__test__/Block.spec.js`, and put a "`.skip`" after the first `describe`.
 
-```javascript
+```js
 describe.skip('The Starter Block', () => {
 ```
 
@@ -233,6 +234,8 @@ Next, you need to publish the block to the Block Theme Registry. Run this comman
 
 ```shell
 element publish -n "Product Landing Tutorial Block"
+git commit -am "First release"
+git tag 1.0
 ```
 
 This will present you with a category selection menu that looks like this:
@@ -415,7 +418,7 @@ If you need it, here is some [Product Variants Help](https://help.volusion.com/e
 
 Copy the "Page URL text" from your product that has variants, and make sure that it matches the `productSlug` assigned to `const props` in `local/index.js`.
 
-```javascript
+```js
 const props = { 
   ...blockModule.defaultConfig,
   productSlug: 'water-bottle',
@@ -427,7 +430,7 @@ const props = {
 Now you'll need to update the block so that those variant options are displayed as dropdowns, and when the shopper makes a different selection the variant sent to the cart changes.
 
 In `src/Block.js`, update the React import statement at the top of the file to include the `useState` hook:
-```javascript
+```js
 import React, { useState } from 'react';
 ```
 
@@ -570,7 +573,7 @@ What you've created here is the most basic functional version of a Product block
 5. The component in `src/Block.js` is about ready to be split up into smaller components. You could move the code that displays the select menus, starting with `product.variantOptions.map`, to a new component.
 6. If you log the `product` and `selectedVariant` (see below) and update the block, you may see they have data that this component is not using yet. One piece that you probably want to display is the images. You should also know that Product Variants have images too, and you may decide to change which image is visible when a shopper chooses a variant that has images. (see [Images for Variants](https://help.volusion.com/en/articles/1724914-product-variants-images-for-variants))
 
-```javascript
+```js
 React.useEffect(() => {
     console.log({ product, selectedVariant });
 }, [selectedVariant]);
