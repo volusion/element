@@ -15,12 +15,6 @@ If you haven't already, we really recommend you keep your code organized using `
 git init
 ```
 
-Also, remember that you can create the repo while creating your block by running:
-
-```bash
-element new --git MyBlock
-```
-
 ## 2. Publish Your Block for the First Time
 
 It's time to test your work online, both in the Site Designer and on a live domain. To do that, let's publish the block:
@@ -63,6 +57,12 @@ Here it is a good moment to commit the change to git.
 git commit -am "First major release"
 ```
 
+Additionally, it is recommended that you create a git tag to record the release:
+
+```bash
+git tag 1.0
+```
+
 ## 6. Create a Minor Release
 
 Once you have published your first major release, you can publish as many minor releases as you want. The minor release are linked to your major release.
@@ -82,6 +82,9 @@ npm run build
 element update
 element release -n "A minor release"
 git commit -am "A minor release"
+
+#Optional but recommended
+git tag 1.1
 ```
 
 ## 8. Rolling Back a Minor Release (When Needed)
@@ -95,11 +98,14 @@ element rollback
 If you had multiple minor releases linked to the major release, every `rollback` command will jump back one release until reaching the major. The major version
 cannot be rolled back.
 
-Every time you run it, remember to point your repo to the right commit to have the same code locally and in the Element servers.
+Every time you run it, remember to point your repo to the right commit or tag to have the same code locally and in the Element servers.
 
-```
+```bash
 git checkout "commit_id_of_previous_minor_release"
+# Or if you used tags:
+git checkout 1.0
 ```
+
 
 ## 9. Creating a New Major Version
 
@@ -109,8 +115,16 @@ Sometimes you will need to publish a new version of your block, with a new featu
 element publish -m
 ```
 
-The `-m` versions stands for `major` and will create a branch for you with the name of the next version. If you are in version 1 for example and run the command,
-a branch called `v2` will be created. Additionally the block will be published to the servers with the new version but not yet released. You can repeat steps
+**Tip:** Before running the command, remember to tag your current block version with `git tag`.
+
+The `-m` versions stands for `major`. The block will be published to the servers with the new version but not yet released. You can repeat steps
 3 to 8 as needed for the new version.
 
-If you need to release changes for different block versions, just change to the appropriate branches.
+
+If you need to release changes for different block versions (i.e. bug fixes), just change to the appropriate tag:
+
+```bash
+git branch support/v1 1.0
+# Or
+git checkout -b support/v1 1.0
+```

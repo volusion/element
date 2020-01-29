@@ -9,7 +9,10 @@ This tutorial will cover creating new pages in Element, and the creation of cust
 If you have built a block before, you can skip down to [Make the Block Fetch Data from an API](#5-make-the-block-fetch-data-from-an-api) after running this command from the directory where you keep your blocks:
 
 ```shell
-element new Bloglist --git && cd Bloglist && npm install && npm start
+element new Bloglist && cd Bloglist && npm install && npm start
+cd BlogList
+git init
+git commit -am "Initial commit"
 ```
 
 ## Prerequisites
@@ -54,7 +57,7 @@ Logged in as your.name@example.com.
 After your login is successful, enter this command into your terminal to create the new block:
 
 ```shell
-element new Bloglist --git
+element new Bloglist
 ```
 
 You should see output that looks like this:
@@ -64,13 +67,14 @@ blocks $ element new Bloglist --git
 Cloning boilerplate for Bloglist...
 Saved boilerplate to ./Bloglist; now updating...
 Updated files Bloglist/local/index.js!
-Initalized git repo.
 ```
 
 At this point, a new directory was created called `Bloglist`. Enter this command in your terminal to navigate into the Bloglist directory:
 
 ```shell
 cd Bloglist
+git init
+git commit -am "Initial commit"
 ```
 
 Type this command into your terminal to install the npm packages that your block needs:
@@ -99,7 +103,7 @@ Use your favorite text editor or IDE to open the files of the Bloglist directory
 
 #### '/src/Block.js' (initial)
 
-```js
+```javascript
 import React from 'react';
 
 import { defaultConfig } from './configs';
@@ -127,7 +131,7 @@ Data fetching for your block should happen in your getDataProps function so that
 
 #### '/src/getDataProps.js' (initial)
 
-```js
+```javascript
 export const getDataProps = (utils, props) => Promise.resolve();
 ```
 
@@ -135,7 +139,7 @@ As you can see initially, this function resolves without a value. Modify the sou
 
 #### '/src/getDataProps.js'
 
-```js
+```javascript
 export const getDataProps = (utils, props) => {
     return utils.client.request("https://jsonplaceholder.typicode.com/posts")
         .then(res => res.json())
@@ -147,21 +151,21 @@ Now that `getDataProps` is requesting the blog posts, you need to set up the blo
 
 #### '/src/Block.js'
 
-```js
+```javascript
 import React from 'react';
 
 import { defaultConfig } from './configs';
 
 function StarterBlock(props) {
     // the blog posts are now available as props.data
-    const { css, classes, data = [] } = props;
+    const { css, data = [] } = props;
     return (
         <React.Fragment>
             <h1>{props.text}</h1>
             <ul>
                 {data.map(blog => {
                     return <li key={blog.id}>
-                        <a href={`/blog/${blog.id}`} className={css(classes.blogLink)}>
+                        <a href={`/blog/${blog.id}`}>
                             {blog.title}
                         </a>
                     </li>;
@@ -185,7 +189,7 @@ The block functions alright, but you should enhance its styling a little bit. Op
 
 #### '/src/getStyles.js' (initial)
 
-```js
+```javascript
 export const getStyles = (globalStyles, blockConfig) => ({});
 ```
 
@@ -193,7 +197,7 @@ So far, the styles object it returns is empty, so you should change that. Replac
 
 #### '/src/getStyles.js'
 
-```js
+```javascript
 export const getStyles = (globalStyles, blockConfig) => ({
     blogLink: {
         color: 'rgba(50, 168, 82, 0.9)',
@@ -207,7 +211,46 @@ export const getStyles = (globalStyles, blockConfig) => ({
 });
 ```
 
-Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS.
+Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodite is already included in the Starter Block. Import it, and add the new style to your block:
+
+#### 'src/Block.js'
+
+```javascript
+import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
+
+import { defaultConfig } from './configs';
+import { getStyles } from './getStyles';
+
+
+function StarterBlock(props) {
+    // the blog posts are now available as props.data
+    const { css, data = [] } = props;
+
+    // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
+    const styles = StyleSheet.create(getStyles({}, props));
+
+    return (
+        <React.Fragment>
+            <h1>{props.text}</h1>
+            <ul>
+                {data.map(blog => {
+                    return <li key={blog.id}>
+                        {/* add the aphrodite class to your rendered HTML. */}
+                        <a href={`/blog/${blog.id}`}  className={css(styles.blogLink)}>
+                            {blog.title}
+                        </a>
+                    </li>;
+                })}
+            </ul>
+        </React.Fragment>
+    );
+}
+StarterBlock.defaultProps = defaultConfig;
+
+export default StarterBlock;
+```
+
 
 Your block should now look something like this and have a hover effect for the blog links:
 
@@ -233,6 +276,8 @@ Next, you need to publish the block to the Block Theme Registry. Run this comman
 
 ```shell
 element publish -n "Blog List Tutorial Block"
+git commit -am "First release"
+git tag 1.0
 ```
 
 This will present you with a category selection menu that looks like this:
@@ -258,7 +303,7 @@ cd ..
 Type this command into your terminal to make the new BlogDetails block:
 
 ```shell
-element new Blogdetails --git
+element new Blogdetails
 ```
 
 Like the blog list block before, you should see output that tells you the operation was successful.
@@ -267,6 +312,8 @@ At this point, a new directory was created called `Blogdetails`. Enter this comm
 
 ```shell
 cd Blogdetails
+git init
+git commit -am "Initial commit"
 ```
 
 Type this command into your terminal to install the npm packages that your block needs:
@@ -309,7 +356,7 @@ Open `/src/configs.js` in your text editor and replace the entire code with this
 
 #### '/src/configs.js'
 
-```js
+```javascript
 export const getConfigSchema = ElementPropTypes => {
     return {
         text: {
@@ -331,7 +378,7 @@ Open `/src/getDataProps.js` and replace the entire source code with this:
 
 #### '/src/getDataProps.js'
 
-```js
+```javascript
 export const getDataProps = (utils, props) => {
     return utils.client.request(`https://jsonplaceholder.typicode.com/posts/${props.blogId}`)
         .then(res => res.json())
@@ -345,7 +392,7 @@ Open `/src/Block.js` and replace the entire source code with this:
 
 #### '/src/Block.js'
 
-```js
+```javascript
 import React from 'react';
 
 import { defaultConfig } from './configs';
@@ -383,6 +430,8 @@ Next, you need to publish the block to the Block Theme Registry. Run this comman
 
 ```shell
 element publish -n "Blog Details Tutorial Block"
+git commit -am "First release"
+git tag 1.0
 ```
 
 This will present you with a category selection menu that looks like this:
@@ -547,4 +596,4 @@ You did a lot in this tutorial:
 * Used url path params to provide data to a block
 * Previewed a theme
 
-Still, this tutorial only scratches the surface of what you can do with Element. For more information, check out the [how-to guides, references, explanations, and tutorials on the Element documentation home page]().
+Still, this tutorial only scratches the surface of what you can do with Element. For more information, check out the [how-to guides, references, explanations, and tutorials on the Element documentation home page](/).
