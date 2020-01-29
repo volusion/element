@@ -6,7 +6,6 @@
 <url> <loc>https://github.com/volusion/element/element/introduction</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/tutorials</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/references</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://github.com/volusion/element/element/references/element-cli</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/references/cart-events</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/references/block-utils</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/references/proptypes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -41,6 +40,7 @@
 <url> <loc>https://github.com/volusion/element/element/references/sdk</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/tutorials/site-designer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/tutorials/proptypes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://github.com/volusion/element/element/references/element-cli</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/track-block-versions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/tutorials/building-an-element-page</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/tutorials/product-landing-page</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
