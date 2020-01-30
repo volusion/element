@@ -8,7 +8,7 @@ const config = {
     logo:
       'https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/favicon.png',
     logoLink: 'https://github.com/volusion/element',
-    title: 'Element / Docs',
+    title: '<a href="/">Element</a>',
     githubUrl: 'https://github.com/volusion/element',
     helpUrl: '',
     tweetText: '',
