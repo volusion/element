@@ -12,11 +12,11 @@ In `Block.js` these methods are avaible via `props`, for example: `props.seo.set
   * [addAmpScript](#addampscript)
   * [addLink](#addlink)
   * [addScript](#addscript)
-  * [canonicalUrl](#canonicalurl)
   * [isAmpRequest](#isamprequest)
   * [isRendering](#isrendering)
   * [throwNotFound](#thrownotfound)
 * **Server and Client Side**
+  * [canonicalUrl](#canonicalurl)
   * [client](#client)
   * [events](#events)
   * [pubSub](#pubsub)
@@ -72,22 +72,6 @@ utils.addScript(
 ```
 
 #### 'addScript' Availability
-
-| getDataProps utils | Block props |
-| ------------------ | ----------- |
-| &check;            | &check;     |
-
-### 'canonicalUrl'
-
-Function that accepts an object and returns a string with the URL of the current page and the passed object as URI parameters. The object passed is also returned as `queryParams` on the page when clicking on the generated link. `canonicalUrl` is generally utilized in conjunction with `isAmpRequest`.
-
-#### 'canonicalUrl' Usage
-
-```javascriptx
-<a href={utils.canonicalUrl({ openPushMenu: true })}>
-```
-
-#### 'canonicalUrl' Availability
 
 | getDataProps utils | Block props |
 | ------------------ | ----------- |
@@ -163,6 +147,22 @@ return getSampleData()
 | &check;            | &cross;     |
 
 ## Server and Client Side
+
+### 'canonicalUrl'
+
+Function that accepts an object and returns a string with the URL of the current page and the passed object as URI parameters. The object passed is also returned as `queryParams` on the page when clicking on the generated link. `canonicalUrl` is generally utilized in conjunction with `isAmpRequest`.
+
+#### 'canonicalUrl' Usage
+
+```javascriptx
+<a href={utils.canonicalUrl({ openPushMenu: true })}>
+```
+
+#### 'canonicalUrl' Availability
+
+| getDataProps utils | Block props |
+| ------------------ | ----------- |
+| &check;            | &check;     |
 
 ### 'client'
 
