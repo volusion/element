@@ -21,7 +21,7 @@ If you don't have [Node Version Manager](https://github.com/nvm-sh/nvm), you sho
 Then run this command in your terminal:
 
 ```shell
-nvm install 8.11.3
+nvm install 12.14.1
 ```
 
 ## 3. Install Git
