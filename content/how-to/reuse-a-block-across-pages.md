@@ -24,7 +24,15 @@ Use the "Page" dropdown in the header to edit another page, or add a new one.
 
 ## 5. My Blocks
 
-Click the plus icon to begin the process of adding a block. Notice that you are viewing the "Default Blocks" tab. Click on the "My Blocks" tab. Click on the name of the block that you made reusable in an earlier step.
+Click the plus icon to begin the process of adding a block. Notice that you are viewing the "Default Blocks" tab. Click on the "My Blocks" tab.
+
+## 6. Rename the Block
+
+Click on the configuration icon to the left of the name of the block you made reusable. Select "Rename" from the menu. Enter a new name and submit the form to save it.
+
+## 7. Add the Block
+
+Click on the name of the block to add it to the page.
 
 ## 6. Edit the Block
 
