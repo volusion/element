@@ -60,7 +60,7 @@ const Header = ({ location }) => (
       }
     `}
     render={data => {
-      const logoImg = require('./images/logo.svg')
+      const logoImg = require('./images/Element-logo-mark-reversed.png')
       const twitter = require('./images/twitter.svg')
       const {
         site: {
@@ -79,13 +79,13 @@ const Header = ({ location }) => (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
             <div className={'navBarHeader'}>
-              {/* <Link to={finalLogoLink} className={'navBarBrand'}>
+              <Link to={finalLogoLink} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
-                  src={logo.image !== '' ? logo.image : logoImg}
+                  src={logoImg}
                   alt={'logo'}
                 />
-              </Link> */}
+              </Link>
               <div
                 className={'headerTitle displayInline'}
                 dangerouslySetInnerHTML={{ __html: headerTitle }}

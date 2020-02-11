@@ -1,5 +1,5 @@
 ---
-title: "Product Landing Page"
+title: 'Product Landing Page'
 ---
 
 We're going to build a new block to handle the display of an individual product and its interactions with the shopping cart. This could be an SEO landing page, someplace you want to drive ad traffic to, or a replacement for the Product Details block because you want to do something with the layout that it isn't capable of.
@@ -90,7 +90,7 @@ npm start
 
 You should notice a browser tab open up with the url set to `http://localhost:4000/`, and the browser contents should look something like this:
 
-![Starter Block contents in browser](/tutorials/browserStarterBlock.png)
+![Starter Block contents in browser](browserStarterBlock.png)
 
 Congratulations! Your block is running locally and is ready for some changes. If this process did not start up a browser tab for your automatically, open a browser tab to `http://localhost:4000/`.
 
@@ -107,11 +107,11 @@ You're going to use a **pageVar** to get the product slug from the page's url. T
 Open `src/configs.js` in your text editor and replace the entire code with this:
 
 ```js
-export const getConfigSchema = ElementPropTypes => {};
+export const getConfigSchema = ElementPropTypes => {}
 
 export const defaultConfig = {
-    productSlug: 'pageVar:pageUrlText'
-};
+  productSlug: 'pageVar:pageUrlText',
+}
 ```
 
 #### 'src/getDataProps.js'
@@ -122,17 +122,15 @@ Open `src/getDataProps.js` and replace the entire source code with this:
 
 ```js
 export const getDataProps = (utils, { productSlug }) => {
-    const { client, isRendering } = utils;
-    if (isRendering || productSlug !== "pageVar:pageUrlText") {
-        return client.products
-            .getBySlug(productSlug)
-            .catch(() => {});
-    } else {
-        return client.products
-            .search({ query: "", pageSize: 1 })
-            .then(data => data.items[0]);
-    }
-};
+  const { client, isRendering } = utils
+  if (isRendering || productSlug !== 'pageVar:pageUrlText') {
+    return client.products.getBySlug(productSlug).catch(() => {})
+  } else {
+    return client.products
+      .search({ query: '', pageSize: 1 })
+      .then(data => data.items[0])
+  }
+}
 ```
 
 (Note: the second argument to `getDataProps()` is the block's props, which are destructured in place)
@@ -156,7 +154,7 @@ const tenantId = '$YOUR_TENANT_ID'
 Update it with your tenant from the browser source:
 
 ```js
-const tenantId = '586aa7bc3e140400156259a5';
+const tenantId = '586aa7bc3e140400156259a5'
 ```
 
 Next you'll find a product slug and pass it to the local preview of your block. Back in your browser, find a product in your store and grab the slug from the URL, that is the text after `/p/`, for example: ...com/p/**water-bottle**.
@@ -166,8 +164,8 @@ Now back in `local/index.js` again, find where `props` are defined:
 ```js
 const props = {
   ...blockModule.defaultConfig,
-  text: 'Custom prop value for local testing'
-};
+  text: 'Custom prop value for local testing',
+}
 ```
 
 Replace the `text` prop with `productSlug`, and the value from the browser
@@ -176,7 +174,7 @@ Replace the `text` prop with `productSlug`, and the value from the browser
 const props = {
   ...blockModule.defaultConfig,
   productSlug: 'water-bottle',
-};
+}
 ```
 
 #### 'src/Block.js'
@@ -186,14 +184,12 @@ Your block's code needs to show the content of the product that it recieved from
 Open `src/Block.js` and replace `return <h1>{props.text}</h1>;` with this:
 
 ```js
-const product = props.data;
+const product = props.data
 
 if (!product.id) {
-    return (
-        <h1>Product Landing Block</h1>
-    );
+  return <h1>Product Landing Block</h1>
 }
-return <h1>{product.name}</h1>;
+return <h1>{product.name}</h1>
 ```
 
 #### Block Testing Spec
@@ -256,7 +252,7 @@ Now that you've published your block, the next thing you'll want to do is create
 
 In the web browser of your choice, sign in to [Volusion.com](https://www.volusion.com/login) with your approved developer account, and locate the link in the sidebar navigation for Site Designer:
 
-![Site Designer Link](/tutorials/siteDesignerLink.png)
+![Site Designer Link](siteDesignerLink.png)
 
 Click the link to proceed to Site Designer.
 
@@ -266,11 +262,11 @@ Look for the "Create new theme" link in Site Designer, and click on it.
 
 _Note: if Site Designer directed you straight to your active theme, first click the **"Change Theme"** link near the top of the screen (next to your theme name)_
 
-![Create New Theme Link](/tutorials/createNewThemeLink.png)
+![Create New Theme Link](createNewThemeLink.png)
 
 This will launch a dialog for you to enter your theme name:
 
-![Create New Theme Dialog](/tutorials/createNewThemeDialog.png)
+![Create New Theme Dialog](createNewThemeDialog.png)
 
 Enter "Product Landing Test Theme" as the name for your theme.
 
@@ -280,7 +276,7 @@ Then click the "Create" button.
 
 You need a page for your product landing block.
 
-![Page Selection dropdown](/tutorials/pageDropdown.png)
+![Page Selection dropdown](pageDropdown.png)
 
 Click the "Add a Page" link, which will open a panel in the sidebar:
 
@@ -305,7 +301,7 @@ Site Designer will redirect you to your new Product Landing page.
 
 You're on the product landing page, so start adding a block by clicking on the **Add Block** link:
 
-![Add Block](/tutorials/addBlockLink.png)
+![Add Block](addBlockLink.png)
 
 This will open the **Add a Block** panel, where you can select from block categories. Click on the **Misc** category. You'll recall this was the category you published your blocks into earlier.
 
@@ -325,7 +321,7 @@ If there is an error at this point, refresh your browser window and choose "Prod
 
 Click the **Preview** button near the top of the Site Designer window:
 
-![Preview button](/tutorials/previewButton.png)
+![Preview button](previewButton.png)
 
 This will launch a new browser tab with your blog list page.
 
@@ -347,33 +343,28 @@ In `src/Block.js`, replace the `StarterBlock` function with this code. Remember,
 
 ```jsx
 function StarterBlock(props) {
-    const product = props.data;
+  const product = props.data
 
-    if (!product.id) {
-        return (
-            <h1>Product Landing Block</h1>
-        );
+  if (!product.id) {
+    return <h1>Product Landing Block</h1>
+  }
+
+  const addToCart = () => {
+    const productVariant = {
+      productId: product.id,
+      quantity: 1,
+      variantId: product.productVariants[0].id,
+      itemPrice: product.productVariants[0].price,
     }
+    props.pubSub.publish(props.events.cart.addToCart, productVariant)
+  }
 
-    const addToCart = () => {
-        const productVariant = {
-            productId: product.id,
-            quantity: 1,
-            variantId: product.productVariants[0].id,
-            itemPrice: product.productVariants[0].price,
-        };
-        props.pubSub.publish(
-            props.events.cart.addToCart,
-            productVariant
-        );
-    };
-
-    return (
-        <React.Fragment>
-            <h1>{product.name}</h1>
-            <button onClick={addToCart}>Add to Cart</button>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <h1>{product.name}</h1>
+      <button onClick={addToCart}>Add to Cart</button>
+    </React.Fragment>
+  )
 }
 ```
 
@@ -419,7 +410,7 @@ If you need it, here is some [Product Variants Help](https://help.volusion.com/e
 Copy the "Page URL text" from your product that has variants, and make sure that it matches the `productSlug` assigned to `const props` in `local/index.js`.
 
 ```js
-const props = { 
+const props = {
   ...blockModule.defaultConfig,
   productSlug: 'water-bottle',
 }
@@ -430,100 +421,90 @@ const props = {
 Now you'll need to update the block so that those variant options are displayed as dropdowns, and when the shopper makes a different selection the variant sent to the cart changes.
 
 In `src/Block.js`, update the React import statement at the top of the file to include the `useState` hook:
+
 ```js
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 ```
 
 Then, in the same file, replace just the `StarterBlock` function with this code:
 
 ```jsx
 function StarterBlock(props) {
-    const product = props.data;
+  const product = props.data
 
-    if (!product.id) {
-        return (
-            <h1>Product Landing Block</h1>
-        );
+  if (!product.id) {
+    return <h1>Product Landing Block</h1>
+  }
+
+  const [selectedOptions, setSelectedOptions] = useState(
+    getInitialSelectedOptions()
+  )
+  const [selectedVariant, setSelectedVariant] = useState(
+    getVariantFromOptions()
+  )
+
+  React.useEffect(() => {
+    setSelectedVariant(getVariantFromOptions())
+  }, [selectedOptions])
+
+  function getInitialSelectedOptions() {
+    return product.variantOptions.map(optionCategory => {
+      return optionCategory.options[0]
+    })
+  }
+
+  function getVariantFromOptions() {
+    if (selectedOptions.length === 0) {
+      return product.productVariants[0]
     }
+    return product.productVariants.find(variant => {
+      return !variant.variants.some((value, index) => {
+        return selectedOptions[index] !== value
+      })
+    })
+  }
 
-    const [selectedOptions, setSelectedOptions] = useState(
-        getInitialSelectedOptions()
-    );
-    const [selectedVariant, setSelectedVariant] = useState(
-        getVariantFromOptions()
-    );
-
-    React.useEffect(() => {
-        setSelectedVariant(getVariantFromOptions());
-    }, [selectedOptions]);
-
-    function getInitialSelectedOptions() {
-        return product.variantOptions.map(optionCategory => {
-            return optionCategory.options[0];
-        });
+  function addItem() {
+    const productVariant = {
+      productId: product.id,
+      quantity: 1,
+      variantId: selectedVariant.id,
+      itemPrice: selectedVariant.price,
     }
+    props.pubSub.publish(props.events.cart.addToCart, productVariant)
+  }
 
-    function getVariantFromOptions() {
-        if (selectedOptions.length === 0) {
-            return product.productVariants[0];
-        }
-        return product.productVariants.find(variant => {
-            return !variant.variants.some((value, index) => {
-                return selectedOptions[index] !== value;
-            });
-        });
-    }
+  function onOptionSelected(value, index) {
+    const updatedSelection = [...selectedOptions]
+    updatedSelection[index] = value
+    setSelectedOptions(updatedSelection)
+  }
 
-    function addItem() {
-        const productVariant = {
-            productId: product.id,
-            quantity: 1,
-            variantId: selectedVariant.id,
-            itemPrice: selectedVariant.price
-        };
-        props.pubSub.publish(props.events.cart.addToCart, productVariant);
-    }
-
-    function onOptionSelected(value, index) {
-        const updatedSelection = [...selectedOptions];
-        updatedSelection[index] = value;
-        setSelectedOptions(updatedSelection);
-    }
-
-    return (
-        <>
-            <h1>{product.name}</h1>
-            <p>
-                {selectedVariant ? (
-                    <span>${selectedVariant.price}</span>
-                ) : (
-                    <span>Option not availble.</span>
-                )}
-            </p>
-            <button onClick={addItem}>Add to Cart</button>
-            {product.variantOptions.map((optionCategory, index) => (
-                <React.Fragment key={`optionCategory${index}`}>
-                    <label> {optionCategory.name} </label>
-                    <select
-                        onChange={e =>
-                            onOptionSelected(e.target.value, index)
-                        }
-                    >
-                        {optionCategory.options.map(
-                            (option, optionIndex) => (
-                                <option
-                                    key={`option${optionIndex}`}
-                                    value={option}
-                                >
-                                    {option}
-                                </option>
-                            )
-                        )}
-                    </select>
-                </React.Fragment>
+  return (
+    <>
+      <h1>{product.name}</h1>
+      <p>
+        {selectedVariant ? (
+          <span>${selectedVariant.price}</span>
+        ) : (
+          <span>Option not availble.</span>
+        )}
+      </p>
+      <button onClick={addItem}>Add to Cart</button>
+      {product.variantOptions.map((optionCategory, index) => (
+        <React.Fragment key={`optionCategory${index}`}>
+          <label> {optionCategory.name} </label>
+          <select onChange={e => onOptionSelected(e.target.value, index)}>
+            {optionCategory.options.map((option, optionIndex) => (
+              <option key={`option${optionIndex}`} value={option}>
+                {option}
+              </option>
             ))}
-        </>
-    );
+          </select>
+        </React.Fragment>
+      ))}
+    </>
+  )
 }
 ```
 
@@ -539,7 +520,7 @@ It should look something like this:
 
 ![Local Block with Variants](localBlockWithVariants.png)
 
-When you change the Color and Size values you will see the price change to reflect the price of the selected variant. Do *not* press "Add to Cart", `pubSub` is not supported locally, and the block needs to be loaded within a theme to have access to the [cart events](/references/cart-events).
+When you change the Color and Size values you will see the price change to reflect the price of the selected variant. Do _not_ press "Add to Cart", `pubSub` is not supported locally, and the block needs to be loaded within a theme to have access to the [cart events](/references/cart-events).
 
 ### Update Your Block
 
@@ -575,12 +556,12 @@ What you've created here is the most basic functional version of a Product block
 
 ```js
 React.useEffect(() => {
-    console.log({ product, selectedVariant });
-}, [selectedVariant]);
+  console.log({ product, selectedVariant })
+}, [selectedVariant])
 ```
 
 ## Further Reading
 
-* [Styling a Block with Aphrodite](/how-to/style-a-block-with-aphrodite)
-* If you were going to make this an SEO landing page you'll want to read the [Set Seo Data from a Block](/how-to/set-seo-data-from-a-block) how-to.
-* To add more controls to change the cart, and also respond to changes from the cart panel, read [How to Interact with the Cart](/how-to/interact-with-the-cart) and [Cart Events Reference](/references/cart-events)
+- [Styling a Block with Aphrodite](/how-to/style-a-block-with-aphrodite)
+- If you were going to make this an SEO landing page you'll want to read the [Set Seo Data from a Block](/how-to/set-seo-data-from-a-block) how-to.
+- To add more controls to change the cart, and also respond to changes from the cart panel, read [How to Interact with the Cart](/how-to/interact-with-the-cart) and [Cart Events Reference](/references/cart-events)
