@@ -4,7 +4,29 @@ title: 'Data Volusion API'
 
 The primary goal of an e-commerce store is to sell products. In Element, the Volusion API is where that product data comes from, as well as other information about the store, and data organization such as menus and categories. See the [Volusion API ElementSdk Client Reference](/references/sdk) for all available data.
 
-## 1. Locate Your Get Data File
+## 1. Set your tenant ID
+
+You will want to set up your block so that it can simulate being inside of a theme and get real data. It's always faster when you can develop something locally.
+
+The first step is to find your Tenant ID. In your browser, pull up the store you will be developing for. View source and search for "tenant". There are several instances, you might find something like this:
+
+```js
+window.ElementSdk.client.configure({tenant: "586aa7bc3e140400156259a5"
+```
+
+Back in your IDE, open `local/index.js` and find this line:
+
+```js
+const tenantId = '$YOUR_TENANT_ID'
+```
+
+Update it with your tenant from the browser source:
+
+```js
+const tenantId = '586aa7bc3e140400156259a5'
+```
+
+## 2. Locate Your Get Data File
 
 Open up your block's code and find `getDataProps.js`. It should look like this:
 
@@ -12,7 +34,7 @@ Open up your block's code and find `getDataProps.js`. It should look like this:
 export const getDataProps = (utils, props) => Promise.resolve()
 ```
 
-## 2. Make the Request Call You Need
+## 3. Make the Request Call You Need
 
 ```javascript
 export const getDataProps = (utils, props) => {
@@ -27,7 +49,7 @@ export const getDataProps = (utils, props) => {
 
 Menus and Categories don't require any arguments. For other data, such as Products, you'll need an ID or slug from the URI. See [How to Read Page URI Parameters from Your Blocks](/how-to/read-page-uri-parameters-in-blocks) and [How to Add a Page That Depends on URI Parameters](/how-to/add-page-with-uri-parameters).
 
-## 3. Use the Data from Your Block
+## 4. Use the Data from Your Block
 
 From your render function located in src/Block.js, you will have the data available:
 
