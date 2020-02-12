@@ -1,5 +1,5 @@
 ---
-title: "Style A Block With Aphrodite"
+title: 'Style A Block With Aphrodite'
 ---
 
 Aphrodite is a framework for writing JavaScript based CSS and creating dynamic classes for use in React. You can read more about it in the [official documentation](https://github.com/Khan/aphrodite).
@@ -22,7 +22,7 @@ You will want to write your CSS in this format:
 
 ```javascript
 yourClassName: {
-    cssRule: ruleProperty;
+  cssRule: ruleProperty
 }
 ```
 

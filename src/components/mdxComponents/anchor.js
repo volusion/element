@@ -3,10 +3,11 @@ import * as React from 'react'
 const AnchorTag = ({ children: link, ...props }) => {
   if (link) {
     return (
-      <a 
+      <a
         href={props.href}
-        // target="_blank" 
-        rel="noopener">
+        // target="_blank"
+        rel="noopener"
+      >
         {link}
       </a>
     )

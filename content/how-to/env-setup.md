@@ -1,5 +1,5 @@
 ---
-title: "Environment Setup"
+title: 'Environment Setup'
 ---
 
 In this how-to guide, we will cover setting up your environment so that you can begin developing blocks with Element.

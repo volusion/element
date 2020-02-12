@@ -1,18 +1,18 @@
 ---
-title: "Element CLI Reference"
+title: 'Element CLI Reference'
 ---
 
 This reference looks at the [Element CLI](https://github.com/volusion/element-cli) commands and their options in detail. To learn more about using Element CLI, read [How to Keep Track of Your Block Versions](/how-to/track-block-versions).
 
 ## Table of Contents
 
-* [Installing](#installing-element-cli)
-* [Login](#login)
-* [New Block](#new-block)
-* [Publish](#publish)
-* [Update](#update)
-* [Rollback](#rollback)
-* [Release](#release)
+- [Installing](#installing-element-cli)
+- [Login](#login)
+- [New Block](#new-block)
+- [Publish](#publish)
+- [Update](#update)
+- [Rollback](#rollback)
+- [Release](#release)
 
 ## Installing Element CLI
 
@@ -56,9 +56,9 @@ element publish -n Name
 
 #### Publish Options
 
-* **[-n, --name NAME]** this is a required option. The provided name will appear in Site Designer when adding your block to a theme.
-* **[-c, --category CATEGORY]** Element CLI will provide an interface prompting you with categories to choose from, feel free to leave this option off.
-* **[-m, --major-version]** see [How to Keep Track of Your Block Versions](/how-to/track-block-versions) for details on when to publish a new major version.
+- **[-n, --name NAME]** this is a required option. The provided name will appear in Site Designer when adding your block to a theme.
+- **[-c, --category CATEGORY]** Element CLI will provide an interface prompting you with categories to choose from, feel free to leave this option off.
+- **[-m, --major-version]** see [How to Keep Track of Your Block Versions](/how-to/track-block-versions) for details on when to publish a new major version.
 
 ### Update
 
@@ -72,8 +72,8 @@ element update
 
 #### Update Options
 
-* **[-p, --toggle-public]** if your agency has permission to change this, it will allow you to make the block available to users outside of our organization.
-* **[-u, --unminified]** unminified is an option for skipping the minification process, useful for debugging.
+- **[-p, --toggle-public]** if your agency has permission to change this, it will allow you to make the block available to users outside of our organization.
+- **[-u, --unminified]** unminified is an option for skipping the minification process, useful for debugging.
 
 ### Rollback
 
@@ -101,4 +101,4 @@ element release
 
 #### Release Options
 
-* **[-n, --note]** a release note viewable in Site Designer, which displays the note from the major release, or the most recent minor release.
+- **[-n, --note]** a release note viewable in Site Designer, which displays the note from the major release, or the most recent minor release.

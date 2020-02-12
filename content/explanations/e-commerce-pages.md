@@ -1,5 +1,5 @@
 ---
-title: "E-commerce Theme Pages"
+title: 'E-commerce Theme Pages'
 ---
 
 Element is a web design and hosting platform. Site Designer is Element's site builder with direct integrations into Volusion's e-commerce offerings. As a companion to Volusion's e-commerce offerings, when you create a new theme in Site Designer it comes pre-loaded with pages that display e-commerce related content, such as products and categories.

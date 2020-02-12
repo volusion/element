@@ -1,5 +1,5 @@
 ---
-title: "Proptypes"
+title: 'Proptypes'
 ---
 
 In this 15 minute tutorial you will learn how to create a block with a configurable light and dark modes.
@@ -27,11 +27,11 @@ Open up your block's code and find `/src/configs.js`. In that file you'll see `g
 export const getConfigSchema = ElementPropTypes => {
   return {
     text: {
-      label: "Text content",
-      type: ElementPropTypes.string
-    }
-  };
-};
+      label: 'Text content',
+      type: ElementPropTypes.string,
+    },
+  }
+}
 ```
 
 ## Add a New Element Proptype
@@ -42,24 +42,24 @@ In the object literal returned by `getConfigSchema` we will add the property `is
 export const getConfigSchema = ElementPropTypes => {
   return {
     text: {
-      label: "Text content",
-      type: ElementPropTypes.string
+      label: 'Text content',
+      type: ElementPropTypes.string,
     },
     isDarkModeEnabled: {
-      label: "Enable Dark Mode",
-      type: ElementPropTypes.bool
-    }
-  };
-};
+      label: 'Enable Dark Mode',
+      type: ElementPropTypes.bool,
+    },
+  }
+}
 ```
 
 when you add a new Element Proptype to a schema you need to give it a default value in `config.js`. You do this by adding default values to the `defaultConfig` object:
 
 ```javascript
 export const defaultConfig = {
-  text: "Element Starter Block",
-  isDarkModeEnabled: true
-};
+  text: 'Element Starter Block',
+  isDarkModeEnabled: true,
+}
 ```
 
 ## Set up the "Dark" And "Light" Styles
@@ -70,15 +70,15 @@ In this step, we define the colors for the light and dark modes. Open up `/src/g
 export const getStyles = (globalStyles, blockConfig) => {
   return {
     dark: {
-      color: "rgb(50,161,152)",
-      background: "rgb(10,54,66)"
+      color: 'rgb(50,161,152)',
+      background: 'rgb(10,54,66)',
     },
     light: {
-      color: "rgb(201,76,34)",
-      background: "rgb(253,246,228)"
-    }
-  };
-};
+      color: 'rgb(201,76,34)',
+      background: 'rgb(253,246,228)',
+    },
+  }
+}
 ```
 
 ## Use the New Proptype in the Block
@@ -97,12 +97,12 @@ Update the code above to this:
 
 ```javascript
 // read our new prop, and what we'll need to get our styles
-const { classes, css, isDarkModeEnabled, text } = props;
+const { classes, css, isDarkModeEnabled, text } = props
 
 // use the new prop to determine which class to apply
-const modeClass = isDarkModeEnabled ? classes.dark : classes.light;
+const modeClass = isDarkModeEnabled ? classes.dark : classes.light
 
-return <h1 className={css(modeClass)}>{text}</h1>;
+return <h1 className={css(modeClass)}>{text}</h1>
 ```
 
 That's it! Now we'll preview our work locally.
@@ -161,43 +161,43 @@ In `block.js`, find the code that's reading the props,
 
 ```javascript
 // read our new prop, and what we'll need to get our styles
-const { classes, css, isDarkModeEnabled, text } = props;
+const { classes, css, isDarkModeEnabled, text } = props
 ```
 
 and update it so that it's getting the new `darkStart` and `darkEnd` properties:
 
 ```javascript
-const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props;
+const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props
 ```
 
 Next, add the code that determines if we are in light or dark mode. The full, commented code is:
 
 ```javascript
 // get the current hour
-const now = new Date().getHours();
+const now = new Date().getHours()
 
 // if somebody entered a dark start value less than 12, assume they are using a 12 hour clock and convert it to 24 hour time.
-const pmStart = darkStart < 12 ? darkStart + 12 : start;
+const pmStart = darkStart < 12 ? darkStart + 12 : start
 
 // is it darktime in the user's time zone?
-const isDark = pmStart <= now || now < darkEnd;
+const isDark = pmStart <= now || now < darkEnd
 
 // use dark mode if dark mode is enabled and it is darktime
-const isDarkMode = isDarkModeEnabled && isDark;
+const isDarkMode = isDarkModeEnabled && isDark
 ```
 
 Here is what it should look like all together, without the comments:
 
 ```javascript
-const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props;
+const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props
 
-const now = new Date().getHours();
-const pmStart = darkStart < 12 ? darkStart + 12 : start;
-const isDark = pmStart <= now || now < darkEnd;
-const isDarkMode = isDarkModeEnabled && isDark;
-const modeClass = isDarkMode ? classes.dark : classes.light;
+const now = new Date().getHours()
+const pmStart = darkStart < 12 ? darkStart + 12 : start
+const isDark = pmStart <= now || now < darkEnd
+const isDarkMode = isDarkModeEnabled && isDark
+const modeClass = isDarkMode ? classes.dark : classes.light
 
-return <h1 className={css(modeClass)}>{text}</h1>;
+return <h1 className={css(modeClass)}>{text}</h1>
 ```
 
 Save your work.
@@ -215,8 +215,8 @@ To see what it will be like when store admins change the configuration of your b
 ```javascript
 const props = {
   ...blockModule.defaultConfig,
-  text: "Custom prop value for local testing"
-};
+  text: 'Custom prop value for local testing',
+}
 ```
 
 Replace the text with whatever you would like, and give it the rest of our `defaultConfig` properties from `/src/config.js`:

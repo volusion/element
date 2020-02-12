@@ -1,5 +1,5 @@
 ---
-title: "Block Utils"
+title: 'Block Utils'
 ---
 
 Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and not available later on the client-side.
@@ -8,20 +8,20 @@ In `Block.js` these methods are avaible via `props`, for example: `props.seo.set
 
 ## Table of Contents
 
-* **Server Side Only**
-  * [addAmpScript](#addampscript)
-  * [addLink](#addlink)
-  * [addScript](#addscript)
-  * [isAmpRequest](#isamprequest)
-  * [isRendering](#isrendering)
-  * [throwNotFound](#thrownotfound)
-* **Server and Client Side**
-  * [canonicalUrl](#canonicalurl)
-  * [client](#client)
-  * [events](#events)
-  * [pubSub](#pubsub)
-  * [queryParams](#queryparams)
-  * [seo](#seo)
+- **Server Side Only**
+  - [addAmpScript](#addampscript)
+  - [addLink](#addlink)
+  - [addScript](#addscript)
+  - [isAmpRequest](#isamprequest)
+  - [isRendering](#isrendering)
+  - [throwNotFound](#thrownotfound)
+- **Server and Client Side**
+  - [canonicalUrl](#canonicalurl)
+  - [client](#client)
+  - [events](#events)
+  - [pubSub](#pubsub)
+  - [queryParams](#queryparams)
+  - [seo](#seo)
 
 ## Server Side Only
 
@@ -32,7 +32,7 @@ Function that loads a script from The AMP Component Catalogue. Currently restric
 ### 'addAmpScript' Usage
 
 ```javascript
-utils.addAmpScript('amp-bind');
+utils.addAmpScript('amp-bind')
 ```
 
 #### 'addAmpScript' Availability
@@ -48,7 +48,7 @@ Function that adds a link to an external style sheet.
 #### 'addLink' Usage
 
 ```javascript
-utils.addLink('https://your-style-sheet.css');
+utils.addLink('https://your-style-sheet.css')
 ```
 
 #### 'addLink' Availability
@@ -65,10 +65,10 @@ Function that includes an external javascript library.
 
 ```javascript
 utils.addScript(
-    'https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js',
-    false, // optional boolean: include the defer attribute
-    false // optional boolean:  include the async attribute
-);
+  'https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js',
+  false, // optional boolean: include the defer attribute
+  false // optional boolean:  include the async attribute
+)
 ```
 
 #### 'addScript' Availability
@@ -126,18 +126,18 @@ Function that takes the visitor to Page Not Found.
 #### 'throwNotFound' Usage
 
 ```javascript
-const isRendering = utils.isRendering;
+const isRendering = utils.isRendering
 
 return getSampleData()
-    .then(data => {
-        return data;
-    })
-    .catch(() => {
-        if (isRendering) utils.throwNotFound();
-        return {
-            isRendering
-        }
-    });
+  .then(data => {
+    return data
+  })
+  .catch(() => {
+    if (isRendering) utils.throwNotFound()
+    return {
+      isRendering,
+    }
+  })
 ```
 
 #### 'throwNotFound' Availability
@@ -181,7 +181,7 @@ Topic names for pubSub events that are available to all blocks. See [Cart Events
 #### 'events' Usage
 
 ```javascript
-utils.pubSub.subscribe(utils.events.cart.itemAddedToCart, this.handleItemAdded);
+utils.pubSub.subscribe(utils.events.cart.itemAddedToCart, this.handleItemAdded)
 ```
 
 #### 'events' Availability
@@ -197,7 +197,7 @@ An instance of PubSubJS. See [How to Communicate between Two (Or More) Blocks](/
 #### 'pubSub' Usage
 
 ```javascript
-utils.pubSub.publish(utils.events.cart.openCart);
+utils.pubSub.publish(utils.events.cart.openCart)
 ```
 
 #### 'pubSub' Availability
@@ -213,8 +213,8 @@ Object with the query params from the page URI. See [How to Read Page URI Parame
 #### 'queryParams' Usage
 
 ```javascript
-const { queryParams = {} } = props;
-const page = Number(queryParams.page) || 1;
+const { queryParams = {} } = props
+const page = Number(queryParams.page) || 1
 ```
 
 #### 'queryParams' Availability
@@ -232,9 +232,9 @@ Library that allows a block to manipulate the SEO related tags and title in the 
 #### 'seo' Usage
 
 ```javascript
-utils.seo.setTitle('Your Page Title');
-utils.seo.setDescription('Your Page Description');
-utils.seo.addExtraTag('twitter:title', 'Your Page Title');
+utils.seo.setTitle('Your Page Title')
+utils.seo.setDescription('Your Page Description')
+utils.seo.addExtraTag('twitter:title', 'Your Page Title')
 ```
 
 #### 'seo' Availability

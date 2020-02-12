@@ -1,5 +1,5 @@
 ---
-title: "Read Page URI Parameters In Blocks"
+title: 'Read Page URI Parameters In Blocks'
 ---
 
 Sometimes, your blocks may need to read URI parameters from the page, so that you can get data such as the name of the particular product or category that the shopper is viewing.
@@ -16,11 +16,11 @@ Example with a property called `productSlug`:
 
 ```javascript
 export const getConfigSchema = ElementPropTypes => ({
-    productSlug: {
-        label: 'Product Slug URI Identifier',
-        type: ElementPropTypes.readOnly,
-        isPrivate: true
-    }
+  productSlug: {
+    label: 'Product Slug URI Identifier',
+    type: ElementPropTypes.readOnly,
+    isPrivate: true,
+  },
 })
 ```
 
@@ -33,7 +33,7 @@ Locate the definition of your `defaultConfig` in your block code. Set the value 
 Example:
 
 ```javascript
-export const defaultConfig = { productSlug: 'pageVar:pageUrlText' };
+export const defaultConfig = { productSlug: 'pageVar:pageUrlText' }
 ```
 
 ## 3. Use the pageVar in Your getDataProps Function
@@ -44,11 +44,13 @@ Example: (Note: the second argument to `getDataProps()` is the block's props, wh
 
 ```javascript
 export const getDataProps = (utils, { productSlug }) => {
-    return utils.client.products
-        .getBySlug(productSlug)
-        .then(product => { product })
-        .catch(() => {});
-};
+  return utils.client.products
+    .getBySlug(productSlug)
+    .then(product => {
+      product
+    })
+    .catch(() => {})
+}
 ```
 
 `getDataProps` gets called like this in your block:
@@ -90,21 +92,23 @@ As an example, you could use query params to figure out which page of results th
 
 ```javascript
 export const getDataProps = (utils, props) => {
-    const { queryParams = {} } = props;
+  const { queryParams = {} } = props
 
-    const categoryId = 'something hard coded or from another API request';
-    const page = Number(queryParams.page) || 1;
-    const sortMethod = queryParams.sortBy || props.defaultSortMethod;
-    return utils.client.products
-        .getByCategoryId({
-            categoryId,
-            pageSize,
-            page,
-            sortMethod
-        }).then((data = {}) => {
-            // transform data
-        }).catch(() => {
-            // catch error and return a default response
-        });
+  const categoryId = 'something hard coded or from another API request'
+  const page = Number(queryParams.page) || 1
+  const sortMethod = queryParams.sortBy || props.defaultSortMethod
+  return utils.client.products
+    .getByCategoryId({
+      categoryId,
+      pageSize,
+      page,
+      sortMethod,
+    })
+    .then((data = {}) => {
+      // transform data
+    })
+    .catch(() => {
+      // catch error and return a default response
+    })
 }
 ```

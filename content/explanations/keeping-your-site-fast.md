@@ -1,5 +1,5 @@
 ---
-title: "Keeping Your Site Fast"
+title: 'Keeping Your Site Fast'
 ---
 
 As you may already know, Element is optimized for speed. By following the advice in this document, you can keep your speed
@@ -26,7 +26,7 @@ One of the easiest ways to explode your block size is by adding dependencies. Fo
 library, use the individual functions packages and install as needed. Example:
 
 ```js
-import isEqual from "lodash/isEqual";
+import isEqual from 'lodash/isEqual'
 ```
 
 Additionally, if you are using a package that will be used exclusively in the client like an input validation library, consider

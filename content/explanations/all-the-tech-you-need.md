@@ -1,13 +1,13 @@
 ---
-title: "All The Tech You Need"
+title: 'All The Tech You Need'
 ---
 
 Developing on the Element platform should be straightforward for developers who are familiar with React. Element follows standard conventions and strives for a developer-friendly experience.
 
 ## React
 
-We use [React](https://reactjs.org/) as the main framework. We don't use state management packages (like Redux or Mobx), and 
-you probably won't need it but you can add it if you want. Our sites use simple components with local state each. For component communication, we use a simple 
+We use [React](https://reactjs.org/) as the main framework. We don't use state management packages (like Redux or Mobx), and
+you probably won't need it but you can add it if you want. Our sites use simple components with local state each. For component communication, we use a simple
 [PubSub](/how-to/communicate-between-blocks) mechanism.
 
 ## CSS
@@ -22,7 +22,7 @@ multiple versions of your blocks.
 
 ## SDK
 
-When coding, you might need to access `e-commerce` data and other goodies. Each block will have access to an [SDK](/references/sdk) that will help you 
+When coding, you might need to access `e-commerce` data and other goodies. Each block will have access to an [SDK](/references/sdk) that will help you
 getting things done in your blocks.
 
 ## AMP (optional)

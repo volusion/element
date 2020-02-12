@@ -1,5 +1,5 @@
 ---
-title: "Block Versions"
+title: 'Block Versions'
 ---
 
 Blocks are the core concept of the Element platform. One benefit of blocks is that they can be reused over any number of sites. For example, if you operated 1,000 Element sites and reused a common block among all of them, updating that one block once would update all 1,000 sites in one operation. If the update was error free, everything would be fine; however, if that update caused a problem you now have that problem across all 1,000 sites. Therefore, a safe and effective release cycle is required for blocks. We discuss that release cycle next.

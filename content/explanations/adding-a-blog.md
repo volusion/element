@@ -1,5 +1,5 @@
 ---
-title: "Adding a Blog"
+title: 'Adding a Blog'
 ---
 
 Generally speaking when you want to incorporate a blog into your store, you will have to redirect your users to some other domain (or subdomain) like `blog.mystore.com`.

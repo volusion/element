@@ -1,5 +1,5 @@
 ---
-title: "Element Concepts"
+title: 'Element Concepts'
 ---
 
 This document describes the basic concepts of the Element platform.

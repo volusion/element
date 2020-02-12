@@ -57,8 +57,8 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "format": "prettier --write '**/*.js'",
+    "format": "prettier --write '**/*.{js,md}'",
+    "deploy": "npm run format && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

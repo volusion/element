@@ -1,5 +1,5 @@
 ---
-title: "What Is Element?"
+title: 'What Is Element?'
 # metaTitle: "This is the title tag of this page"
 # metaDescription: "This is the meta description"
 ---

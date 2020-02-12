@@ -1,5 +1,5 @@
 ---
-title: "Data Volusion API"
+title: 'Data Volusion API'
 ---
 
 The primary goal of an e-commerce store is to sell products. In Element, the Volusion API is where that product data comes from, as well as other information about the store, and data organization such as menus and categories. See the [Volusion API ElementSdk Client Reference](/references/sdk) for all available data.
@@ -9,18 +9,19 @@ The primary goal of an e-commerce store is to sell products. In Element, the Vol
 Open up your block's code and find `getDataProps.js`. It should look like this:
 
 ```javascript
-export const getDataProps = (utils, props) => Promise.resolve();
+export const getDataProps = (utils, props) => Promise.resolve()
 ```
 
 ## 2. Make the Request Call You Need
 
 ```javascript
 export const getDataProps = (utils, props) => {
-      return utils.client.menus.get()
-          .then(data => {
-              return data.items[0].items;
-          })
-          .catch(console.error);
+  return utils.client.menus
+    .get()
+    .then(data => {
+      return data.items[0].items
+    })
+    .catch(console.error)
 }
 ```
 

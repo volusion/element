@@ -1,5 +1,5 @@
 ---
-title: "Communicate Between Blocks"
+title: 'Communicate Between Blocks'
 ---
 
 Sometimes, it may be necessary for one block to send information to another block on the same page. In Element, blocks can communicate with each other via a pub-sub mechanism. This guide will explain how to send information between two (or more) blocks.
@@ -32,9 +32,9 @@ Example:
 ```javascript
 // in your block component body, add a function. Here we're doing it as an instance property because this component is a class.
 handleOptionChange = event => {
-    const newOptionValue = event.target.value;
-    this.props.pubSub.publish('myEvents_PRODUCT_OPTION_CHANGED', newOptionValue);
-};
+  const newOptionValue = event.target.value
+  this.props.pubSub.publish('myEvents_PRODUCT_OPTION_CHANGED', newOptionValue)
+}
 ```
 
 Note: if your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
@@ -80,9 +80,9 @@ Your handler function is the code that actually does something with the data rec
 ```javascript
 // inside the body of your component
 onOptionChanged = (msg, newOptionValue) => {
-    // do something with newOptionValue. In this example we will set it to state.
-    this.setState({ productOption: newOptionValue });
-};
+  // do something with newOptionValue. In this example we will set it to state.
+  this.setState({ productOption: newOptionValue })
+}
 ```
 
 Repeat this process for more receiver blocks, if necessary.

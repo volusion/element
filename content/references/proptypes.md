@@ -1,29 +1,29 @@
 ---
-title: "Proptypes"
+title: 'Proptypes'
 ---
 
 ## Table of Contents
 
-* Data
-  * [bool](#bool)
-  * [category](#category)
-  * [color](#color)
-  * [editorFull](#editorfull)
-  * [editorMinimal](#editorminimal)
-  * [embeddable](#embeddable)
-  * [image](#image)
-  * [number](#number)
-  * [oneOf](#oneof)
-  * [product](#product)
-  * [slider](#slider)
-  * [string](#string)
-* Meta / Organization
-  * [arrayOf shape](#arrayof-shape)
-  * [isPrivate](#isPrivate)
-  * [readOnly](#readonly)
-  * [sectionHeader](#sectionheader)
-* More
-  * [Further Reading](#further-reading)
+- Data
+  - [bool](#bool)
+  - [category](#category)
+  - [color](#color)
+  - [editorFull](#editorfull)
+  - [editorMinimal](#editorminimal)
+  - [embeddable](#embeddable)
+  - [image](#image)
+  - [number](#number)
+  - [oneOf](#oneof)
+  - [product](#product)
+  - [slider](#slider)
+  - [string](#string)
+- Meta / Organization
+  - [arrayOf shape](#arrayof-shape)
+  - [isPrivate](#isPrivate)
+  - [readOnly](#readonly)
+  - [sectionHeader](#sectionheader)
+- More
+  - [Further Reading](#further-reading)
 
 ## Data
 
@@ -40,8 +40,8 @@ boolean: {
 
 ```javascript
 export const defaultConfig = {
-    boolean: true,
-};
+  boolean: true,
+}
 ```
 
 ### category
@@ -70,8 +70,8 @@ color: {
 
 ```javascript
 export const defaultConfig = {
-    color: 'purple', // all CSS color formats accepted
-};
+  color: 'purple', // all CSS color formats accepted
+}
 ```
 
 **Note:** merchant edits to color fields will are stored in RGBA format.
@@ -89,8 +89,8 @@ editorFull: {
 
 ```javascript
 export const defaultConfig = {
-    editorFull: '<h1>Full WYSIWYG</h1>'
-};
+  editorFull: '<h1>Full WYSIWYG</h1>',
+}
 ```
 
 ![Editor Full](editor-full.png)
@@ -108,8 +108,8 @@ editorMinimal: {
 
 ```javascript
 export const defaultConfig = {
-    editorMinimal: '<p>Minimal text editor&#8230;</p>'
-};
+  editorMinimal: '<p>Minimal text editor&#8230;</p>',
+}
 ```
 
 ![Editor Minimal](editor-minimal.png)
@@ -131,12 +131,12 @@ embeddable: {
 
 ```javascript
 export const defaultConfig = {
-    embeddable: {
-        embedType: 'iframe', // the only supported value
-        url: 'https://www.volusion.com/login',
-        height: 150
-    }
-};
+  embeddable: {
+    embedType: 'iframe', // the only supported value
+    url: 'https://www.volusion.com/login',
+    height: 150,
+  },
+}
 ```
 
 ### image
@@ -151,11 +151,11 @@ image: {
 ```
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const defaultConfig = {
-    image: ElementPropTypes.image.default
-};
+  image: ElementPropTypes.image.default,
+}
 ```
 
 ![Image: Default URL](proptype-image-default.png)
@@ -169,14 +169,14 @@ imageWithPlaceholder: {
 
 ```javascript
 export const defaultConfig = {
-    imageWithPlaceholder: {
-        uriBase: 'http://d21ivvgspl06jm.cloudfront.net/',
-        imagePath: 'element-block-assets/slideshow/slide2.jpg',
-        altText: 'Monument Valley',
-        width: 1600,
-        height: 500
-    }
-};
+  imageWithPlaceholder: {
+    uriBase: 'http://d21ivvgspl06jm.cloudfront.net/',
+    imagePath: 'element-block-assets/slideshow/slide2.jpg',
+    altText: 'Monument Valley',
+    width: 1600,
+    height: 500,
+  },
+}
 ```
 
 ![Image Picker](image-picker.png)
@@ -194,8 +194,8 @@ number: {
 
 ```javascript
 export const defaultConfig = {
-    number: 42,
-};
+  number: 42,
+}
 ```
 
 ### oneOf
@@ -211,24 +211,24 @@ oneOf: {
 
 ```javascript
 export const defaultConfig = {
-    oneOf: 'News'
-};
+  oneOf: 'News',
+}
 ```
 
 ```javascript
 export const defaultConfig = {
-    arrayOfShapes: []
-};
+  arrayOfShapes: [],
+}
 
 // or pre-populated
 export const defaultConfig = {
-    arrayOfShapes: [
-        {
-            text: 'Link',
-            url: 'https://'
-        }
-    ]
-};
+  arrayOfShapes: [
+    {
+      text: 'Link',
+      url: 'https://',
+    },
+  ],
+}
 ```
 
 ### product
@@ -256,20 +256,20 @@ sliderOptions: {
 ```
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const defaultConfig = {
-    sliderOptions: {
-        labelPrefix: "~",
-        labelStepSize: 10,
-        labelSuffix: " oz",
-        min: 50,
-        max: 100,
-        stepSize: 5,
-        selectedValue: 75,
-        vertical: false
-    }
-};
+  sliderOptions: {
+    labelPrefix: '~',
+    labelStepSize: 10,
+    labelSuffix: ' oz',
+    min: 50,
+    max: 100,
+    stepSize: 5,
+    selectedValue: 75,
+    vertical: false,
+  },
+}
 ```
 
 ### string
@@ -285,8 +285,8 @@ string: {
 
 ```javascript
 export const defaultConfig = {
-    string: 'Default string',
-};
+  string: 'Default string',
+}
 ```
 
 ## Meta / Organization
@@ -338,8 +338,8 @@ readOnly: {
 
 ```javascript
 export const defaultConfig = {
-    readOnly: 'Read-only text.' // use for instructions, help text
-};
+  readOnly: 'Read-only text.', // use for instructions, help text
+}
 ```
 
 ## sectionHeader
@@ -348,19 +348,19 @@ export const defaultConfig = {
 
 ```javascript
 sectionHeader: {
-    type: ElementPropTypes.sectionHeader
+  type: ElementPropTypes.sectionHeader
 }
 ```
 
 ```javascript
 export const defaultConfig = {
-    sectionHeader: 'Section Header'
-};
+  sectionHeader: 'Section Header',
+}
 ```
 
 ## More
 
 ### Further reading
 
-* [Working with Element Proptypes Tutorial](/tutorials/proptypes)
-* [How to: Add Element Proptypes to a Block](/how-to/proptypes)
+- [Working with Element Proptypes Tutorial](/tutorials/proptypes)
+- [How to: Add Element Proptypes to a Block](/how-to/proptypes)

@@ -1,5 +1,5 @@
 ---
-title: "Release A Minor Block Change"
+title: 'Release A Minor Block Change'
 ---
 
 In this how-to guide, you'll learn how to identify whether changes made to a specific block are non-breaking or not, and if they are non-breaking, how to release those changes to your block users.
@@ -32,7 +32,7 @@ npm run build
 element update
 ```
 
-Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer *Preview* link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time that you alter the block code, and test again.
+Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer _Preview_ link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time that you alter the block code, and test again.
 
 ## 3. Create a Minor Release
 

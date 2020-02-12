@@ -1,5 +1,5 @@
 ---
-title: "Add Blocks to Templates"
+title: 'Add Blocks to Templates'
 ---
 
 ## 1. Open Your Theme in Site Designer
@@ -26,5 +26,5 @@ To add the block:
 
 Now you have added the block, you should see it displayed on the Master Template page. Navigate to other places to see that the block is now on all your site pages:
 
-* Select a page (such as Home) from the page selector dropdown to see the block on other pages in Site Designer
-* Click the Preview or View Live Store buttons to see the block on your site
+- Select a page (such as Home) from the page selector dropdown to see the block on other pages in Site Designer
+- Click the Preview or View Live Store buttons to see the block on your site
