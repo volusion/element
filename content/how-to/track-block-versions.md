@@ -1,5 +1,5 @@
 ---
-title: "Track Block Versions"
+title: 'Track Block Versions'
 ---
 
 In this how-to guide we will explore how to keep track of block versions to maintain and organize your block's code. We will assume that you are already
@@ -7,7 +7,7 @@ developing a block locally and want to publish your block for the first time.
 
 An explanation about [Block Versions](/explanations/block-versions) is a recommended read.
 
-## 1. Initialize a Git Repository with Your Block Code 
+## 1. Initialize a Git Repository with Your Block Code
 
 If you haven't already, we really recommend you keep your code organized using `git`. It's as easy as running:
 
@@ -106,7 +106,6 @@ git checkout "commit_id_of_previous_minor_release"
 git checkout 1.0
 ```
 
-
 ## 9. Creating a New Major Version
 
 Sometimes you will need to publish a new version of your block, with a new feature, breaking changes, or something that diverges a bit from the original one.
@@ -119,7 +118,6 @@ element publish -m
 
 The `-m` versions stands for `major`. The block will be published to the servers with the new version but not yet released. You can repeat steps
 3 to 8 as needed for the new version.
-
 
 If you need to release changes for different block versions (i.e. bug fixes), just change to the appropriate tag:
 

@@ -1,5 +1,5 @@
 ---
-title: "What Is Element?"
+title: 'What Is Element?'
 ---
 
 Element is a modern web design and hosting platform. It was designed from the ground up on these guiding principles:

@@ -1,5 +1,5 @@
 ---
-title: "Site Designer"
+title: 'Site Designer'
 ---
 
 We're going to design a new theme that's different from the other available themes. We will do this without having to write any code.
@@ -197,7 +197,7 @@ Open the Page dropdown in the header and choose "Product Details".
 
 Edit the "Product Details" block. Scroll the sidebar down to Colors:
 
-* Change the Background alpha transparency to "`0`".
+- Change the Background alpha transparency to "`0`".
 
 ### Button Styles
 
@@ -226,7 +226,7 @@ Within Site Designer you can toggle the interface into a mobile preview mode, an
 
 ### 2. Full Theme Preview
 
-Preview as a stand-alone temporary shareable URL using this Preview button in the header: 
+Preview as a stand-alone temporary shareable URL using this Preview button in the header:
 
 ![Preview button](previewButton.png)
 

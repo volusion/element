@@ -22,7 +22,13 @@ const config = {
     },
   },
   sidebar: {
-    forcedNavOrder: ['/introduction', '/explanations', '/how-to', '/references', '/tutorials'],
+    forcedNavOrder: [
+      '/introduction',
+      '/explanations',
+      '/how-to',
+      '/references',
+      '/tutorials',
+    ],
     collapsedNav: ['/explanations', '/how-to', '/references', '/tutorials'],
     links: [{ text: 'Volusion', link: 'https://www.volusion.com/' }],
     frontline: false,
@@ -32,8 +38,7 @@ const config = {
     title: 'Element Documentation | Volusion',
     description: 'Documentation built with mdx.',
     ogImage: null,
-    docsLocation:
-      'https://github.com/volusion/element',
+    docsLocation: 'https://github.com/volusion/element',
     favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
   },
   pwa: {

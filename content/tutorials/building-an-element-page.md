@@ -1,5 +1,5 @@
 ---
-title: "Building An Element Page"
+title: 'Building An Element Page'
 ---
 
 This tutorial will cover creating new pages in Element, and the creation of custom blocks that you will put into those new pages.
@@ -104,24 +104,24 @@ Use your favorite text editor or IDE to open the files of the Bloglist directory
 #### '/src/Block.js' (initial)
 
 ```javascript
-import React from 'react';
+import React from 'react'
 
-import { defaultConfig } from './configs';
+import { defaultConfig } from './configs'
 
 function StarterBlock(props) {
-    return <h1>{props.text}</h1>;
+  return <h1>{props.text}</h1>
 }
 
-StarterBlock.defaultProps = defaultConfig;
+StarterBlock.defaultProps = defaultConfig
 
-export default StarterBlock;
+export default StarterBlock
 ```
 
 You're going to modify this block so that it does some new things:
 
-* Fetch data from an API to get a list of blog posts
-* Use the fetched data to display a list of blog post links
-* Add some basic styling
+- Fetch data from an API to get a list of blog posts
+- Use the fetched data to display a list of blog post links
+- Add some basic styling
 
 Let's get to it.
 
@@ -132,7 +132,7 @@ Data fetching for your block should happen in your getDataProps function so that
 #### '/src/getDataProps.js' (initial)
 
 ```javascript
-export const getDataProps = (utils, props) => Promise.resolve();
+export const getDataProps = (utils, props) => Promise.resolve()
 ```
 
 As you can see initially, this function resolves without a value. Modify the source code so that it fetches from a sample API:
@@ -141,9 +141,10 @@ As you can see initially, this function resolves without a value. Modify the sou
 
 ```javascript
 export const getDataProps = (utils, props) => {
-    return utils.client.request("https://jsonplaceholder.typicode.com/posts")
-        .then(res => res.json())
-        .catch(e => []);
+  return utils.client
+    .request('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .catch(e => [])
 }
 ```
 
@@ -152,31 +153,31 @@ Now that `getDataProps` is requesting the blog posts, you need to set up the blo
 #### '/src/Block.js'
 
 ```javascript
-import React from 'react';
+import React from 'react'
 
-import { defaultConfig } from './configs';
+import { defaultConfig } from './configs'
 
 function StarterBlock(props) {
-    // the blog posts are now available as props.data
-    const { css, data = [] } = props;
-    return (
-        <React.Fragment>
-            <h1>{props.text}</h1>
-            <ul>
-                {data.map(blog => {
-                    return <li key={blog.id}>
-                        <a href={`/blog/${blog.id}`}>
-                            {blog.title}
-                        </a>
-                    </li>;
-                })}
-            </ul>
-        </React.Fragment>
-    );
+  // the blog posts are now available as props.data
+  const { css, data = [] } = props
+  return (
+    <React.Fragment>
+      <h1>{props.text}</h1>
+      <ul>
+        {data.map(blog => {
+          return (
+            <li key={blog.id}>
+              <a href={`/blog/${blog.id}`}>{blog.title}</a>
+            </li>
+          )
+        })}
+      </ul>
+    </React.Fragment>
+  )
 }
-StarterBlock.defaultProps = defaultConfig;
+StarterBlock.defaultProps = defaultConfig
 
-export default StarterBlock;
+export default StarterBlock
 ```
 
 In your browser, your block should now be showing the titles of blog posts from the sample API:
@@ -190,7 +191,7 @@ The block functions alright, but you should enhance its styling a little bit. Op
 #### '/src/getStyles.js' (initial)
 
 ```javascript
-export const getStyles = (globalStyles, blockConfig) => ({});
+export const getStyles = (globalStyles, blockConfig) => ({})
 ```
 
 So far, the styles object it returns is empty, so you should change that. Replace the source code with this:
@@ -199,16 +200,16 @@ So far, the styles object it returns is empty, so you should change that. Replac
 
 ```javascript
 export const getStyles = (globalStyles, blockConfig) => ({
-    blogLink: {
-        color: 'rgba(50, 168, 82, 0.9)',
-        backgroundColor: 'transparent',
-        transition: 'all 0.2s ease',
-        ':hover': {
-            color: 'rgba(20, 100, 90, 1)',
-            backgroundColor: '#ffdbf3'
-        },
-    }
-});
+  blogLink: {
+    color: 'rgba(50, 168, 82, 0.9)',
+    backgroundColor: 'transparent',
+    transition: 'all 0.2s ease',
+    ':hover': {
+      color: 'rgba(20, 100, 90, 1)',
+      backgroundColor: '#ffdbf3',
+    },
+  },
+})
 ```
 
 Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodite is already included in the Starter Block. Import it, and add the new style to your block:
@@ -216,41 +217,41 @@ Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodi
 #### 'src/Block.js'
 
 ```javascript
-import React from 'react';
-import { StyleSheet, css } from 'aphrodite';
+import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
-import { defaultConfig } from './configs';
-import { getStyles } from './getStyles';
-
+import { defaultConfig } from './configs'
+import { getStyles } from './getStyles'
 
 function StarterBlock(props) {
-    // the blog posts are now available as props.data
-    const { css, data = [] } = props;
+  // the blog posts are now available as props.data
+  const { css, data = [] } = props
 
-    // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
-    const styles = StyleSheet.create(getStyles({}, props));
+  // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
+  const styles = StyleSheet.create(getStyles({}, props))
 
-    return (
-        <React.Fragment>
-            <h1>{props.text}</h1>
-            <ul>
-                {data.map(blog => {
-                    return <li key={blog.id}>
-                        {/* add the aphrodite class to your rendered HTML. */}
-                        <a href={`/blog/${blog.id}`}  className={css(styles.blogLink)}>
-                            {blog.title}
-                        </a>
-                    </li>;
-                })}
-            </ul>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <h1>{props.text}</h1>
+      <ul>
+        {data.map(blog => {
+          return (
+            <li key={blog.id}>
+              {/* add the aphrodite class to your rendered HTML. */}
+              <a href={`/blog/${blog.id}`} className={css(styles.blogLink)}>
+                {blog.title}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </React.Fragment>
+  )
 }
-StarterBlock.defaultProps = defaultConfig;
+StarterBlock.defaultProps = defaultConfig
 
-export default StarterBlock;
+export default StarterBlock
 ```
-
 
 Your block should now look something like this and have a hover effect for the blog links:
 
@@ -342,9 +343,9 @@ Use your favorite text editor or IDE to open the files of the Blogdetails direct
 
 You're going to modify this block so that it does some new things:
 
-* Get a blog id from an id parameter in the page's url
-* Fetch data from an API for the matching blog post
-* Display the matching blog post in the block
+- Get a blog id from an id parameter in the page's url
+- Fetch data from an API for the matching blog post
+- Display the matching blog post in the block
 
 Let's get to it.
 
@@ -358,18 +359,18 @@ Open `/src/configs.js` in your text editor and replace the entire code with this
 
 ```javascript
 export const getConfigSchema = ElementPropTypes => {
-    return {
-        text: {
-            label: 'Text content',
-            type: ElementPropTypes.string
-        }
-    };
-};
+  return {
+    text: {
+      label: 'Text content',
+      type: ElementPropTypes.string,
+    },
+  }
+}
 
 export const defaultConfig = {
-    text: 'Element Starter Block',
-    blogId: 'pageVar:blogId'
-};
+  text: 'Element Starter Block',
+  blogId: 'pageVar:blogId',
+}
 ```
 
 Your `getDataProps` function needs to fetch the matching blog.
@@ -380,10 +381,11 @@ Open `/src/getDataProps.js` and replace the entire source code with this:
 
 ```javascript
 export const getDataProps = (utils, props) => {
-    return utils.client.request(`https://jsonplaceholder.typicode.com/posts/${props.blogId}`)
-        .then(res => res.json())
-        .catch(e => []);
-};
+  return utils.client
+    .request(`https://jsonplaceholder.typicode.com/posts/${props.blogId}`)
+    .then(res => res.json())
+    .catch(e => [])
+}
 ```
 
 Your block's code needs to show the content of the blog that it recieved from its data.
@@ -393,23 +395,23 @@ Open `/src/Block.js` and replace the entire source code with this:
 #### '/src/Block.js'
 
 ```javascript
-import React from 'react';
+import React from 'react'
 
-import { defaultConfig } from './configs';
+import { defaultConfig } from './configs'
 
 function StarterBlock(props) {
-    const { data: blog = {} } = props;
-    return (
-        <React.Fragment>
-            <h1>{props.text}</h1>
-            <h2>{blog.title}</h2>
-            <p>{blog.body}</p>
-        </React.Fragment>
-    );
+  const { data: blog = {} } = props
+  return (
+    <React.Fragment>
+      <h1>{props.text}</h1>
+      <h2>{blog.title}</h2>
+      <p>{blog.body}</p>
+    </React.Fragment>
+  )
 }
-StarterBlock.defaultProps = defaultConfig;
+StarterBlock.defaultProps = defaultConfig
 
-export default StarterBlock;
+export default StarterBlock
 ```
 
 ### 6. Publish the Blog Details Block
@@ -588,12 +590,12 @@ Click your browser's **back** button to get back to the blog list page and explo
 
 You did a lot in this tutorial:
 
-* Created two blocks
-* Styled a block
-* Deployed blocks for use in themes
-* Created new pages in your theme
-* Added blocks to your theme
-* Used url path params to provide data to a block
-* Previewed a theme
+- Created two blocks
+- Styled a block
+- Deployed blocks for use in themes
+- Created new pages in your theme
+- Added blocks to your theme
+- Used url path params to provide data to a block
+- Previewed a theme
 
 Still, this tutorial only scratches the surface of what you can do with Element. For more information, check out the [how-to guides, references, explanations, and tutorials on the Element documentation home page](/).

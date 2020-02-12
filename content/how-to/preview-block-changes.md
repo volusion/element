@@ -1,5 +1,5 @@
 ---
-title: "Preview Block Changes"
+title: 'Preview Block Changes'
 ---
 
 ## 1. Make Changes to Your Block
@@ -61,14 +61,14 @@ Then test your changes, and make more changes if necessary.
 
 When you are ready, you can return to your terminal and run this command to release your changes to your block users:
 
- ```shell
- element release
- ```
+```shell
+element release
+```
 
 **Remember that releasing will affect your block users.**
 
 ## Further Reading
 
-* [How to Keep Track of Your Block Versions](/how-to/track-block-versions)
-* [Block Versions Explanation](/explanations/block-versions)
-* [Element CLI Reference](/references/element-cli)
+- [How to Keep Track of Your Block Versions](/how-to/track-block-versions)
+- [Block Versions Explanation](/explanations/block-versions)
+- [Element CLI Reference](/references/element-cli)

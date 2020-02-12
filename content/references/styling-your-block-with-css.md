@@ -1,13 +1,14 @@
 ---
-title: "Styling Your Block With CSS"
+title: 'Styling Your Block With CSS'
 ---
+
 ## Table of contents
 
--   [Atomic CSS Framework](#atomic-css-framework)
--   [Aphrodite](#aphrodite)
--   [joinClasses()](#joinclasses)
--   [Inline Styling](#inline-styling)
--   [Best Practices](#best-practices)
+- [Atomic CSS Framework](#atomic-css-framework)
+- [Aphrodite](#aphrodite)
+- [joinClasses()](#joinclasses)
+- [Inline Styling](#inline-styling)
+- [Best Practices](#best-practices)
 
 ## Atomic CSS Framework
 
@@ -17,13 +18,13 @@ title: "Styling Your Block With CSS"
 
 There are a couple reasons for this:
 
--   Atomic has been extremely trimmed down from the original Tachyons library because Google will penalize you for significant amounts of unused CSS.
--   In order to build sites to be [Google AMP](https://developers.google.com/amp) compliant, you can use no more than [50 KB of CSS](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/). This includes inline styling, external stylesheets, and custom Aphrodite CSS. Keeping a nice small file size allows the user to have a lot of breathing room to add blocks to their site without worrying about invalidating it with Google AMP.
+- Atomic has been extremely trimmed down from the original Tachyons library because Google will penalize you for significant amounts of unused CSS.
+- In order to build sites to be [Google AMP](https://developers.google.com/amp) compliant, you can use no more than [50 KB of CSS](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/). This includes inline styling, external stylesheets, and custom Aphrodite CSS. Keeping a nice small file size allows the user to have a lot of breathing room to add blocks to their site without worrying about invalidating it with Google AMP.
 
 ### Why not use a CSS purifier?
 
--   A CSS purifier cannot be used because our blocks are built on React. This means that you can have a large amount of content that does not exist in the DOM until a requirement is met (like a modal, or a mobile push menu). If we used a purifier and that content did not exist in the DOM when the page first loads, the CSS for that content could be removed if the same classes are not also used elsewhere on the page.
--   Because you are unable to run JavaScript on Google AMP pages, the above issue is not a concern on AMP so we still run a CSS purifier on Google AMP pages to make sure they get the best possible Google scores.
+- A CSS purifier cannot be used because our blocks are built on React. This means that you can have a large amount of content that does not exist in the DOM until a requirement is met (like a modal, or a mobile push menu). If we used a purifier and that content did not exist in the DOM when the page first loads, the CSS for that content could be removed if the same classes are not also used elsewhere on the page.
+- Because you are unable to run JavaScript on Google AMP pages, the above issue is not a concern on AMP so we still run a CSS purifier on Google AMP pages to make sure they get the best possible Google scores.
 
 ### Where can I lean more about the Atomic classes?
 
@@ -31,29 +32,29 @@ We've included reader-friendly links below for each "classification" of css rule
 
 #### Individual Stylesheets
 
--   [box-sizing](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/box-sizing.css)
--   [coordinates](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/coordinates.css)
--   [display](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/display.css)
--   [flexbox](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/flexbox.css)
--   [height](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/height.css)
--   [images](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/images.css)
--   [lists](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/lists.css)
--   [max-width](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/max-width.css)
--   [normalize](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/normalize.css)
--   [overflow](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/overflow.css)
--   [position](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/position.css)
--   [skins](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/skins.css)
--   [spacing](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/spacing.css)
--   [text-align](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/text-align.css)
--   [text-decoration](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/text-decoration.css)
--   [utilities](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/utilities.css)
--   [vertical-align](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/vertical-align.css)
--   [width](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/width.css)
--   [z-index](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/z-index.css)
+- [box-sizing](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/box-sizing.css)
+- [coordinates](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/coordinates.css)
+- [display](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/display.css)
+- [flexbox](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/flexbox.css)
+- [height](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/height.css)
+- [images](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/images.css)
+- [lists](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/lists.css)
+- [max-width](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/max-width.css)
+- [normalize](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/normalize.css)
+- [overflow](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/overflow.css)
+- [position](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/position.css)
+- [skins](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/skins.css)
+- [spacing](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/spacing.css)
+- [text-align](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/text-align.css)
+- [text-decoration](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/text-decoration.css)
+- [utilities](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/utilities.css)
+- [vertical-align](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/vertical-align.css)
+- [width](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/width.css)
+- [z-index](https://github.com/volusion/element-atomic-css/blob/master/dist/styles/z-index.css)
 
 #### All of Atomic
 
--   [Atomic](https://github.com/volusion/element-atomic-css/blob/master/dist/atomic.css)
+- [Atomic](https://github.com/volusion/element-atomic-css/blob/master/dist/atomic.css)
 
 ### How to use Atomic?
 
@@ -61,8 +62,8 @@ The Atomic library is loaded anywhere your blocks are used, so there's no extra 
 
 ```jsx
 <div className="flex flex-wrap">
-    <div className="w-100 w-60-l">{/* Your content here */}</div>
-    <div className="w-100 w-40-l">{/* Your content here */}</div>
+  <div className="w-100 w-60-l">{/* Your content here */}</div>
+  <div className="w-100 w-40-l">{/* Your content here */}</div>
 </div>
 ```
 
@@ -76,23 +77,20 @@ When the Atomic classes just aren't enough to meet your needs, you'll want to wr
 
 #### It will:
 
--   Accept any number of arguments and join them all together with a single space between each one.
--   Remove any unnecessary whitespace that might be caused before, between, or after your final classes.
--   Supports conditional logic for which classes should be included.
--   Remove any invalid classes that might be output by bad logic (removes `undefined`, `null`, and `false`), which is the biggest reason to use it over string literals.
+- Accept any number of arguments and join them all together with a single space between each one.
+- Remove any unnecessary whitespace that might be caused before, between, or after your final classes.
+- Supports conditional logic for which classes should be included.
+- Remove any invalid classes that might be output by bad logic (removes `undefined`, `null`, and `false`), which is the biggest reason to use it over string literals.
 
 #### How to use it:
 
 ```jsx
 <div
-    className={joinClasses(
-        'flex items-center w-100',
-        css(
-            classes.yourCustomAphroditeClassA,
-            classes.yourCustomAphroditeClassB
-        ),
-        isRequirementMet && 'w-50-l' // isRequirementMet === false in this example
-    )}
+  className={joinClasses(
+    'flex items-center w-100',
+    css(classes.yourCustomAphroditeClassA, classes.yourCustomAphroditeClassB),
+    isRequirementMet && 'w-50-l' // isRequirementMet === false in this example
+  )}
 />
 ```
 

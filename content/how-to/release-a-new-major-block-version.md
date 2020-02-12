@@ -1,5 +1,5 @@
 ---
-title: "Release A New Major Block Version"
+title: 'Release A New Major Block Version'
 ---
 
 In this how-to guide, you'll learn how to release a new major (opt-in) version of your block that your block users will need to manually upgrade to. This is often necessary when you are introducing **breaking changes** to your block, such as changes to the block appearance, or changes to the block's config schema. You can also [release non-breaking block changes that automatically propagate to all your block users](/how-to/release-a-minor-block-change).
@@ -29,7 +29,7 @@ npm run build
 element update
 ```
 
-Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer *Preview* link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time that you alter the block code, and test again.
+Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer _Preview_ link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time that you alter the block code, and test again.
 
 ## 4. Release Your New Version
 

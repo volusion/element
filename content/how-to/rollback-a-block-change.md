@@ -1,5 +1,5 @@
 ---
-title: "Rollback A Block Change"
+title: 'Rollback A Block Change'
 ---
 
 If you published a minor change (major changes cannot be rolled back) and for some reason you want to roll it back, here is how you can do it.

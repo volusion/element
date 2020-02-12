@@ -1,5 +1,5 @@
 ---
-title: "How to Interact with the Cart"
+title: 'How to Interact with the Cart'
 ---
 
 Some of your custom blocks may need to interact with the cart, for example if you wanted to add an item to the cart from your block, or trigger an action in your block after a shopper adds an item to the cart. You can do this with the included PubSubJS mechanism.
@@ -33,9 +33,9 @@ Your handler function is the code that actually does something with the data rec
 ```javascript
 // inside the body of your component
 handleItemAdded = (msg, itemData) => {
-    // do something with itemData. In this example we will set it to state.
-    this.setState({ itemAdded: itemData });
-};
+  // do something with itemData. In this example we will set it to state.
+  this.setState({ itemAdded: itemData })
+}
 ```
 
 ## 2. Publishing an Event to the Cart
@@ -54,8 +54,8 @@ Example:
 ```javascript
 // in your block component body, add a function. Here we're doing it as an instance property because this component is a class.
 addItem = itemData => {
-    this.props.pubSub.publish(this.props.events.cart.addToCart, itemData);
-};
+  this.props.pubSub.publish(this.props.events.cart.addToCart, itemData)
+}
 ```
 
 Note: if your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
@@ -64,10 +64,7 @@ In this example, the cart block expects `itemData` to be an object with the foll
 
 ```javascript
 {
-    productId,
-    quantity,
-    variantId,
-    itemPrice
+  productId, quantity, variantId, itemPrice
 }
 ```
 

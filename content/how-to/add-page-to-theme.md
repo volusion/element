@@ -1,5 +1,5 @@
 ---
-title: "How to Add a Page to a Theme"
+title: 'How to Add a Page to a Theme'
 ---
 
 ## 1. Open Your Theme in Site Designer
@@ -28,9 +28,9 @@ If the "New Blank Page" sidebar opened up and you were not redirected to Volusio
 
 Fill out the page title. The page path must start with a `/`, for example: `/sample-page`. Here are some tips:
 
-* Use hyphens to separate words
-* Use lowercase letters
-* Keep the path short and related to the content
+- Use hyphens to separate words
+- Use lowercase letters
+- Keep the path short and related to the content
 
 ## 5. SEO Fields
 

@@ -1,5 +1,5 @@
 ---
-title: "How to Get Approved to Develop Blocks"
+title: 'How to Get Approved to Develop Blocks'
 ---
 
 Only authorized block developers can develop blocks in the Element ecosystem.

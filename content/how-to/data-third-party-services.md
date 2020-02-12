@@ -1,5 +1,5 @@
 ---
-title: "Data ThirdParty Services"
+title: 'Data ThirdParty Services'
 ---
 
 Sometimes we need our blocks to consume third party data. For example, a blog API. In this how-to, we will see
@@ -12,16 +12,17 @@ We will be consuming data from `https://jsonplaceholder.typicode.com/posts`
 Open up your block's code and find `getDataProps.js`. It should look like this:
 
 ```javascript
-export const getDataProps = (utils, props) => Promise.resolve();
+export const getDataProps = (utils, props) => Promise.resolve()
 ```
 
 ## 2. Make the Request Call You Need
 
 ```javascript
 export const getDataProps = (utils, props) => {
-      return utils.client.request("https://jsonplaceholder.typicode.com/posts")
-          .then(res => res.json())
-          .catch(e => []);
+  return utils.client
+    .request('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .catch(e => [])
 }
 ```
 

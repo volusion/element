@@ -1,5 +1,5 @@
 ---
-title: "Reuse A Block Across Pages"
+title: 'Reuse A Block Across Pages'
 ---
 
 This document will show how to share a block's settings between instances of that block on more than one page. This is like [adding block to your template](/how-to/add-blocks-to-templates), except that it does not need to be in the header or footer. It will not be on every page of the site, only the pages you put it on.

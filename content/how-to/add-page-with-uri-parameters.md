@@ -1,5 +1,5 @@
 ---
-title: "How to Add a Page That Depends on URI Parameters"
+title: 'How to Add a Page That Depends on URI Parameters'
 ---
 
 ## 1. Figure Out What Block(s) you Will Use
@@ -16,15 +16,15 @@ Add a page to your theme in Site Designer. For a full guide, see [How to Add a P
 
 ## 3. Configure the Page Path Using :pageUrlText
 
-* The page path must start with a `/`
-* The page path should end with `/:pageUrlText`
-* Example: `/special-features/:pageUrlText`
+- The page path must start with a `/`
+- The page path should end with `/:pageUrlText`
+- Example: `/special-features/:pageUrlText`
 
 Here are some tips:
 
-* Use hyphens to separate words
-* Use lowercase letters
-* Keep the path short and related to the content
+- Use hyphens to separate words
+- Use lowercase letters
+- Keep the path short and related to the content
 
 Your block will get the value in the store's actual page URI, not `:pageUrlText`, so make sure you configure your block to handle the actual URI value.
 
