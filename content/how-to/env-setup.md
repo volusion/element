@@ -14,7 +14,7 @@ If you do not already have Node.js installed, [follow the instructions here to d
 
 ## 2. Use the Right Node Version
 
-You should be using Node `v8.11.3`
+You should be using Node `v12.14.1`
 
 If you don't have [Node Version Manager](https://github.com/nvm-sh/nvm), you should install it.
 
