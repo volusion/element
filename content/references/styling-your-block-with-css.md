@@ -69,7 +69,7 @@ The Atomic library is loaded anywhere your blocks are used, so there's no extra 
 
 ## Aphrodite
 
-When the Atomic classes just aren't enough to meet your needs, you'll want to write custom styling with Aphrodite. You can view more information on styling your block with Aphrodite [here](../../how-to/style-a-block-with-aphrodite).
+When the Atomic classes just aren't enough to meet your needs, you'll want to write custom styling with Aphrodite. You can view more information on styling your block with Aphrodite [here](/how-to/style-a-block-with-aphrodite).
 
 ## 'joinClasses()'
 
