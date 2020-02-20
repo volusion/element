@@ -29,7 +29,6 @@
 <url> <loc>https://github.com/volusion/element/element/how-to/add-page-to-theme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/communicate-between-blocks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/data-third-party-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://github.com/volusion/element/element/how-to/env-setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/data-volusion-api</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/fetch-data-fast</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/get-approved-to-develop-blocks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -45,4 +44,5 @@
 <url> <loc>https://github.com/volusion/element/element/how-to/style-a-block-with-aphrodite</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/track-block-versions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://github.com/volusion/element/element/how-to/rollback-a-block-change</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://github.com/volusion/element/element/how-to/env-setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
