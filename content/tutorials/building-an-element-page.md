@@ -159,7 +159,7 @@ import { defaultConfig } from './configs'
 
 function StarterBlock(props) {
   // the blog posts are now available as props.data
-  const { css, data = [] } = props
+  const { data = [] } = props
   return (
     <React.Fragment>
       <h1>{props.text}</h1>
@@ -225,7 +225,7 @@ import { getStyles } from './getStyles'
 
 function StarterBlock(props) {
   // the blog posts are now available as props.data
-  const { css, data = [] } = props
+  const { data = [] } = props
 
   // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
   const styles = StyleSheet.create(getStyles({}, props))
