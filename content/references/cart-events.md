@@ -6,7 +6,7 @@ The Element SDK provides topic names for standard cart events. Blocks can subscr
 
 ## Table of Contents
 
-- [Event Definitions](#event-definitions)
+- [Event Definitions](#eventdefinitions)
 - [addToCart](#addToCart) - publish to add an item to the cart
 - [itemAddedToCart](#itemAddedToCart) - subscribe to get info about an item added to the cart
 - [itemRemovedFromCart](#itemRemovedFromCart) - subscribe to get info about an item removed from the cart
