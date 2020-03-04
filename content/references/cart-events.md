@@ -7,13 +7,13 @@ The Element SDK provides topic names for standard cart events. Blocks can subscr
 ## Table of Contents
 
 - [Event Definitions](#eventdefinitions)
-- [addToCart](#addToCart) - publish to add an item to the cart
-- [itemAddedToCart](#itemAddedToCart) - subscribe to get info about an item added to the cart
-- [itemRemovedFromCart](#itemRemovedFromCart) - subscribe to get info about an item removed from the cart
-- [openAccountPanel](#openAccountPanel) - publish to open the account panel
-- [openCart](#openCart) - publish to open the cart panel
-- [updateCartCount](#updateCartCount) - subscribe to get the updated cart quantity
-- [Additional Reading](#additional-reading)
+  - [addToCart](#'addtocart') - publish to add an item to the cart
+  - [itemAddedToCart](#'itemaddedtocart') - subscribe to get info about an item added to the cart
+  - [itemRemovedFromCart](#'itemremovedfromcart') - subscribe to get info about an item removed from the cart
+  - [openAccountPanel](#'openaccountpanel') - publish to open the account panel
+  - [openCart](#'opencart') - publish to open the cart panel
+  - [updateCartCount](#'updatecartcount') - subscribe to get the updated cart quantity
+- [Additional Reading](#additionalreading)
 
 ### Event Definitions
 
