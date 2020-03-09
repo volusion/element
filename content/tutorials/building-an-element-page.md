@@ -373,11 +373,21 @@ export const defaultConfig = {
 }
 ```
 
+#### '/local/index.js'
+
+Using `pageVar:blogId` in your `defaultConfig` will allow you to grab the blog ID from your URL (seen later in this tutorial), but your local environment url shouldn't change. This means we'll want to set a local env prop. You can do this through the `props` object in `local/index.js`. Just add the key as seen below and your local environment will load the blog with ID 1.
+
+```javascript
+const props = {
+  blogId: '1',
+}
+```
+
+#### '/src/getDataProps.js'
+
 Your `getDataProps` function needs to fetch the matching blog.
 
 Open `/src/getDataProps.js` and replace the entire source code with this:
-
-#### '/src/getDataProps.js'
 
 ```javascript
 export const getDataProps = (utils, props) => {
