@@ -40,4 +40,4 @@ By default, each store has a live theme that is visible to all your site users. 
 
 ### The E-Commerce Theme
 
-Volusion is an e-commerce platform and we provide a [basic starter theme](/explanations/e-commerce-pages) for that purpose. You can still use Element to build any kind of sites, not just e-commerce. You can create pages to show a blog list and entries, a Q&A page, reviews, a map, a contact form, basically anything you want. You can create pages to show a blog list and entries, a Q&A page, reviews, a map, a contact form, basically anything you want.
+Volusion is an e-commerce platform and we provide a [basic starter theme](/explanations/e-commerce-pages) for that purpose. You can still use Element to build any kind of sites, not just e-commerce. You can create pages to show a blog list and entries, a Q&A page, reviews, a map, a contact form, basically anything you want. 
