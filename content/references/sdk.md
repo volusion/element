@@ -31,8 +31,8 @@ window.ElementSdk.client.categories
 
 - [Categories](#categories)
   - [`categories.get()`](#'categories.get()')
-- [Content Pages](#content-pages)
-  - [`contentPages.getBySeoFriendlyName()`](#contentpagesgetbyseofriendlyname)
+- [Content Pages](#contentpages)
+  - [`contentPages.getBySeoFriendlyName()`](#'contentpages.getbyseofriendlyname()')
 - [Menus](#menus)
   - [`menus.get()`](#menusget)
 - [Products](#products)
