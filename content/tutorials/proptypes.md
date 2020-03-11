@@ -67,7 +67,7 @@ export const defaultConfig = {
 In this step, we define the colors for the light and dark modes. Open up `/src/getStyles.js` and update the code to look like this:
 
 ```javascript
-export const getStyles = (globalStyles, blockConfig) => {
+export const getStyles = blockProps => {
   return {
     dark: {
       color: 'rgb(50,161,152)',
@@ -101,7 +101,7 @@ import { css, StyleSheet } from 'ahrodite'
 import { getStyles } from './getSyles'
 
 // create your dynaimc classes
-const classes = StyleSheet.create(getStyles({}, props))
+const classes = StyleSheet.create(getStyles(props))
 
 // add logic to determine which class to apply
 const modeClass = isDarkModeEnabled ? css(classes.dark) : css(classes.light)
@@ -196,7 +196,7 @@ Here is what it should look like all together, without the comments:
 import { css, StyleSheet } from 'ahrodite'
 import { getStyles } from './getSyles'
 
-const classes = StyleSheet.create(getStyles({}, props))
+const classes = StyleSheet.create(getStyles(props))
 
 const { isDarkModeEnabled, darkEnd, darkStart, text } = props
 

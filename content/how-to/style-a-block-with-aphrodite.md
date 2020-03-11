@@ -15,7 +15,7 @@ Sometimes you will want your user to be able to alter the style of their block. 
 You will write your CSS in a file called `getStyles.js`. The `getStyles` function in this file takes 2 arguments. The first is globally available props while the second is your block's props (defined in step 1). By default, the function will look something like this:
 
 ```javascript
-export const getStyles(globalProps, blockProps) => ({})
+export const getStyles(blockProps) => ({})
 ```
 
 You will want to write your CSS in this format:
@@ -29,7 +29,7 @@ yourClassName: {
 Example:
 
 ```javascript
-export const getStyles(globalProps, blockProps) => ({
+export const getStyles(blockProps) => ({
     header: {
         backgroundColor: '#fff',
         color: '#000'
@@ -42,7 +42,7 @@ Remember, you're writing Javascript based CSS, so be sure to use the correct CSS
 If you have defined user-editable props, you can reference them like this:
 
 ```javascript
-export const getStyles(globalProps, { headerBackgroundColor, headerTextColor }) => ({
+export const getStyles({ headerBackgroundColor, headerTextColor }) => ({
     header: {
         backgroundColor: headerBackgroundColor,
         color: headerTextColor
@@ -62,7 +62,7 @@ import { css, StyleSheet } from 'aphrodite';
 import { getSyles } from './getStyles';
 
 const Block = props => {
-    const classes = StyleSheet.create(getStyles({}, props));
+    const classes = StyleSheet.create(getStyles(props));
     return (
         <header className={css(classes.header)}>
             // ...
@@ -86,7 +86,7 @@ import { getSyles } from './getStyles';
 import { Logo } from './components/Logo';
 
 const Block = props => {
-    const classes = StyleSheet.create(getStyles({}, props));
+    const classes = StyleSheet.create(getStyles(props));
     return (
         <header className={css(classes.header)}>
             <Logo classes={classes} />
