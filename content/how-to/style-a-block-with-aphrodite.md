@@ -12,7 +12,7 @@ Sometimes you will want your user to be able to alter the style of their block. 
 
 ### 2. Writing Your Styles File
 
-You will write your CSS in a file called `getStyles.js`. The `getStyles` function in this file takes 2 arguments. The first is globally available props while the second is your block's props (defined in step 1). By default, the function will look something like this:
+You will write your CSS in a file called `getStyles.js`. The `getStyles` function argument is your block's props (defined in step 1). By default, the function will look something like this:
 
 ```javascript
 export const getStyles(blockProps) => ({})
