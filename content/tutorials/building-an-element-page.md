@@ -191,7 +191,7 @@ The block functions alright, but you should enhance its styling a little bit. Op
 #### '/src/getStyles.js' (initial)
 
 ```javascript
-export const getStyles = (globalStyles, blockConfig) => ({})
+export const getStyles = blockProps => ({})
 ```
 
 So far, the styles object it returns is empty, so you should change that. Replace the source code with this:
@@ -199,7 +199,7 @@ So far, the styles object it returns is empty, so you should change that. Replac
 #### '/src/getStyles.js'
 
 ```javascript
-export const getStyles = (globalStyles, blockConfig) => ({
+export const getStyles = blockProps => ({
   blogLink: {
     color: 'rgba(50, 168, 82, 0.9)',
     backgroundColor: 'transparent',
@@ -228,7 +228,7 @@ function StarterBlock(props) {
   const { data = [] } = props
 
   // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
-  const styles = StyleSheet.create(getStyles({}, props))
+  const styles = StyleSheet.create(getStyles(props))
 
   return (
     <React.Fragment>
