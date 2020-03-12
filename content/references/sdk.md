@@ -30,9 +30,9 @@ window.ElementSdk.client.categories
 ### Table of Contents
 
 - [Categories](#categories)
-  - [`categories.get()`](#'categories.get()')
+  - [`categories.get()`](<#'categories.get()'>)
 - [Content Pages](#contentpages)
-  - [`contentPages.getBySeoFriendlyName()`](#'contentpages.getbyseofriendlyname()')
+  - [`contentPages.getBySeoFriendlyName()`](<#'contentpages.getbyseofriendlyname()'>)
 - [Menus](#menus)
   - [`menus.get()`](#menusget)
 - [Products](#products)

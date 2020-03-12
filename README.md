@@ -10,6 +10,8 @@ Visit `http://localhost:8000/` to view the app.
 
 ### Deploy
 
+Be sure to have `gatsby-cli` installed.
+
 Run `npm run deploy`. This builds the files and pushes them to the `gh-pages` branch for automagical deployment.
 
 ## 🔧 Configure
