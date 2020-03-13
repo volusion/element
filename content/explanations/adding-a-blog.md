@@ -2,21 +2,12 @@
 title: 'Adding a Blog'
 ---
 
-Generally speaking when you want to incorporate a blog into your store, you will have to redirect your users to some other domain (or subdomain) like `blog.mystore.com`.
-That means that your blog is hosted in a totally different platform and you have to invest time and money creating a similar look and feel for your blog.
+Usually, incorporating a blog into your store involves redirecting your users to another domain (or subdomain) like `blog.mystore.com`. This means that your blog is hosted on a totally separate platform, so you must invest time and money creating a similar look and feel for your blog while keeping up with two different domains. Additionally, you are sacrificing SEO value by not having your blog hosted as a route in your main domain (`www.yourstore.com/blog`)
 
-If you have invested in creating a nice header and footer for your store for example, you will have to create it again possibly in a totally different platform. Not to mention
-that you now need to care about your store's hosting and your blog's hosting.
+With Element, you can avoid all that. By creating a `/blog` page to your store and adding the appropriate blocks, you can offer a first class experience to users who are reading your content. You will also be reusing the same store's theme, reducing maintenance costs.
 
-Also, if you want your users to use the cart from your blog shoppers will have to be linked to a new page. As a result of that, you can't have a first class experience from your blog
-to add products to the cart or check cart details without abandoning the blog page.
+You can even increase sales by embedding "Add to Cart" operations—or any kind of actions that users can normally do from the store—from your blog posts.
 
-Additionally, you are sacrificing SEO value by not having your blog hosted as a route in your main domain (`www.yourstore.com/blog`)
+To see how easily you can add a blog, read our "[Building an Element Page](/tutorials/building-an-element-page)" tutorial, where all the steps are described from start to finish.
 
-But with Element you can avoid all that. By creating a `/blog` page to your store and adding the appropriate blocks, you will be able to offer a first class
-experience to your users while reading your content. As a result, you can have another point to increase sales by embedding add to cart operations from
-your blog posts or any kind of actions that users can normally do from the store. Also you are reusing the same store's theme, reducing maintenance costs.
-
-To see how easily you can add a blog, read our [Building an Element Page Tutorial](/tutorials/building-an-element-page) where all the steps are described from start to finish.
-
-Remember that this Element benefit is not limited to blogs. You can incorporate any kind of application to your store like Q&A, reviews and others.
+Remember that this Element benefit is not limited to blogs—you can incorporate any kind of application to your store, such as Q&As, reviews, and more.
