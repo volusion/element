@@ -22,6 +22,8 @@ To install Element CLI, run this command in your terminal:
 npm install -g @volusion/element-cli
 ```
 
+Use the same command above to update your Element CLI to the latest version.
+
 ## Commands
 
 ### Login

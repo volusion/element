@@ -67,7 +67,7 @@ export const defaultConfig = {
 In this step, we define the colors for the light and dark modes. Open up `/src/getStyles.js` and update the code to look like this:
 
 ```javascript
-export const getStyles = (globalStyles, blockConfig) => {
+export const getStyles = blockProps => {
   return {
     dark: {
       color: 'rgb(50,161,152)',
@@ -96,13 +96,17 @@ return
 Update the code above to this:
 
 ```javascript
-// read our new prop, and what we'll need to get our styles
-const { classes, css, isDarkModeEnabled, text } = props
+// import the aphrodite utils
+import { css, StyleSheet } from 'ahrodite'
+import { getStyles } from './getSyles'
 
-// use the new prop to determine which class to apply
-const modeClass = isDarkModeEnabled ? classes.dark : classes.light
+// create your dynaimc classes
+const classes = StyleSheet.create(getStyles(props))
 
-return <h1 className={css(modeClass)}>{text}</h1>
+// add logic to determine which class to apply
+const modeClass = isDarkModeEnabled ? css(classes.dark) : css(classes.light)
+
+return <h1 className={modeClass}>{text}</h1>
 ```
 
 That's it! Now we'll preview our work locally.
@@ -157,17 +161,17 @@ Save your work.
 
 We're going to update the block component so that it compares the current time to our new `darkStart` and `darkEnd` to decide what styles to use. If the current time is after `darkStart` and before `darkEnd` we'll enable dark mode.
 
-In `block.js`, find the code that's reading the props,
+In `Block.js`, find the code that's reading the props,
 
 ```javascript
 // read our new prop, and what we'll need to get our styles
-const { classes, css, isDarkModeEnabled, text } = props
+const { isDarkModeEnabled, text } = props
 ```
 
 and update it so that it's getting the new `darkStart` and `darkEnd` properties:
 
 ```javascript
-const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props
+const { isDarkModeEnabled, darkEnd, darkStart, text } = props
 ```
 
 Next, add the code that determines if we are in light or dark mode. The full, commented code is:
@@ -189,15 +193,20 @@ const isDarkMode = isDarkModeEnabled && isDark
 Here is what it should look like all together, without the comments:
 
 ```javascript
-const { classes, css, isDarkModeEnabled, darkEnd, darkStart, text } = props
+import { css, StyleSheet } from 'ahrodite'
+import { getStyles } from './getSyles'
+
+const classes = StyleSheet.create(getStyles(props))
+
+const { isDarkModeEnabled, darkEnd, darkStart, text } = props
 
 const now = new Date().getHours()
 const pmStart = darkStart < 12 ? darkStart + 12 : start
 const isDark = pmStart <= now || now < darkEnd
 const isDarkMode = isDarkModeEnabled && isDark
-const modeClass = isDarkMode ? classes.dark : classes.light
+const modeClass = isDarkMode ? css(classes.dark) : css(classes.light)
 
-return <h1 className={css(modeClass)}>{text}</h1>
+return <h1 className={modeClass}>{text}</h1>
 ```
 
 Save your work.
@@ -219,7 +228,7 @@ const props = {
 }
 ```
 
-Replace the text with whatever you would like, and give it the rest of our `defaultConfig` properties from `/src/config.js`:
+Replace the text with whatever you would like, and give it the rest of our `defaultConfig` properties from `/src/configs.js`:
 
 ```javascript
 text: 'Light or Dark',
