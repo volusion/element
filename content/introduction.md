@@ -31,4 +31,4 @@ Element provides the full power of Javascript and React—no need to learn a cus
 
 ## Further Reading
 
-To learn more about Element, read the [Concepts](/explanations/element-concepts) explanation.
+To learn more about Element, see "[Element Concepts](/explanations/element-concepts)."
