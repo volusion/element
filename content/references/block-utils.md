@@ -2,25 +2,26 @@
 title: 'Block Utils'
 ---
 
-Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and arw not available later on the client side.
+Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and are not available later on the client side.
+
 
 In `Block.js` these methods are available via `props` (for example: `props.seo.setTitle()`). In `getDataProps`, they are passed as part of `utils`, which is how we will reference them in this document.
 
 ## Table of Contents
 
 - **Server Side Only**
-  - [addAmpScript](#'addAmpScript')
-  - [addLink](#'addLink')
-  - [addScript](#'addScript')
-  - [isAmpRequest](#'isAmpRequest')
-  - [isRendering](#'isRendering')
-  - [throwNotFound](#'throwNotFound')
+  - [addAmpScript](#'addampscript')
+  - [addLink](#'addlink')
+  - [addScript](#'addscript')
+  - [isAmpRequest](#'isamprequest')
+  - [isRendering](#'isrendering')
+  - [throwNotFound](#'thrownotfound')
 - **Server and Client Side**
-  - [canonicalUrl](#'canonicalUrl')
+  - [canonicalUrl](#'canonicalurl')
   - [client](#'client')
   - [events](#'events')
-  - [pubSub](#'pubSub')
-  - [queryParams](#'queryParams')
+  - [pubSub](#'pubsub')
+  - [queryParams](#'queryparams')
   - [seo](#'seo')
 
 ## Server Side Only
