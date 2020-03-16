@@ -8,6 +8,6 @@ With Element, you can avoid all that. By creating a `/blog` page to your store a
 
 You can even increase sales by embedding "Add to Cart" operations—or any kind of actions that users can normally do from the store—from your blog posts.
 
-To see how easily you can add a blog, read our "[Building an Element Page](/tutorials/building-an-element-page)" tutorial, where all the steps are described from start to finish.
+To see how easily you can add a blog, read our "[Building an Element Page Tutorial](/tutorials/building-an-element-page)," where all the steps are described from start to finish.
 
 Remember that this Element benefit is not limited to blogs—you can incorporate any kind of application to your store, such as Q&As, reviews, and more.
