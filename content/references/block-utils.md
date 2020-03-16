@@ -9,19 +9,19 @@ In `Block.js` these methods are available via `props` (for example: `props.seo.s
 ## Table of Contents
 
 - **Server Side Only**
-  - [addAmpScript](#addampscript)
-  - [addLink](#addlink)
-  - [addScript](#addscript)
-  - [isAmpRequest](#isamprequest)
-  - [isRendering](#isrendering)
-  - [throwNotFound](#thrownotfound)
+  - [addAmpScript](#'addAmpScript')
+  - [addLink](#'addLink')
+  - [addScript](#'addScript')
+  - [isAmpRequest](#'isAmpRequest')
+  - [isRendering](#'isRendering')
+  - [throwNotFound](#'throwNotFound')
 - **Server and Client Side**
-  - [canonicalUrl](#canonicalurl)
-  - [client](#client)
-  - [events](#events)
-  - [pubSub](#pubsub)
-  - [queryParams](#queryparams)
-  - [seo](#seo)
+  - [canonicalUrl](#'canonicalUrl')
+  - [client](#'client')
+  - [events](#'events')
+  - [pubSub](#'pubSub')
+  - [queryParams](#'queryParams')
+  - [seo](#'seo')
 
 ## Server Side Only
 
