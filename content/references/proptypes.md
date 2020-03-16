@@ -18,12 +18,12 @@ title: 'Proptypes'
   - [slider](#slider)
   - [string](#string)
 - Meta / Organization
-  - [arrayOf shape](#arrayof-shape)
-  - [isPrivate](#isPrivate)
+  - [arrayOf shape](#arrayofshape)
+  - [isPrivate](#isprivate)
   - [readOnly](#readonly)
   - [sectionHeader](#sectionheader)
 - More
-  - [Further Reading](#further-reading)
+  - [Further Reading](#furtherreading)
 
 ## Data
 
@@ -74,7 +74,7 @@ export const defaultConfig = {
 }
 ```
 
-**Note:** merchant edits to color fields will are stored in RGBA format.
+Merchant edits to color fields are stored in RGBA format.
 
 ### editorFull
 
@@ -342,7 +342,7 @@ export const defaultConfig = {
 }
 ```
 
-## sectionHeader
+### sectionHeader
 
 ![Section Header](proptype-section-header.png)
 
@@ -360,7 +360,7 @@ export const defaultConfig = {
 
 ## More
 
-### Further reading
+### Further Reading
 
 - [Working with Element Proptypes Tutorial](/tutorials/proptypes)
-- [How to: Add Element Proptypes to a Block](/how-to/proptypes)
+- [Add Element Proptypes to a Block](/how-to/proptypes)
