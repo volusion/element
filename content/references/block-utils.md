@@ -2,9 +2,9 @@
 title: 'Block Utils'
 ---
 
-Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and not available later on the client-side.
+Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and arw not available later on the client side.
 
-In `Block.js` these methods are avaible via `props`, for example: `props.seo.setTitle()`. In `getDataProps` they are passed as part of `utils`, which is how we will reference them in this document.
+In `Block.js` these methods are available via `props` (for example: `props.seo.setTitle()`). In `getDataProps`, they are passed as part of `utils`, which is how we will reference them in this document.
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ In `Block.js` these methods are avaible via `props`, for example: `props.seo.set
 
 ### 'addAmpScript'
 
-Function that loads a script from The AMP Component Catalogue. Currently restricted to the following: [amp-analytics](https://amp.dev/documentation/components/amp-analytics/?format=websites), [amp-bind](https://amp.dev/documentation/components/amp-bind/?format=websites), and [amp-form](https://amp.dev/documentation/components/amp-form/?format=websites).
+This function loads a script from The AMP Component Catalogue. The function is currently restricted to the following: [amp-analytics](https://amp.dev/documentation/components/amp-analytics/?format=websites), [amp-bind](https://amp.dev/documentation/components/amp-bind/?format=websites), and [amp-form](https://amp.dev/documentation/components/amp-form/?format=websites).
 
 ### 'addAmpScript' Usage
 
@@ -43,7 +43,7 @@ utils.addAmpScript('amp-bind')
 
 ### 'addLink'
 
-Function that adds a link to an external style sheet.
+This function adds a link to an external style sheet.
 
 #### 'addLink' Usage
 
@@ -59,7 +59,7 @@ utils.addLink('https://your-style-sheet.css')
 
 ### 'addScript'
 
-Function that includes an external javascript library.
+This function includes an external javascript library.
 
 #### 'addScript' Usage
 
@@ -79,7 +79,7 @@ utils.addScript(
 
 ### 'isAmpRequest'
 
-Boolean property signifying whether the current request is an AMP request. `isAmpRequest` is true on AMP pages, and `undefined` otherwise.
+This boolean property signifies whether the current request is an AMP request. `isAmpRequest` is `true` on AMP pages, and `undefined` otherwise.
 
 #### 'isAmpRequest' Usage
 
@@ -97,7 +97,7 @@ if (utils.isAmpRequest) {
 
 ### 'isRendering'
 
-Boolean property that is `true` when the block is rendered by the live store, or a preview of a theme, and `undefined` otherwise, for instance in Site Designer or when developing locally.
+This boolean property is `true` when the block is rendered by the live store or a preview of a theme, and `undefined` otherwise (for instance, in Site Designer or when developing locally).
 
 #### 'isRendering' Usage
 
@@ -121,7 +121,7 @@ export getDataProps({ isRendering }, props) => Promise.resolve({ isRendering });
 
 ### 'throwNotFound'
 
-Function that takes the visitor to Page Not Found.
+This function takes the visitor to Page Not Found.
 
 #### 'throwNotFound' Usage
 
@@ -150,7 +150,7 @@ return getSampleData()
 
 ### 'canonicalUrl'
 
-Function that accepts an object and returns a string with the URL of the current page and the passed object as URI parameters. The object passed is also returned as `queryParams` on the page when clicking on the generated link. `canonicalUrl` is generally utilized in conjunction with `isAmpRequest`.
+This function accepts an object and returns a string with the URL of the current page and the passed object as URI parameters. The object passed is also returned as `queryParams` on the page when clicking on the generated link. `canonicalUrl` is generally utilized in conjunction with `isAmpRequest`.
 
 #### 'canonicalUrl' Usage
 
@@ -166,7 +166,7 @@ Function that accepts an object and returns a string with the URL of the current
 
 ### 'client'
 
-Library that gives you access to the Volusion API. See [Volusion API ElementSdk Client Reference](/references/sdk)
+This library gives you access to the Volusion API. For more information, see "[SDK](/references/sdk)."
 
 #### 'client' Availability
 
@@ -176,7 +176,7 @@ Library that gives you access to the Volusion API. See [Volusion API ElementSdk 
 
 ### 'events'
 
-Topic names for pubSub events that are available to all blocks. See [Cart Events](/references/cart-events).
+These topic names for pubSub events are available to all blocks. For more information, see "[Cart Events](/references/cart-events)."
 
 #### 'events' Usage
 
@@ -192,7 +192,7 @@ utils.pubSub.subscribe(utils.events.cart.itemAddedToCart, this.handleItemAdded)
 
 ### 'pubSub'
 
-An instance of PubSubJS. See [How to Communicate between Two (Or More) Blocks](/how-to/communicate-between-blocks).
+This is an instance of PubSubJS. For more information, see "[Communicate Between Blocks](/how-to/communicate-between-blocks)."
 
 #### 'pubSub' Usage
 
@@ -208,7 +208,7 @@ utils.pubSub.publish(utils.events.cart.openCart)
 
 ### 'queryParams'
 
-Object with the query params from the page URI. See [How to Read Page URI Parameters from Your Blocks](/how-to/read-page-uri-parameters-in-blocks#more-data-from-the-uri-read-query-params-from-block-props).
+This is an object with the query params from the page URI. For more information, see "[Read Page URI Parameters In Blocks](/how-to/read-page-uri-parameters-in-blocks#more-data-from-the-uri-read-query-params-from-block-props)."
 
 #### 'queryParams' Usage
 
@@ -223,11 +223,11 @@ const page = Number(queryParams.page) || 1
 | ------------ | ----------- |
 | &check;      | &check;     |
 
-**Note:** when accessing `queryParams` from getDataProps they are available under props, not utils.
+**Note:** when accessing `queryParams` from getDataProps, they are available under props, not utils.
 
 ### 'seo'
 
-Library that allows a block to manipulate the SEO related tags and title in the head of the page. See [How to set SEO data from a block](/how-to/set-seo-data-from-a-block).
+This library allows a block to manipulate the SEO-related tags and title in the head of the page. For more information, see "[Set SEO Data From a Block](/how-to/set-seo-data-from-a-block)."
 
 #### 'seo' Usage
 
