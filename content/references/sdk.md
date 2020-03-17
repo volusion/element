@@ -2,9 +2,9 @@
 title: 'SDK'
 ---
 
-This document looks at the ways that you can use `window.ElementSdk.client` to call the Volusion API.
+This document examines ways you can use `window.ElementSdk.client` to call the Volusion API.
 
-## Calling the Sdk
+## Calling the SDK
 
 In production block code, the most common place that you'll be using the SDK is in `getDataProps.js`
 
@@ -14,7 +14,7 @@ export const getDataProps = (utils, { productSlug }) => {
 }
 ```
 
-See [How to Read Page URI Parameters from Your Block](how-to/read-page-uri-parameters-in-blocks) for more background behind that example.
+See "[Read Page URI Parameters In Blocks](how-to/read-page-uri-parameters-in-blocks)" for more background.
 
 **Tip**: To explore the SDK locally from a block's `local/index.js` file, or from your browser's javascript console from a store running on Element, try this:
 
@@ -34,26 +34,26 @@ window.ElementSdk.client.categories
 - [Content Pages](#contentpages)
   - [`contentPages.getBySeoFriendlyName()`](<#'contentpages.getbyseofriendlyname()'>)
 - [Menus](#menus)
-  - [`menus.get()`](#menusget)
+  - [`menus.get()`](<#'menus.get()'>)
 - [Products](#products)
-  - [`products.getById()`](#productsgetbyid)
-  - [`products.getBySlug()`](#productsgetbyslug)
-  - [`products.getRelatedById()`](#productsgetrelatedbyid)
-  - [`products.getRelatedBySlug()`](#productsgetrelatedbyslug)
-  - [`products.getByCategoryId()`](#productsgetbycategoryid)
-  - [`products.getWithChildCategories()`](#productsgetwithchildcategories)
-  - [`products.search()`](#productssearch)
+  - [`products.getById()`](<#'products.getbyid()'>)
+  - [`products.getBySlug()`](<#'products.getbyslug()'>)
+  - [`products.getRelatedById()`](<#'products.getrelatedbyid()'>)
+  - [`products.getRelatedBySlug()`](<#'products.getrelatedbyslug()'>)
+  - [`products.getByCategoryId()`](<#'products.getbycategoryid()'>)
+  - [`products.getWithChildCategories()`](<#'products.getwithchildcategories()'>)
+  - [`products.search()`](<#'products.search()'>)
 - [Request](#request)
-- [Store Information](#store-information)
+- [Store Information](#'storeinformation')
   - [`storeInformation`](#storeinformation)
-- [Tenant ID](#tenant-id)
-  - [`tenant`](#tenant)
+- [Tenant ID](#'tenantid')
+  - [`tenant`](#'tenant')
 
 ### Categories
 
 #### 'categories.get()'
 
-A method that returns a Promise that resolves with an array of the configured store's categories.
+This method returns a Promise that resolves with an array of the configured store's categories.
 
 #### Usage
 
@@ -108,11 +108,11 @@ utils.client.categories.get()
 
 ### Content Pages
 
-Older stores have pages outside of Element. Manage them from [Volusion Admin Pages](https://admin.volusion.com/pages/list).
+Older stores have pages outside of Element. You can manage them from [Volusion Admin Pages](https://admin.volusion.com/pages/list).
 
 #### 'contentPages.getBySeoFriendlyName()'
 
-A method that returns a Promise that resolves with the data for the given Content Page SEO Friendly Name (slug).
+This method returns a Promise that resolves with the data for the given Content Page SEO Friendly Name (slug).
 
 #### Usage
 
@@ -142,7 +142,7 @@ utils.client.contentPages.getBySeoFriendlyName('page-name')
 
 #### 'menus.get()'
 
-A method that returns a Promise that resolves with an object with an `items` property that contains array of the configured store's menus. **Note:** the Volusion Admin interface only supports a single menu at this time.
+This method returns a Promise that resolves with an object with an `items` property that contains an array of the configured store's menus. **Note:** the Volusion Admin interface only supports a single menu at this time.
 
 #### Usage
 
@@ -175,13 +175,13 @@ utils.client.menus.get()
 }
 ```
 
-**Note:** menu item will have a `url` if it is of `type` `"link"`, otherwise it will have a slug.
+**Note:** the menu item will have a `url` if it is of `type` `"link"`, otherwise it will have a slug.
 
 ### Products
 
 #### 'products.getById()'
 
-A method that returns a Promise that resolves with the data for the given Product ID.
+This method returns a Promise that resolves with the data for the given Product ID.
 
 #### Usage
 
@@ -220,7 +220,7 @@ utils.client.products.getById('product123')
 
 #### 'products.getBySlug()'
 
-A method that returns a Promise that resolves with the data for the given Product SEO Friendly Name (slug).
+This method returns a Promise that resolves with the data for the given Product SEO Friendly Name (slug).
 
 #### Usage
 
@@ -259,7 +259,7 @@ utils.client.products.getBySlug('product-name')
 
 #### 'products.getRelatedById()'
 
-A method that returns a Promise that resolves with an array of related products for the given Product ID.
+This method returns a Promise that resolves with an array of related products for the given Product ID.
 
 #### Usage
 
@@ -308,7 +308,7 @@ utils.client.products.getRelatedById('product123')
 
 #### 'products.getRelatedBySlug()'
 
-A method that returns a Promise that resolves with an array of related products for the given Product SEO Friendly Name (slug).
+This method returns a Promise that resolves with an array of related products for the given Product SEO Friendly Name (slug).
 
 #### Usage
 
@@ -357,7 +357,7 @@ utils.client.products.getRelatedBySlug('product-name')
 
 #### 'products.getByCategoryId()'
 
-A method that returns a Promise that resolves with an array of related products for the given category ID.
+This method returns a Promise that resolves with an array of related products for the given category ID.
 
 #### Usage
 
@@ -450,7 +450,7 @@ Note: `page` will be used if both `page` and `offset` are present.
 
 #### 'products.getWithChildCategories()'
 
-A synchronous method that returns an array with the given category and any subcategories it might have, if passed a category ID and the store's entire category tree (the response from [`categories.get()`](#categoriesget)).
+This synchronous method returns an array with the given category and any subcategories it might have, if it has passed a category ID and the store's entire category tree (the response from [`categories.get()`](#categoriesget)).
 
 #### Usage
 
@@ -466,7 +466,7 @@ utils.client.products.getWithChildCategories('category123', categoryTree)
 
 #### 'products.search()'
 
-An asynchronous method that returns a Promise that resolves with an array with products matching the given query, as well as pagination data
+This asynchronous method returns a Promise that resolves with an array of products matching the given query, as well as pagination data
 
 #### Usage
 
@@ -553,7 +553,7 @@ Note: `page` will be used if both `page` and `offset` are present.
 
 ### Request
 
-An asynchronous function that behaves exactly like [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), returning a promise that resolves with a response from a third party API endpoint.
+This asynchronous function behaves exactly like [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), returning a promise that resolves with a response from a third-party API endpoint.
 
 #### Usage
 
@@ -564,13 +564,13 @@ utils.client
   .catch(e => [])
 ```
 
-**TIP:** always use this when [calling third party services](/how-to/data-third-party-services) so that your block behaves consistently when rendered by the server or on the client-side.
+**TIP:** always use this when [calling third-party services](/how-to/data-third-party-services) so that your block behaves consistently when rendered by the server or on the client side.
 
 ### Store Information
 
 #### 'storeInformation'
 
-A property with an object value containing details about the configured store.
+This property has an object value containing details about the configured store.
 
 #### Usage
 
@@ -618,7 +618,7 @@ utils.client.storeInformation
 
 #### 'tenant'
 
-A property with a string value containing the configured store's tenant ID.
+This property has a string value containing the configured store's tenant ID.
 
 #### Usage
 
