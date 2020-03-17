@@ -2,17 +2,17 @@
 title: 'Cart Events'
 ---
 
-The Element SDK provides topic names for standard cart events. Blocks can subscribe to these topics, as well as publishing to them, using PubSubJS.
+The Element SDK provides topic names for standard cart events. Blocks can subscribe to these topics and publish to them using PubSubJS.
 
 ## Table of Contents
 
 - [Event Definitions](#eventdefinitions)
-  - [addToCart](#'addtocart') - publish to add an item to the cart
-  - [itemAddedToCart](#'itemaddedtocart') - subscribe to get info about an item added to the cart
-  - [itemRemovedFromCart](#'itemremovedfromcart') - subscribe to get info about an item removed from the cart
-  - [openAccountPanel](#'openaccountpanel') - publish to open the account panel
-  - [openCart](#'opencart') - publish to open the cart panel
-  - [updateCartCount](#'updatecartcount') - subscribe to get the updated cart quantity
+  - [addToCart](#'addtocart'): publish to add an item to the cart
+  - [itemAddedToCart](#'itemaddedtocart'): subscribe to get info about an item added to the cart
+  - [itemRemovedFromCart](#'itemremovedfromcart'): subscribe to get info about an item removed from the cart
+  - [openAccountPanel](#'openaccountpanel'): publish to open the account panel
+  - [openCart](#'opencart'): publish to open the cart panel
+  - [updateCartCount](#'updatecartcount'): subscribe to get the updated cart quantity
 - [Additional Reading](#additionalreading)
 
 ### Event Definitions
@@ -30,7 +30,7 @@ The Element SDK provides topic names for standard cart events. Blocks can subscr
 }
 ```
 
-Subscriptions using these topics should be referenced as properties of `this.props.events.cart`, not as strings. This is because these topic names are provided by Element SDK and could be subject to change. By using the property values from `this.props.events.cart`, you are guaranteed to have a valid topic name. Using the string is not as safe.
+Subscriptions using these topics should be referenced as properties of `this.props.events.cart`, not as strings, because these topic names are provided by Element SDK and could change. By using the property values from `this.props.events.cart`, you are guaranteed to have a valid topic name. Using the string is not as safe.
 
 For example, use `this.props.events.cart.addToCart`, not `"cart.addToCart"`.
 
@@ -38,7 +38,7 @@ For example, use `this.props.events.cart.addToCart`, not `"cart.addToCart"`.
 
 ### 'addToCart'
 
-The cart subscribes to the `addToCart` event. You can publish it from your own blocks to add items to the cart.
+The cart subscribes this event, and you can publish it from your own blocks to add items to the cart.
 
 #### 'addToCart' Usage
 
@@ -88,7 +88,7 @@ The `data` provided by `itemAddedToCart` has the following shape:
 
 The cart publishes this event after the shopper removes an item from the cart. Your blocks can subscribe to it to see information about the item that the shopper removed.
 
-#### 'itemRemovedFromCart Usage'
+#### 'itemRemovedFromCart' Usage
 
 ```javascript
 // subscribe to the event
@@ -117,7 +117,7 @@ The `data` provided by `itemRemovedFromCart` has the following shape:
 
 ### 'openAccountPanel'
 
-The cart block subscribes to this event and your blocks can publish the event to open the account panel.
+The cart block subscribes to this event, and your blocks can publish the event to open the account panel.
 
 #### 'openAccountPanel' Usage
 
@@ -129,7 +129,7 @@ this.props.pubSub.publish(this.props.events.cart.openAccountPanel)
 
 ### 'openCart'
 
-The cart block subscribes to this event and your blocks can publish the event to open the cart panel.
+The cart block subscribes to this event, and your blocks can publish the event to open the cart panel.
 
 #### 'openCart' Usage
 
@@ -162,4 +162,4 @@ handleUpdatedCartCount = (msg, count) => {
 
 For more details on PubSubJS, see the [PubSubJS npm reference](https://www.npmjs.com/package/pubsub-js).
 
-For more information about how to communicate between blocks using PubSubJS, see the guide for [How to Communicate between Two (Or More) Blocks](/how-to/communicate-between-blocks)
+For more information about how to communicate between blocks using PubSubJS, see "[Communicate Between Blocks](/how-to/communicate-between-blocks)."
