@@ -44,9 +44,9 @@ window.ElementSdk.client.categories
   - [`products.getWithChildCategories()`](<#'products.getwithchildcategories()'>)
   - [`products.search()`](<#'products.search()'>)
 - [Request](#request)
-- [Store Information](#'storeinformation')
-  - [`storeInformation`](#storeinformation)
-- [Tenant ID](#'tenantid')
+- [Store Information](#storeinformation)
+  - [`storeInformation`](#'storeinformation')
+- [Tenant ID](#tenantid)
   - [`tenant`](#'tenant')
 
 ### Categories
