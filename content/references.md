@@ -1,10 +1,12 @@
 ---
 title: 'Reference'
+metaTitle: 'Reference'
+metaDescription: 'Links to helpful reference articles for building on Element.'
 ---
 
-- [Visual Guide to Proptypes](references/proptypes)
+- [Proptypes](references/proptypes)
 - [Block Utils](references/block-utils)
-- [Volusion API ElementSdk Client Reference](references/sdk)
+- [Element SDK Client](references/sdk)
 - [Cart Events](references/cart-events)
 - [Element CLI](references/element-cli)
-- [Styling your block with CSS](references/styling-your-block-with-css)
+- [Styling Your Block With CSS](references/styling-your-block-with-css)
