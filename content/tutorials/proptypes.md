@@ -1,19 +1,21 @@
 ---
-title: 'Proptypes'
+title: 'Working With Element Proptypes Tutorial'
+metaTitle: 'Working With Element Proptypes Tutorial'
+metaDescription: 'In this 15 minute tutorial, you will learn how to create an Element block with configurable light and dark modes.'
 ---
 
-In this 15 minute tutorial you will learn how to create a block with a configurable light and dark modes.
+In this 15 minute tutorial, you will learn how to create a block with configurable light and dark modes.
 
 ![Preview](result-preview.png)
 
 ## Prerequisites
 
-- [Basic understanding of blocks](explanations/element-concepts)
-- [Element CLI installed](/how-to/env-setup)
+- [Element Concepts](/explanations/element-concepts)
+- [Element Setup](/how-to/env-setup)
 
 ## Create a New Block
 
-Create a new block named Solarized. If you haven't used element before, see [How to Set Up your Environment for Developing Blocks](/how-to/env-setup).
+Create a new block named Solarized. If you haven't used Element before, see "[Environment Setup](/how-to/env-setup)."
 
 ```shell
 element new Solarized
@@ -21,7 +23,7 @@ element new Solarized
 
 ## Locate the Block Configuration and Schema
 
-Open up your block's code and find `/src/configs.js`. In that file you'll see `getConfigSchema`. This is where you tell Site Designer what configuration fields are available for your block. Store admins will be able to edit the settings of your block using those fields. By default, `getConfigSchema` looks like this:
+Open up your block's code and find `/src/configs.js`. In that file, you'll see `getConfigSchema`—this is where you tell Site Designer what configuration fields are available for your block. Store admins will be able to edit the settings of your block using those fields. By default, `getConfigSchema` looks like this:
 
 ```javascript
 export const getConfigSchema = ElementPropTypes => {
@@ -36,7 +38,7 @@ export const getConfigSchema = ElementPropTypes => {
 
 ## Add a New Element Proptype
 
-In the object literal returned by `getConfigSchema` we will add the property `isDarkModeEnabled`, which is how we'll reference it from the block's component code. We'll give it the `label` "Enable Dark Mode" which appears above the field in the Site Designer's edit panel. For the `type` make it an `ElementPropTypes.bool`, which represents a boolean field. Your `getConfigSchema` should now look like this:
+In the object literal returned by `getConfigSchema`, we will add the property `isDarkModeEnabled`, which is how we'll reference it from the block's component code. We'll give it the `label` "Enable Dark Mode," which appears above the field in the Site Designer's edit panel. For the `type`, make it an `ElementPropTypes.bool`, which represents a boolean field. Your `getConfigSchema` should now look like this:
 
 ```javascript
 export const getConfigSchema = ElementPropTypes => {
@@ -53,7 +55,7 @@ export const getConfigSchema = ElementPropTypes => {
 }
 ```
 
-when you add a new Element Proptype to a schema you need to give it a default value in `config.js`. You do this by adding default values to the `defaultConfig` object:
+When you add a new Element Proptype to a schema, you need to give it a default value in `config.js`. Do this by adding default values to the `defaultConfig` object:
 
 ```javascript
 export const defaultConfig = {
@@ -83,7 +85,7 @@ export const getStyles = blockProps => {
 
 ## Use the New Proptype in the Block
 
-Open `/src/Block.js`. We'll now edit it so that it uses the new `isDarkModeEnabled` prop. Any Element Proptypes that you add to the config schema will be available in the props passed to the block's component.
+Open `/src/Block.js`—we'll now edit it so that it uses the new `isDarkModeEnabled` prop. Any Element Proptypes that you add to the config schema will be available in the props passed to the block's component.
 
 Locate the place where the block returns some JSX:
 
@@ -109,18 +111,18 @@ const modeClass = isDarkModeEnabled ? css(classes.dark) : css(classes.light)
 return <h1 className={modeClass}>{text}</h1>
 ```
 
-That's it! Now we'll preview our work locally.
+Now we'll preview our work locally.
 
 ## Run the Block Locally
 
-Make sure that you have all your dependencies loaded, and then start up the block in watch mode. Run these from terminal in your block's directory:
+Make sure that you have all your dependencies loaded, then start up the block in watch mode. Run these from terminal in your block's directory:
 
 ```shell
 npm install
 npm start
 ```
 
-That will launch a browser window where you'll get preview of the block that will update as you make changes.
+This will launch a browser window, where you'll get a preview of the block that will update as you make changes.
 
 ![Dark Mode](darkMode.png)
 
@@ -159,16 +161,16 @@ Save your work.
 
 ## Use 'darkStart' and 'darkEnd' in the Block
 
-We're going to update the block component so that it compares the current time to our new `darkStart` and `darkEnd` to decide what styles to use. If the current time is after `darkStart` and before `darkEnd` we'll enable dark mode.
+We're going to update the block component so that it compares the current time to our new `darkStart` and `darkEnd` to decide what styles to use. If the current time is after `darkStart` and before `darkEnd`, we'll enable dark mode.
 
-In `Block.js`, find the code that's reading the props,
+In `Block.js`, find the code that's reading the props:
 
 ```javascript
 // read our new prop, and what we'll need to get our styles
 const { isDarkModeEnabled, text } = props
 ```
 
-and update it so that it's getting the new `darkStart` and `darkEnd` properties:
+Update it so that it's getting the new `darkStart` and `darkEnd` properties:
 
 ```javascript
 const { isDarkModeEnabled, darkEnd, darkStart, text } = props
@@ -190,7 +192,7 @@ const isDark = pmStart <= now || now < darkEnd
 const isDarkMode = isDarkModeEnabled && isDark
 ```
 
-Here is what it should look like all together, without the comments:
+Here is what it should look like altogether, without the comments:
 
 ```javascript
 import { css, StyleSheet } from 'ahrodite'
@@ -213,7 +215,7 @@ Save your work.
 
 ## View the Results Locally
 
-Go back to your browser. Now you will see either dark or light styles depending on the current time:
+Go back to your browser, where you will see either dark or light styles depending on the current time:
 
 ![Light or Dark](lightOrDark.png)
 
@@ -237,7 +239,7 @@ darkStart: 8,
 darkEnd: 6
 ```
 
-Now change the start/end so that your local preview will switch modes. For example, if the current time is 10:00 in the morning, change the `end` to 11 so that the block still thinks it should render in dark mode.
+Now, change the start/end so that your local preview will switch modes. For example, if the current time is 10 in the morning, change the `end` to 11 so that the block still thinks it should render in dark mode.
 
 Open your browser and see the change:
 
@@ -245,7 +247,7 @@ Open your browser and see the change:
 
 ## View the Config in Site Designer
 
-From your terminal, build and publish the block. It will prompt you to select a category, choose `Misc`.
+From your terminal, build and publish the block. When it prompts you to select a category, choose `Misc`.
 
 ```shell
 npm run build
@@ -260,10 +262,10 @@ Hover over the block to reveal the edit button.
 
 ![Edit Block](editBlock.png)
 
-Press the edit button and you'll be able to see the form generated by the config schema we've been working with.
+Click the **Edit** button to see the form generated by the config schema we've been working with.
 
 ![Block Config Form](blockConfigForm.png)
 
 Use the Preview button to test changes made to the Dark Mode Hours.
 
-Changes made to the block config in Site Designer to the `darkStart` and `darkEnd` fields will not update the block in real time. This is because our `isDarkMode` logic above is triggered one time when the block is rendered, but is not tied to a React lifecycle event such as `componentDidUpdate`. You may preview the theme to see the changes.
+Changes made to the block config in Site Designer to the `darkStart` and `darkEnd` fields will not update the block in real time. This is because our `isDarkMode` logic is triggered one time when the block is rendered, but is not tied to a React lifecycle event such as `componentDidUpdate`. You may preview the theme to see the changes.
