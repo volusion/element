@@ -8,7 +8,7 @@ This tutorial will cover creating new pages in Element, as well as creating cust
 
 ## Quick Start
 
-If you have built a block before, you can skip down to [Make the Block Fetch Data from an API](#5maketheblockfetchdatafromanapi) after running this command from the directory where you keep your blocks:
+If you have built a block before, you can skip down to [Make the Block Fetch Data from an API](#5.maketheblockfetchdatafromanapi) after running this command from the directory where you keep your blocks:
 
 ```shell
 element new Bloglist && cd Bloglist && npm install && npm start
@@ -25,7 +25,7 @@ Before you get started, you need to ensure that your development environment is 
 
 The first thing you need is for your Volusion account to be part of an approved organization that can create blocks in the Element ecosystem. To do this, see "[How to Get Approved to Develop Blocks](/how-to/get-approved-to-develop-blocks)."
 
-### Setting up Your Development Environment
+### Set up Your Development Environment
 
 You also need to set up your environment with Node.js, Git, and Element CLI. For specific step-by-step instructions, see "[Environment Setup](/how-to/env-setup)."
 
@@ -95,7 +95,7 @@ npm start
 
 You should notice a browser tab open up with the url set to `http://localhost:4000/`. The browser contents should look something like this:
 
-![Starter Block contents in browser](/tutorials/browserStarterBlock.png)
+![Starter Block contents in browser](browserStarterBlock.png)
 
 Congratulations! Your block is running locally and is ready for some changes. If this process did not start up a browser tab for you automatically, open a browser tab to `http://localhost:4000/`.
 
@@ -460,7 +460,7 @@ Now that you've published your blocks, the next thing you'll want to do is creat
 
 In the web browser of your choice, sign in to [Volusion.com](https://www.volusion.com/login) with your approved developer account, and click the **Site Designer** link in the sidebar navigation:
 
-![Site Designer Link](/tutorials/siteDesignerLink.png)
+![Site Designer Link](siteDesignerLink.png)
 
 ### 2. Create a New Theme
 
@@ -468,19 +468,19 @@ Click the **Create new theme** link in Site Designer.
 
 _Note: if Site Designer directed you straight to your active theme, first click the **Change Theme** link near the top of the screen (next to your theme name)._
 
-![Create New Theme Link](/tutorials/createNewThemeLink.png)
+![Create New Theme Link](createNewThemeLink.png)
 
 This will launch a dialog for you to enter your theme name:
 
-![Create New Theme Dialog](/tutorials/createNewThemeDialog.png)
+![Create New Theme Dialog](createNewThemeDialog.png)
 
 Enter "Blog Test Theme" as the name for your theme, then click the **Create** button.
 
-## Adding a New Page for Your Blog List Block
+## Add a New Page for Your Blog List Block
 
 After creating your new theme, Site Designer will navigate you to the home page for your theme. Next, you'll need to add a page where your blog list block will live. To do this, open the page selection drop-down that says **Page: Home**, revealing the "Add a Page" menu option:
 
-![Page Selection dropdown](/tutorials/pageDropdown.png)
+![Page Selection dropdown](pageDropdown.png)
 
 Click the **Add a Page** link, which will open a panel in the sidebar:
 
@@ -501,7 +501,7 @@ Site Designer will redirect you to your new Blog List page.
 
 Click the **Add Block** link:
 
-![Add Block](/tutorials/addBlockLink.png)
+![Add Block](addBlockLink.png)
 
 This will open the "Add a Block" panel, where you can select from block categories. Click on the **Misc** category—you'll recall this was the category you published your blocks into earlier.
 
@@ -515,7 +515,7 @@ You should see your blog list block appear in the main panel of Site Designer. I
 
 ![Blog List Block contents](blogListBlockInSiteDesigner.png)
 
-## Adding a New Page for Your Blog Detail Block
+## Add a New Page for Your Blog Detail Block
 
 Now that you've created the blog list page and added the block to it, you need to do the same for the blog detail.
 
@@ -540,7 +540,7 @@ Site Designer will redirect you to your new Blog Detail page.
 
 Click the **Add Block** link:
 
-![Add Block](/tutorials/addBlockLink.png)
+![Add Block](/addBlockLink.png)
 
 This will open the "Add a Block" panel, where you can select from block categories. Click on the **Misc** category—you'll recall this was the category you published your blocks into earlier.
 
@@ -562,7 +562,7 @@ You're done setting up the blocks, and it's finally time to see how everything w
 
 Next, click the **Preview** button near the top of the Site Designer window:
 
-![Preview button](/tutorials/previewButton.png)
+![Preview button](previewButton.png)
 
 This will launch a new browser tab with your blog list page. The page URL will be something like:
 
