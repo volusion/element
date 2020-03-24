@@ -11,7 +11,7 @@ In this 15 minute tutorial, you will learn how to create a block with configurab
 ## Prerequisites
 
 - [Element Concepts](/explanations/element-concepts)
-- [Element Setup](/how-to/env-setup)
+- [Environment Setup](/how-to/env-setup)
 
 ## Create a New Block
 
