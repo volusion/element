@@ -540,7 +540,7 @@ Site Designer will redirect you to your new Blog Detail page.
 
 Click the **Add Block** link:
 
-![Add Block](/addBlockLink.png)
+![Add Block](addBlockLink.png)
 
 This will open the "Add a Block" panel, where you can select from block categories. Click on the **Misc** category—you'll recall this was the category you published your blocks into earlier.
 
