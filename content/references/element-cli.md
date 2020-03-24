@@ -1,6 +1,6 @@
 ---
-title: 'Element CLI Reference'
-metaTitle: 'Element CLI Reference'
+title: 'Element CLI'
+metaTitle: 'Element CLI'
 metaDescription: 'This reference looks at the Element CLI commands and their options in detail.'
 ---
 
