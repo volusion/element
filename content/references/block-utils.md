@@ -1,5 +1,7 @@
 ---
 title: 'Block Utils'
+metaTitle: 'Block Utils'
+metaDescription: 'Element blocks have access to the following utils, passed to them as props.'
 ---
 
 Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and are not available later on the client side.

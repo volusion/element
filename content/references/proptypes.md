@@ -1,5 +1,7 @@
 ---
 title: 'Proptypes'
+metaTitle: 'Proptypes'
+metaDescription: 'Learn everything you need to know about Element proptypes.'
 ---
 
 ## Table of Contents
