@@ -1,12 +1,14 @@
 ---
-title: 'Product Landing Page'
+title: 'Implementing a New Product Landing Page Tutorial'
+metaTitle: 'Implementing a New Product Landing Page Tutorial'
+metaDescription: 'In this tutorial, we'll build a new block to handle the display of an individual product and its interactions with the shopping cart.'
 ---
 
-We're going to build a new block to handle the display of an individual product and its interactions with the shopping cart. This could be an SEO landing page, someplace you want to drive ad traffic to, or a replacement for the Product Details block because you want to do something with the layout that it isn't capable of.
+In this tutorial, we'll build a new block to handle the display of an individual product and its interactions with the shopping cart. This could be an SEO landing page, a page you want to drive ad traffic to, or a replacement for the Product Details block with more capabilities.
 
 ## Quick Start
 
-If you have built a block before, you can skip down to [Make the Block Fetch Data from an API](#5-get-a-product-based-on-the-slug-in-the-page-path) after running this command from the directory where you keep your blocks:
+If you have built a block before, you can skip down to [Get a Product Based on the Slug in the Page Path](#5.getaproductbasedonthesluginthepagepath) after running this command from the directory where you keep your blocks:
 
 ```shell
 element new Productlanding && cd Productlanding && npm install && npm start
@@ -18,19 +20,19 @@ Before you get started, you need to ensure that your development environment is 
 
 ### An Account with Approval to Create Blocks
 
-The first thing you need is for your Volusion account to be part of an approved organization that can create blocks in the Element ecosystem. To do this, see the [guide for how to become approved as a block developer](/how-to/get-approved-to-develop-blocks).
+The first thing you need is for your Volusion account to be part of an approved organization that can create blocks in the Element ecosystem. To do this, see "[How to Get Approved to Develop Blocks](/how-to/get-approved-to-develop-blocks)."
 
 ### Setting up Your Development Environment
 
-You also need to set up your environment with Node.js, Git, and Element CLI. For specific step-by-step instructions, see the [guide for how to set up your development environment](/how-to/env-setup).
+You also need to set up your environment with Node.js, Git, and Element CLI. For specific step-by-step instructions, see "[Environment Setup](/how-to/env-setup)."
 
 ## Create the Product Landing Block
 
-If your development environment is set up, you're ready to begin the tutorial. You're going to start by creating a product landing block, using your terminal and your favorite text editor or IDE.
+If your development environment is set up, you're ready to begin the tutorial. Start by creating a product landing block, using your terminal and your favorite text editor or IDE.
 
 ### 1. Log in to Element CLI
 
-Open up your terminal and navigate to a good working directory where you'd like to keep your block code. For this tutorial, we will assume you are in a directory called "blocks".
+Open up your terminal and navigate to a good working directory where you'd like to keep your block code. For this tutorial, we will assume you are in a directory called "blocks."
 
 First, log in to Element CLI to ensure that your identity is associated with the block you're about to create. Enter this command into your terminal:
 
@@ -66,7 +68,7 @@ Saved boilerplate to ./Productlanding; now updating...
 Updated files Productlanding/local/index.js!
 ```
 
-At this point, a new directory was created called `Productlanding`. Enter this command in your terminal to navigate into the Productlanding directory:
+A new directory was created called `Productlanding`. Enter this command in your terminal to navigate into the Productlanding directory:
 
 ```shell
 cd Productlanding
@@ -88,19 +90,19 @@ Type this command into your terminal to run the block locally:
 npm start
 ```
 
-You should notice a browser tab open up with the url set to `http://localhost:4000/`, and the browser contents should look something like this:
+You should notice a browser tab open up with the URL set to `http://localhost:4000/`. The browser contents should look something like this:
 
 ![Starter Block contents in browser](browserStarterBlock.png)
 
-Congratulations! Your block is running locally and is ready for some changes. If this process did not start up a browser tab for your automatically, open a browser tab to `http://localhost:4000/`.
+Congratulations! Your block is running locally and is ready for some changes. If this process did not start up a browser tab for you automatically, open a browser tab to `http://localhost:4000/`.
 
 ### 4. Open the Files of the Productlanding Directory in Your Text Editor
 
-Use your favorite text editor or IDE to open the files of the Productlanding directory. Take a look around. Notice the /src directory: this is where the code for your block lives.
+Use your favorite text editor or IDE to open the files of the Productlanding directory and take a look around. Notice the /src directory: this is where the code for your block lives.
 
 ### 5. Get a Product Based on the Slug in the Page Path
 
-You're going to use a **pageVar** to get the product slug from the page's url. The first step for doing this is registering the pageVar in your block's config.
+You're going to use a pageVar to get the product slug from the page's URL. The first step for doing this is registering the pageVar in your block's config.
 
 #### 'src/configs.js'
 
@@ -133,13 +135,13 @@ export const getDataProps = (utils, { productSlug }) => {
 }
 ```
 
-(Note: the second argument to `getDataProps()` is the block's props, which are destructured in place)
+**Note:** the second argument to `getDataProps()` is the block's props, which are destructured in place.
 
 #### 'local/index.js'
 
 You will now set up your block so that it can simulate being inside of a theme and get real data. It's always faster when you can develop something locally.
 
-The first step is to find your Tenant ID. In your browser from Site Designer, click on the "View store" button. View source and search for "tenant". There are several instances, you might find something like this:
+The first step is to find your Tenant ID. From Site Designer, click on the **View store** button. View source and search for "tenant". There are several instances; you might find something like this:
 
 ```js
 window.ElementSdk.client.configure({tenant: "586aa7bc3e140400156259a5"
@@ -157,9 +159,9 @@ Update it with your tenant from the browser source:
 const tenantId = '586aa7bc3e140400156259a5'
 ```
 
-Next you'll find a product slug and pass it to the local preview of your block. Back in your browser, find a product in your store and grab the slug from the URL, that is the text after `/p/`, for example: ...com/p/**water-bottle**.
+Next, you'll find a product slug and pass it to the local preview of your block. Back in your browser, find a product in your store and grab the slug from the URL (the text after `/p/`); for example, ...com/p/**water-bottle**.
 
-Now back in `local/index.js` again, find where `props` are defined:
+Back in `local/index.js`, find where `props` are defined:
 
 ```js
 const props = {
@@ -168,7 +170,7 @@ const props = {
 }
 ```
 
-Replace the `text` prop with `productSlug`, and the value from the browser
+Replace the `text` prop with `productSlug` and the value from the browser:
 
 ```js
 const props = {
@@ -179,7 +181,7 @@ const props = {
 
 #### 'src/Block.js'
 
-Your block's code needs to show the content of the product that it recieved from its data.
+Your block's code needs to show the content of the product that it received from its data.
 
 Open `src/Block.js` and replace `return <h1>{props.text}</h1>;` with this:
 
@@ -194,7 +196,7 @@ return <h1>{product.name}</h1>
 
 #### Block Testing Spec
 
-For now you'll want to skip the tests. Open `__test__/Block.spec.js`, and put a "`.skip`" after the first `describe`.
+For now, you'll want to skip the tests. Open `__test__/Block.spec.js`, and put a "`.skip`" after the first `describe`.
 
 ```js
 describe.skip('The Starter Block', () => {
@@ -202,19 +204,19 @@ describe.skip('The Starter Block', () => {
 
 ### 6. Look at Your Block in the Browser
 
-Run `npm start` in your terminal and then switch back to your browser window. Your block should look something like this:
+Run `npm start` in your terminal, then switch back to your browser window. Your block should look something like this:
 
 ![Local Product Landing Block](localProductLandingBlock.png)
 
 #### Troubleshooting
 
-If the browser window is blank at this point then you'll have to do some debugging. Open up your developer console and see if there's a helpful error message. If your block says "Product Landing Block" then there was a problem getting your product data. Look to see if you have any network errors, and double check the Tenant ID and productSlug you have set in `local/index.js`. There might not even be any errors, just a GET request to `/store/products` with an empty `items` array in the response.
+If the browser window is blank, then you'll have to do some debugging. Open up your developer console and see if there's a helpful error message. If your block says "Product Landing Block," then there was a problem getting your product data. Look to see if you have any network errors, and double check the Tenant ID and productSlug you have set in `local/index.js`. There may not even be any errors, just a GET request to `/store/products` with an empty `items` array in the response.
 
 If none of that helps, review the steps above again.
 
 ### 7. Publish the Product Landing Block
 
-The product landing block is done for now, so it's time to publish it. Go to your terminal window and **terminate the local server** by pressing the `q` key, or by pressing `CTRL + C`.
+The product landing block is done for now, so it's time to publish it. Go to your terminal window and terminate the local server by pressing the `q` key, or by pressing `CTRL + C`.
 
 Run this command in your terminal to build the block:
 
@@ -242,25 +244,23 @@ Select the `Products` option and press enter. You will see output that looks lik
 
 ![Block published successfully](productLandingPublishDone.png)
 
-(Note for later about the "No image" warning: you can find details on the thumbnail.png image requirements in the [Element CLI reference](/references/element-cli#publish).)
+**Note for later about the "No image" warning:** you can find details on the thumbnail.png image requirements in "[Element CLI](/references/element-cli#publish).")
 
 ## Create a New Theme
 
-Now that you've published your block, the next thing you'll want to do is create a new theme to work with. You will make a page inside this theme and put your block into that page, but first you need a theme as an isolated workspace to do that. Themes are the parent construct to pages.
+Now that you've published your block, the next thing you'll want to do is create a new theme to work with. You will make a page inside this theme and put your block into that page, but first you need a theme as an isolated workspace. Themes are the parent construct to pages.
 
 ### 1. Open Site Designer
 
-In the web browser of your choice, sign in to [Volusion.com](https://www.volusion.com/login) with your approved developer account, and locate the link in the sidebar navigation for Site Designer:
+In the web browser of your choice, sign in to [Volusion.com](https://www.volusion.com/login) with your approved developer account, and click the **Site Designer** link in the sidebar navigation:
 
 ![Site Designer Link](siteDesignerLink.png)
 
-Click the link to proceed to Site Designer.
-
 ### 2. Create a New Theme
 
-Look for the "Create new theme" link in Site Designer, and click on it.
+Click the **Create new theme** link in Site Designer.
 
-_Note: if Site Designer directed you straight to your active theme, first click the **"Change Theme"** link near the top of the screen (next to your theme name)_
+_**Note:** If Site Designer directed you straight to your active theme, first click **Change Theme** near the top of the screen (next to your theme name)._
 
 ![Create New Theme Link](createNewThemeLink.png)
 
@@ -268,17 +268,15 @@ This will launch a dialog for you to enter your theme name:
 
 ![Create New Theme Dialog](createNewThemeDialog.png)
 
-Enter "Product Landing Test Theme" as the name for your theme.
+Enter "Product Landing Test Theme" as the name for your theme, then click the **Create** button.
 
-Then click the "Create" button.
+## Add a New Page for Your Product Landing Block
 
-## Adding a New Page for Your Product Landing Block
-
-You need a page for your product landing block.
+You now need to create a page for your product landing block.
 
 ![Page Selection dropdown](pageDropdown.png)
 
-Click the "Add a Page" link, which will open a panel in the sidebar:
+Click the **Add a Page** link, which will open a panel in the sidebar:
 
 ![Add a Page Panel](addAPagePanelProductLanding.png)
 
@@ -287,35 +285,33 @@ Fill out the first two fields:
 1. Page Title: `Product Landing`
 2. Page Path: `/product/:pageUrlText`
 
-_Note 1: make sure you have a `/` character at the start of `/product/:pageUrlText`! Notice also that the **:pageUrlText** matches the variable name you used earlier in the product landing configs._
+_**Note 1:** Make sure you have a `/` character at the start of `/product/:pageUrlText`. Notice also that the **:pageUrlText** matches the variable name you used earlier in the product landing configs._
 
-_Note 2: If you decide to use this page to replace the Product Details, you must use the path `/p/:pageUrlText`, or unexpected things may break, such as the sitemap._
+_**Note 2:** If you decide to use this page to replace the Product Details, you must use the path `/p/:pageUrlText` or unexpected breaks may occur, such as the sitemap._
 
-Leave the rest of the fields blank.
-
-Then click the **Done** button at the bottom of the panel.
+Leave the rest of the fields blank, then click the **Done** button at the bottom of the panel.
 
 Site Designer will redirect you to your new Product Landing page.
 
 ## Add the Product Landing Block to Its Page
 
-You're on the product landing page, so start adding a block by clicking on the **Add Block** link:
+Click the **Add Block** link:
 
 ![Add Block](addBlockLink.png)
 
-This will open the **Add a Block** panel, where you can select from block categories. Click on the **Misc** category. You'll recall this was the category you published your blocks into earlier.
+This will open the "Add a Block" panel, where you can select from block categories. Click on the **Misc** category—you'll recall this was the category you published your blocks into earlier.
 
 ![Product Blocks](productBlocksLink.png)
 
-Locate the **Product Landing Tutorial Block** that you published, and click the **Add Block** button:
+Locate the "Product Landing Tutorial Block" that you published, and click the **Add Block** button:
 
 ![Product Landing Tutorial Block](productLandingTutorialBlockLink.png)
 
-You should see your product landing block appear in the main panel of Site Designer. It should look something like this, but with the name of an arbitrary product from your store.
+You should see your product landing block appear in the main panel of Site Designer. It should look something like this, but with the name of an arbitrary product from your store:
 
 ![Product Landing Block contents](productLandingBlockInSiteDesigner.png)
 
-If there is an error at this point, refresh your browser window and choose "Product Landing" from the page dropdown again. You may also have to navigate back to editing your theme after refreshing the page.
+If there is an error at this point, refresh your browser window and choose **Product Landing** from the page drop-down again. You may also have to navigate back to editing your theme after refreshing the page.
 
 ## Preview Your Page
 
@@ -325,17 +321,17 @@ Click the **Preview** button near the top of the Site Designer window:
 
 This will launch a new browser tab with your blog list page.
 
-Navigate or use the search to locate a product details page. The url will be something like:
+Navigate or use the search to locate a product details page. The URL will be something like:
 
 `https://e9bd448c-a462-4518-98f3-9dadb57a8d8b.myvolusion.com/p/water-bottle`
 
-Replace the `/p/` with `/product/` to load the product landing page. Your header will be different, but your block should look something like this, where in this case the product name was "River Tam Sticker".
+Replace the `/p/` with `/product/` to load the product landing page. Your header will be different, but your block should look something like this (in this case, the product name was "River Tam Sticker"):
 
 ![Product Landing Preview](productLandingPreview.png)
 
-## Building an Add to Cart Button
+## Build an "Add to Cart" Button
 
-Now that you know that product data is loading, you can update the block with button to add the product to the cart.
+Now that you know that product data is loading, you can update the block with a button to add the product to the cart.
 
 ### 'src/Block.js'
 
@@ -383,27 +379,27 @@ You should see output similar to this:
 
 ### Try It Out
 
-Go back to your browser that's open to your product landing page. Refresh the page. You should see an "Add to Cart" button appear under the product name like this:
+Go back to the browser that's open to your product landing page and refresh it. You should see an "Add to Cart" button appear under the product name, like this:
 
 ![Add to Cart Preview](previewAddToCart.png)
 
 Click it, and the cart panel will open with your product in it.
 
-## Supporting Product Variants
+## Support Product Variants
 
-Product variants allow a store owner to control the price, availability, and photos associated with alternative types of the same product, for example different sizes of a T-Shirt.
+Product variants allow a store owner to control the price, availability, and photos associated with alternative types of the same product; for example, different sizes of a T-Shirt.
 
 ### Volusion Product with Variants
 
-You'll need to find or make a product that has variants. Go to Volusion Admin and find the Products section. It should be accessible via an icon like this:
+You'll need to find or make a product that has variants. Go to [Volusion Admin](https://admin.volusion.com) and click into the **Products** section. It should be accessible via an icon like this:
 
 ![Products Icon](productsAdminIcon.png)
 
-Set up variants for a product. When you're done it might look something like this:
+Set up variants for a product. When you're done, it might look something like this:
 
 ![Variants Admin](adminVariantsModule.png)
 
-If you need it, here is some [Product Variants Help](https://help.volusion.com/en/articles/461911-product-variants).
+Here is some [product variants help](https://help.volusion.com/en/articles/461911-product-variants) if you need it.
 
 #### 'local/index.js'
 
@@ -418,7 +414,7 @@ const props = {
 
 ### 'src/Block.js'
 
-Now you'll need to update the block so that those variant options are displayed as dropdowns, and when the shopper makes a different selection the variant sent to the cart changes.
+Now, you'll need to update the block so that those variant options are displayed as drop-downs. When the shopper makes a different selection, the variant sent to the cart should change.
 
 In `src/Block.js`, update the React import statement at the top of the file to include the `useState` hook:
 
@@ -520,11 +516,11 @@ It should look something like this:
 
 ![Local Block with Variants](localBlockWithVariants.png)
 
-When you change the Color and Size values you will see the price change to reflect the price of the selected variant. Do _not_ press "Add to Cart", `pubSub` is not supported locally, and the block needs to be loaded within a theme to have access to the [cart events](/references/cart-events).
+When you change the "Color" and "Size" values, you will see the price change to reflect the price of the selected variant. Do _not_ press "Add to Cart;" `pubSub` is not supported locally, and the block needs to be loaded within a theme to have access to the [cart events](/references/cart-events).
 
 ### Update Your Block
 
-Now that we're done testing locally, stop your server and run these commands in your terminal to build the and update the block:
+Now that we're done testing locally, stop your server and run these commands in your terminal to build and update the block:
 
 ```shell
 npm run build
@@ -533,7 +529,7 @@ element update
 
 ### Preview the Block
 
-Copy the "Page URL text" from your product that has variants, and go back to your browser with the `/products/` page preview and replace the product slug in the URL. It should look something like this:
+Copy the "Page URL text" from your product that has variants, and go back to the browser with the `/products/` page preview, replacing the product slug in the URL. It should look something like this:
 
 `https://7c5f30cd-1dca-4c06-a888-1d017fb18148.volusionplatformdev.com/product/water-bottle`
 
@@ -545,10 +541,10 @@ Now you will be able to choose a different variant and add it to your cart.
 
 ## Production Quality Code & Features
 
-What you've created here is the most basic functional version of a Product block. It could use some [styling](/how-to/style-a-block-with-aphrodite). Beyond that, here are some features and code improvements that you should consider before using this block in a store:
+What you've created here is the most basic functional version of a Product block—it could use some [styling](/how-to/style-a-block-with-aphrodite). Beyond that, here are some features and code improvements that you should consider before using this block in a store:
 
 1. Hidden variants will show the message `"Option not available."`, but they will throw an error if you try to add them to the cart. It would be wise to disable the "Add to Cart" button if selectedVariant is `undefined`.
-2. You may wish to add form controls that allow the user to change the quantity of the item in the cart using [props.events.cart.updateCartCount](/references/cart-events#updatecartcount)
+2. You may wish to add form controls that allow the user to change the quantity of the item in the cart using [props.events.cart.updateCartCount](/references/cart-events#updatecartcount).
 3. Utility functions such as `getVariantFromOptions` should be pulled out into a service where they would be easier to cover with unit tests. The tests would also serve the dual purpose of documenting the function.
 4. You should rename the `StarterBlock` component to something else, maybe `ProductLanding`? We're using the default export, so the name change will be limited to `src/Block.js`.
 5. The component in `src/Block.js` is about ready to be split up into smaller components. You could move the code that displays the select menus, starting with `product.variantOptions.map`, to a new component.
