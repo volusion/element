@@ -1,7 +1,7 @@
 ---
 title: 'Track Block Versions'
 metaTitle: 'Track Block Versions'
-metaDescription: 'In this how-to guide, we will explore how to keep track of block versions to maintain and organize your block's code.'
+metaDescription: "In this how-to guide, we will explore how to keep track of block versions to maintain and organize your block's code."
 ---
 
 In this how-to guide, we will explore how to keep track of block versions to maintain and organize your block's code. We will assume that you are already developing a block locally and want to publish your block for the first time.
