@@ -1,14 +1,16 @@
 ---
 title: 'Style A Block With Aphrodite'
+metaTitle: 'Style A Block With Aphrodite'
+metaDescription: 'Aphrodite is a framework for writing JavaScript-based CSS and creating dynamic classes for use in React. Learn how to use it when building in Element.'
 ---
 
-Aphrodite is a framework for writing JavaScript based CSS and creating dynamic classes for use in React. You can read more about it in the [official documentation](https://github.com/Khan/aphrodite).
+Aphrodite is a framework for writing JavaScript-based CSS and creating dynamic classes for use in React. You can read more about it in the [official documentation](https://github.com/Khan/aphrodite).
 
 ## Writing Your Styles
 
 ### 1. Creating User-Editable Props
 
-Sometimes you will want your user to be able to alter the style of their block. Most commonly this comes in the form of changing colors. For a detailed explaination on writing props, check our our [documentation for adding proptypes to a block](/how-to/proptypes).
+Sometimes you will want your user to be able to alter the style of their block. Most commonly this comes in the form of changing colors. For a detailed explanation on writing props, see "[Add element Proptypes](/how-to/proptypes)."
 
 ### 2. Writing Your Styles File
 
@@ -37,7 +39,7 @@ export const getStyles(blockProps) => ({
 })
 ```
 
-Remember, you're writing Javascript based CSS, so be sure to use the correct CSS rule names (ie `backgroundColor` instead of `background-color`). [You can view a list of available style rules here.](https://www.w3schools.com/jsref/dom_obj_style.asp)
+Remember, you're writing Javascript-based CSS, so be sure to use the correct CSS rule names (i.e. `backgroundColor` instead of `background-color`). [View a list of available style rules here.](https://www.w3schools.com/jsref/dom_obj_style.asp)
 
 If you have defined user-editable props, you can reference them like this:
 
@@ -52,7 +54,7 @@ export const getStyles({ headerBackgroundColor, headerTextColor }) => ({
 
 ### 3. Creating Your Classes
 
-When you need to reference your custom styles, you will need to import your `getStyles` function form your styles file as well as `css` and `StyleSheet` from aphrodite. Then follow the example below to create your classes object. Once your classes object exists, you can create your dynamic classNames by using the following format: `css(classes.YOUR_CLASS_NAME)`.
+When you need to reference your custom styles, you will need to import your `getStyles` function from your styles file as well as `css` and `StyleSheet` from Aphrodite. Afterwards, follow the example below to create your classes object. Once your classes object exists, you can create your dynamic classNames using the following format: `css(classes.YOUR_CLASS_NAME)`.
 
 Example:
 
@@ -75,7 +77,7 @@ export { Block }
 
 ### 4. Referencing Your Classes from within Your Components
 
-To do this, you simply need to pass the `classes` props down to your component, import `css` in your component file just like you did for your Block file, and follow the same process for constructing your class.
+Simply pass the `classes` props down to your component, import `css` in your component file (just like you did for your Block file), and follow the same process for constructing your class.
 
 Example block code:
 
