@@ -1,11 +1,12 @@
 ---
-title: 'Data ThirdParty Services'
+title: 'Fetch Data from Third-Party Services'
+metaTitle: 'Fetch Data from Third-Party Services'
+metaDescription: 'Sometimes we need our blocks to consume third-party data, such as a blog API. In this how-to, we will see how to achieve just that.'
 ---
 
-Sometimes we need our blocks to consume third party data. For example, a blog API. In this how-to, we will see
-how to achieve just that.
+Sometimes we need our blocks to consume third-party data, such as a blog API. In this how-to, we will see how to achieve just that.
 
-We will be consuming data from `https://jsonplaceholder.typicode.com/posts`
+We will be consuming data from `https://jsonplaceholder.typicode.com/posts`.
 
 ## 1. Locate Your Get Data File
 
