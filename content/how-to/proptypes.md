@@ -1,8 +1,10 @@
 ---
-title: 'Element Proptypes'
+title: 'Add Element Proptypes'
+metaTitle: 'Add Element Proptypes'
+metaDescription: 'In this how-to guide, we will add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype sectionHeader.'
 ---
 
-In this how-to guide we will add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype `sectionHeader`.
+In this how-to guide, we will add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype `sectionHeader`.
 
 ## 1. Find the Current Block Configs
 
@@ -25,7 +27,7 @@ export const defaultConfig = {
 
 ## 2. Add a New Element Proptype
 
-Add another proptype to the schema. You need to provide a label property and a type. For this example we'll add a `textColor` prop with a PropType of `color`, but look at the [Proptypes Reference](/references/proptypes) for other available types.
+Add another proptype to the schema. You will need to provide a label property and a type. For this example, we'll add a `textColor` prop with a PropType of `color`, but look at the "[Proptypes](/references/proptypes)" reference for other available types.
 
 ```javascript
 export const getConfigSchema = ElementPropTypes => {
@@ -44,7 +46,7 @@ export const getConfigSchema = ElementPropTypes => {
 
 ## 3. Add a New Default Value
 
-Still in `config.js`, when you add a new Element Proptype to a schema, you need to give it a default value:
+When you add a new Element Proptype to a schema in `config.js`, you need to give it a default value:
 
 ```javascript
 export const defaultConfig = {
@@ -123,7 +125,7 @@ export const defaultConfig = {
 }
 ```
 
-Go back into `/src/Block.js` and update the style of the `<h1>` to use our new property.
+Go back into `/src/Block.js` and update the style of the `<h1>` to use our new property:
 
 ```html
 <h1 style={{color: props.textColor, background: props.backgroundColor}}>
@@ -138,6 +140,6 @@ npm run build
 element update
 ```
 
-Add your block to a theme, or reload your theme with the block, and you'll see the new props and default values, grouped under the "Colors" `sectionHeader`:
+Add your block to a theme, or reload your theme with the block, and you'll see the new props and default values grouped under the "Colors" `sectionHeader`:
 
 ![New Proptypes Section Header in Site Designer](newSectionHeaderSiteDesigner.png)
