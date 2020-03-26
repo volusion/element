@@ -1,5 +1,7 @@
 ---
 title: 'Communicate Between Blocks'
+metaTitle: 'Communicate Between Blocks'
+metaDescription: 'This guide will explain how to send information between two (or more) blocks.'
 ---
 
 Sometimes, it may be necessary for one block to send information to another block on the same page. In Element, blocks can communicate with each other via a pub-sub mechanism. This guide will explain how to send information between two (or more) blocks.
@@ -10,9 +12,9 @@ For more details on PubSubJS, see the [PubSubJS npm reference](https://www.npmjs
 
 ## 1. Identify the Blocks That Need to Communicate with Each Other
 
-The first step of setting up block communication is figuring out which block will send messages (the sender), and which blocks will receive those messages (the receivers). In Element, some pre-made blocks already send messages to each other, and you can listen for those events in your blocks. See the [Cart Events Reference](/references/cart-events) for more info.
+The first step of setting up block communication is figuring out which block will send messages (the sender), and which blocks will receive those messages (the receivers). In Element, some pre-made blocks already send messages to each other, and you can listen for those events in your blocks. For more information, see "[Cart Events](/references/cart-events)."
 
-For this guide, you will be setting up **your own blocks** as senders and receivers of messages.
+For this guide, you will be setting up your own blocks as senders and receivers of messages.
 
 ## 2. Add a Publish Action to Your Sender Block
 
@@ -37,11 +39,11 @@ handleOptionChange = event => {
 }
 ```
 
-Note: if your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
+**Note:** If your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
 
-### Prefix Your Topic Names!
+### Prefix Your Topic Names
 
-It's always a good idea to add a unique prefix to topic names that you create, to ensure that you don't collide with any other existing topic names. This way, your events will all live in their own _namespace_. In this example, our topic is named `myEvents_PRODUCT_OPTION_CHANGED`, and `myEvents_` is the prefix we have chosen. You should choose something descriptive and unique.
+It's always a good idea to add a unique prefix to topic names that you create to ensure that you don't collide with any other existing topic names. This way, your events will all live in their own _namespace_. In this example, our topic is named `myEvents_PRODUCT_OPTION_CHANGED`, and `myEvents_` is the prefix we have chosen. You should choose something descriptive and unique.
 
 ### Call Your Function at the Appropriate Time
 
@@ -71,7 +73,7 @@ componentDidMount() {
 `utils.pubSub.subscribe()` takes two arguments:
 
 1. A topic name (string), which can be any value that a sender block is publishing.
-2. A handler function. The message will be passed to the handler function.
+2. A handler function—the message will be passed to the handler function.
 
 ### Implement Your Handler Function for the Subscription
 
@@ -89,4 +91,4 @@ Repeat this process for more receiver blocks, if necessary.
 
 ## Appendix: Listening for Existing Messages
 
-To set up your blocks to listen for existing messages, see the [Cart Events Reference](/references/cart-events).
+To set up your blocks to listen for existing messages, see "[Cart Events](/references/cart-events)."
