@@ -1,8 +1,10 @@
 ---
-title: 'Fetch Data Fast'
+title: 'Fetch Block Data Fast'
+metaTitle: 'Fetch Block Data Fast'
+metaDescription: 'In this how-to, we demonstrate how to fetch data as efficiently as possible using asynchronous requests in JavaScript.'
 ---
 
-In this how-to, we will show how to fetch data as efficiently as possible using asynchronous requests in JavaScript. As site speed is paramount to the end user experience, we recommend this technique.
+In this how-to, we demonstrate how to fetch data as efficiently as possible using asynchronous requests in JavaScript. As site speed is paramount to the end user experience, we recommend this technique.
 
 Let's consider the following code in that might appear in `getDataProps.js`:
 
@@ -37,11 +39,9 @@ export const getDataProps = (utils, props) => {
 }
 ```
 
-With this simple change the `categories` and `menus` data will each be fetched concurrently, thus reducing latency.
+With this simple change, the `categories` and `menus` data will each be fetched concurrently, reducing latency.
 
-Please keep in mind the following:
+Please keep the following in mind:
 
-- Currently Element does not support async/await. You need to use promises. (This will be remedied soon.)
-- When fetching data, think about the dependencies between the information you are fetching. If no
-  dependency exists, fetch the data concurrently to reduce latency and exploit the fastest server side
-  rendering possible.
+- Currently, Element does not support async/await—you need to use promises. This will be remedied soon.
+- When fetching data, think about the dependencies between the information you are fetching. If no dependency exists, fetch the data concurrently to reduce latency and exploit the fastest server-side rendering possible.
