@@ -1,5 +1,7 @@
 ---
 title: 'Preview Block Changes'
+metaTitle: 'Preview Block Changes'
+metaDescription: 'Learn how to preview changes made to your block in Element.'
 ---
 
 ## 1. Make Changes to Your Block
@@ -35,12 +37,12 @@ If the command is successful, you'll see output like this:
 
 ## 4. Open Site Designer
 
-Log in to [volusion.com](https://www.volusion.com/login) and navigate to [Site Designer](https://admin.volusion.com/designer)
+Log in to [volusion.com](https://www.volusion.com/login) and navigate to [Site Designer](https://admin.volusion.com/designer).
 
-## 5. Ensure You Are Using the Staging Version of the Block in Your Theme
+## 5. Ensure That You Are Using the Staging Version of the Block in Your Theme
 
 1. Edit the theme that contains the block you are testing, or edit one of your themes and add the block to it.
-2. Hover your mouse over the block in your theme, and click the **Edit** button that appears.
+2. Hover your mouse over the block in your theme and click the **Edit** button that appears.
 3. Open the block version dropdown by clicking the **gear icon**, and ensure that you have the _Staging_ version of your block selected.
 
 ## 6. Preview Your Theme
@@ -53,9 +55,9 @@ Your changes are live for you to observe and test, but are not released to your 
 
 ## 8. Repeat the Process to Test More Changes
 
-Repeat steps 1 (Make Changes to Your Block), 2 (Build Your Block), and 3 (Update Your Block), to update your block in _Staging_.
+Repeat steps 1 (Make Changes to Your Block), 2 (Build Your Block), and 3 (Update Your Block) to update your block in _Staging_.
 
-Then test your changes, and make more changes if necessary.
+Then, test your changes and make more changes if necessary.
 
 ## 9. Release Your Changes to Your Block Users
 
@@ -65,10 +67,10 @@ When you are ready, you can return to your terminal and run this command to rele
 element release
 ```
 
-**Remember that releasing will affect your block users.**
+**Note:** Releasing will affect your block users.
 
 ## Further Reading
 
-- [How to Keep Track of Your Block Versions](/how-to/track-block-versions)
-- [Block Versions Explanation](/explanations/block-versions)
-- [Element CLI Reference](/references/element-cli)
+- [Track Block Versions](/how-to/track-block-versions)
+- [Block Versions](/explanations/block-versions)
+- [Element CLI](/references/element-cli)
