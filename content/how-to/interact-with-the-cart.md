@@ -1,8 +1,10 @@
 ---
-title: 'How to Interact with the Cart'
+title: 'Interact with the Cart'
+metaTitle: 'Interact with the Cart'
+metaDescription: 'Some of your custom blocks may need to interact with the cart. You can do this with the included PubSubJS mechanism.'
 ---
 
-Some of your custom blocks may need to interact with the cart, for example if you wanted to add an item to the cart from your block, or trigger an action in your block after a shopper adds an item to the cart. You can do this with the included PubSubJS mechanism.
+Some of your custom blocks may need to interact with the cart—for example, if you wanted to add an item to the cart from your block, or trigger an action in your block after a shopper adds an item to the cart. You can do this with the included PubSubJS mechanism.
 
 ## 1. Listening for a Cart Event
 
@@ -24,7 +26,7 @@ componentDidMount() {
 `utils.pubSub.subscribe()` takes two arguments:
 
 1. A topic name, which should be one of the [Cart Events](/references/cart-events).
-2. A handler function. The message will be passed to the handler function.
+2. A handler function—the message will be passed to the handler function.
 
 ### Implement Your Handler Function for the Subscription
 
@@ -47,7 +49,7 @@ Your block may want to publish an event to the cart. This can allow you to add a
 Send your message using `utils.pubSub.publish()` in your block. This function takes two arguments:
 
 1. A topic name, which should be one of the [Cart Events](/references/cart-events). The cart block will listen for this topic.
-2. A data value (any type). This is the piece of data you will send to the cart.
+2. A data value (any type)—this is the piece of data you will send to the cart.
 
 Example:
 
@@ -58,7 +60,7 @@ addItem = itemData => {
 }
 ```
 
-Note: if your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
+**Note:** If your component is a stateless functional component rather than an ES6 class, you would define your function as a const rather than an instance property.
 
 In this example, the cart block expects `itemData` to be an object with the following properties:
 
@@ -70,6 +72,6 @@ In this example, the cart block expects `itemData` to be an object with the foll
 
 ## Further Reading
 
-To get a sense of what cart interactions are possible, see the [Cart Events Reference](/references/cart-events).
+To get a sense of what cart interactions are possible, see "[Cart Events](/references/cart-events)."
 
 For more details on PubSubJS, see the [PubSubJS npm reference](https://www.npmjs.com/package/pubsub-js).
