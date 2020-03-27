@@ -1,12 +1,14 @@
 ---
 title: 'Release A Minor Block Change'
+metaTitle: 'Release A Minor Block Change'
+metaDescription: "In this how-to guide, you'll learn how to identify whether changes made to a specific block are non-breaking, and if so, how to release those changes to your block users."
 ---
 
-In this how-to guide, you'll learn how to identify whether changes made to a specific block are non-breaking or not, and if they are non-breaking, how to release those changes to your block users.
+In this how-to guide, you'll learn how to identify whether changes made to a specific block are non-breaking, and if so, how to release those changes to your block users.
 
 ## Prerequisites
 
-This guide assumes that you already have a published block that you are modifying. If you don't have a published block yet, check out the [tutorial for building an element page](/tutorials/building-an-element-page), which covers creating and publishing blocks.
+This guide assumes that you already have a published block that you are modifying. If you don't have a published block yet, see "[Building an Element Page Tutorial](/tutorials/building-an-element-page)," which covers creating and publishing blocks.
 
 ## 1. Ensure That Your Changes Are Actually Non-Breaking
 
@@ -25,24 +27,24 @@ Look at this chart and determine what kind of changes you're making. If any of t
 
 ## 2. Verify Your Changes in Staging
 
-Assuming that your changes are in fact non-breaking, you should release them to staging so that you can verify that they work as intended, without affecting any of your block users. To do that, go to your terminal and navigate to your block's home directory. Then type these commands:
+Assuming that your changes are in fact non-breaking, you should release them to staging so you can verify that they work as intended without affecting any of your block users. To do that, go to your terminal and navigate to your block's home directory and type these commands:
 
 ```shell
 npm run build
 element update
 ```
 
-Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer _Preview_ link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time that you alter the block code, and test again.
+Your changes will now be available for you (and anyone in your development org) to see in Site Designer and via the Site Designer Preview link. Manually test them in a theme and verify that they are ready to release to your block users. If your changes are not ready yet, re-run `npm run build` and `element update` again every time you alter the block code, and then test again.
 
 ## 3. Create a Minor Release
 
-When your changes are ready, you can release them by publishing a minor release. Minor releases will instantly propagate to your block users: they don't need to take any action to receive the update in their blocks. In your terminal, run this command:
+When your changes are ready, you can release them by publishing a minor release. Minor releases will instantly propagate to your block users; they don't need to take any action to receive the update in their blocks. In your terminal, run this command:
 
 ```shell
 element release -n "A minor release"
 ```
 
-It's also a good time to tag the release with a commit. To do so, run this command in your terminal:
+This is also a good time to tag the release with a commit. To do so, run this command in your terminal:
 
 ```shell
 git commit -am "A minor release"
@@ -52,6 +54,6 @@ Your block changes are now available to your block users.
 
 ## Further Reading
 
-See the [guide for how to keep track of your block versions](/how-to/track-block-versions) for more advice about releases.
+See "[Track Block Versions](/how-to/track-block-versions)" for more advice about releases.
 
-See the [Element CLI reference](/references/element-cli) for more details about Element CLI commands.
+See the "[Element CLI](/references/element-cli)" reference for more details about Element CLI commands.
