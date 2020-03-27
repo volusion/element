@@ -10,6 +10,8 @@ metaDescription: 'Learn everything you need to know about Element proptypes.'
   - [bool](#bool)
   - [category](#category)
   - [color](#color)
+  - [date](#date)
+  - [dateRange](#dateRange)
   - [editorFull](#editorfull)
   - [editorMinimal](#editorminimal)
   - [embeddable](#embeddable)
@@ -77,6 +79,39 @@ export const defaultConfig = {
 ```
 
 Merchant edits to color fields are stored in RGBA format.
+
+### date
+
+![Date Picker](proptype-date.png)
+
+```javascript
+date: {
+  label: 'Date',
+  type: ElementPropTypes.date
+}
+
+export const defaultConfig = {
+  date: new Date(2020, 2, 16)
+}
+```
+
+### dateRange
+
+![DateRange Picker](proptype-dateRange.png)
+
+```javascript
+dateRange: {
+  label: 'Date Range',
+  type: ElementPropTypes.dateRange
+}
+
+export const defaultConfig = {
+  dateRange: [
+    new Date(2020, 2, 16), // start date
+    new Date(2020, 2, 26)  // end date
+  ]
+}
+```
 
 ### editorFull
 
