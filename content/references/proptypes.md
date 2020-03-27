@@ -11,7 +11,7 @@ metaDescription: 'Learn everything you need to know about Element proptypes.'
   - [category](#category)
   - [color](#color)
   - [date](#date)
-  - [dateRange](#dateRange)
+  - [dateRange](#daterange)
   - [editorFull](#editorfull)
   - [editorMinimal](#editorminimal)
   - [embeddable](#embeddable)
