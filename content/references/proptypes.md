@@ -91,7 +91,7 @@ date: {
 }
 
 export const defaultConfig = {
-  date: new Date(2020, 2, 16)
+  date: new Date('March 16, 2020')
 }
 ```
 
