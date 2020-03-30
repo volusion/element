@@ -1,7 +1,7 @@
 ---
 title: 'Styling Your Block With CSS'
 metaTitle: 'Styling Your Block With CSS'
-metsDescription: 'Style your VOLT site with Atomic CSS: a mobile-first, layout-focused, CSS library based on Tachyons.'
+metsDescription: 'This reference guides you in styling your VOLT site with Atomic CSS: a mobile-first, layout-focused, CSS library based on Tachyons.'
 ---
 
 ## Table of contents

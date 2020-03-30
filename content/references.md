@@ -1,7 +1,7 @@
 ---
 title: 'Reference'
 metaTitle: 'Reference'
-metaDescription: 'Links to helpful reference articles for building on Element.'
+metaDescription: 'Find links to helpful reference articles for building on Element.'
 ---
 
 - [Proptypes](references/proptypes)

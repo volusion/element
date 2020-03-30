@@ -1,7 +1,7 @@
 ---
 title: 'Cart Events'
 metaTitle: 'Cart Events'
-metaDescription: 'The Element SDK provides topic names for standard cart events. Blocks can subscribe to these topics and publish to them using PubSubJS.'
+metaDescription: 'This reference will teach you about cart events in Element.'
 ---
 
 The Element SDK provides topic names for standard cart events. Blocks can subscribe to these topics and publish to them using PubSubJS.

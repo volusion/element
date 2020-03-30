@@ -1,7 +1,7 @@
 ---
 title: 'Element SDK Client'
 metaTitle: 'Element SDK Client'
-metsDescription: 'This document examines ways you can use window.ElementSdk.client to call the Volusion API.'
+metsDescription: 'This reference examines ways you can use window.ElementSdk.client to call the Volusion API.'
 ---
 
 This document examines ways you can use `window.ElementSdk.client` to call the Volusion API.
