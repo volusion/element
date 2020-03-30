@@ -1,7 +1,7 @@
 ---
 title: 'Implementing a New Product Landing Page Tutorial'
 metaTitle: 'Implementing a New Product Landing Page Tutorial'
-metaDescription: "In this tutorial, we'll build a new block to handle the display of an individual product and its interactions with the shopping cart."
+metaDescription: "This tutorial covers building a new block to handle the display of an individual product and its interactions with the shopping cart."
 ---
 
 In this tutorial, we'll build a new block to handle the display of an individual product and its interactions with the shopping cart. This could be an SEO landing page, a page you want to drive ad traffic to, or a replacement for the Product Details block with more capabilities.
