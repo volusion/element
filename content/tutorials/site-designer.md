@@ -1,7 +1,7 @@
 ---
 title: 'Design A New Theme With Site Designer Tutorial'
 metaTitle: 'Design A New Theme With Site Designer Tutorial'
-metaDescription: 'Learn how to design a new theme in Site Designer without writing code.'
+metaDescription: 'This tutorial covers how to design a new theme in Site Designer without writing code.'
 ---
 
 In this tutorial, we'll design a new theme that's different from the other available themes without having to write any code.

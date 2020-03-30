@@ -1,7 +1,7 @@
 ---
 title: 'Working With Element Proptypes Tutorial'
 metaTitle: 'Working With Element Proptypes Tutorial'
-metaDescription: 'In this 15 minute tutorial, you will learn how to create an Element block with configurable light and dark modes.'
+metaDescription: 'This tutorial covers how to create an Element block with configurable light and dark modes.'
 ---
 
 In this 15 minute tutorial, you will learn how to create a block with configurable light and dark modes.

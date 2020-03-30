@@ -1,7 +1,7 @@
 ---
 title: 'Tutorials'
 metaTitle: 'Tutorials'
-metaDescription: 'Links to various tutorials for learning how to build on Element.'
+metaDescription: 'Find links to various tutorials for learning how to build on Element.'
 ---
 
 - [Design a New Theme With Site Designer Tutorial](tutorials/site-designer): Create a new theme without writing any code. This tutorial focuses on using Design Settings to set up global theme styles and touches on other aspects of the Site Designer interface.
