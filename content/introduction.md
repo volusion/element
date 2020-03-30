@@ -1,7 +1,7 @@
 ---
 title: 'What Is Element?'
-# metaTitle: "This is the title tag of this page"
-# metaDescription: "This is the meta description"
+metaTitle: What Is Element?'
+metaDescription: "This explanation describes Element, the framework of Volusion's VOLT platform."
 ---
 
 Element is a modern web design and hosting platform. It was designed from the ground up on these guiding principles:

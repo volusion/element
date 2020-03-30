@@ -1,5 +1,7 @@
 ---
 title: 'Ecommerce Theme Pages'
+metaTitle: 'Ecommerce Theme Pages'
+metaDescription: 'This explanation covers the pre-built theme pages that come with your VOLT site.'
 ---
 
 Element is a web design and hosting platform. Site Designer is Element's site builder with direct integrations into Volusion's ecommerce offerings. When you create a new theme in Site Designer, you will notice that it comes pre-loaded with pages that display ecommerce related content, such as products and categories.

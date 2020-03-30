@@ -1,5 +1,7 @@
 ---
 title: 'Element Concepts'
+metaTitle: 'Element Concepts'
+metaDescription:: 'This explanation covers different aspects of Element you should be familiar with before beginning to build on Element.'
 ---
 
 This document describes the basic concepts of the Element platform.
