@@ -105,13 +105,19 @@ dateRange: {
   type: ElementPropTypes.dateRange
 }
 
+const today = new Date();
+const nextWeek = new Date();
+nextWeek.setDate(nextWeek + 7);
+
 export const defaultConfig = {
   dateRange: [
-    new Date(2020, 2, 16), // start date
-    new Date(2020, 2, 26)  // end date
+    new today,    // start date
+    new nextWeek  // end date
   ]
 }
 ```
+
+The above example is the recommended method for setting default dates as it will use the date the block is added as the starting point.
 
 ### editorFull
 
