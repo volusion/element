@@ -1,7 +1,7 @@
 ---
 title: 'Interact with the Cart'
 metaTitle: 'Interact with the Cart'
-metaDescription: 'Some of your custom blocks may need to interact with the cart. You can do this with the included PubSubJS mechanism.'
+metaDescription: 'This how-to guide explains how to make your custom blocks interact with the cart in Element.'
 ---
 
 Some of your custom blocks may need to interact with the cart—for example, if you wanted to add an item to the cart from your block, or trigger an action in your block after a shopper adds an item to the cart. You can do this with the included PubSubJS mechanism.

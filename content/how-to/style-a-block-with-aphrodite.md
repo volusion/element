@@ -1,7 +1,7 @@
 ---
 title: 'Style A Block With Aphrodite'
 metaTitle: 'Style A Block With Aphrodite'
-metaDescription: 'Aphrodite is a framework for writing JavaScript-based CSS and creating dynamic classes for use in React. Learn how to use it when building in Element.'
+metaDescription: 'This how-to guide covers styling a block with Aphrodite, a framework for writing JavaScript-based CSS and creating dynamic classes for use in React.'
 ---
 
 Aphrodite is a framework for writing JavaScript-based CSS and creating dynamic classes for use in React. You can read more about it in the [official documentation](https://github.com/Khan/aphrodite).

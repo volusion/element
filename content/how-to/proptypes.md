@@ -1,7 +1,7 @@
 ---
 title: 'Add Element Proptypes'
 metaTitle: 'Add Element Proptypes'
-metaDescription: 'In this how-to guide, we will add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype sectionHeader.'
+metaDescription: 'This how-to guide shows how to add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype sectionHeader.'
 ---
 
 In this how-to guide, we will add new Element Proptypes to an existing Element Block React Component and organize them using an Element Proptype `sectionHeader`.

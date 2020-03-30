@@ -1,7 +1,7 @@
 ---
 title: 'Fetch Block Data Fast'
 metaTitle: 'Fetch Block Data Fast'
-metaDescription: 'In this how-to, we demonstrate how to fetch data as efficiently as possible using asynchronous requests in JavaScript.'
+metaDescription: 'This how-to guide demonstrates how to fetch data as efficiently as possible using asynchronous requests in JavaScript.'
 ---
 
 In this how-to, we demonstrate how to fetch data as efficiently as possible using asynchronous requests in JavaScript. As site speed is paramount to the end user experience, we recommend this technique.

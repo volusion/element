@@ -1,7 +1,7 @@
 ---
 title: 'Add External Scripts from a Block'
 metaTitle: 'Add External Scripts from a Block'
-metaDescription: 'Learn how to add external scripts from a block in Element.'
+metaDescription: 'This how-to guide covers adding external scripts from a block in Element.'
 ---
 
 ## 1. Locate Your Block's 'componentDidMount' Function

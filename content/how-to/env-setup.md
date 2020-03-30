@@ -1,7 +1,7 @@
 ---
-title: 'Environment Setup'
-metaTitle: 'Environment Setup'
-metaDescription: 'In this how-to guide, we cover setting up your environment so that you can begin developing blocks with Element.'
+title: 'Set up Your Setup'
+metaTitle: 'Set up Your Environment'
+metaDescription: 'This how-to guide covers setting up your environment so that you can begin developing blocks with Element.'
 ---
 
 In this how-to guide, we will cover setting up your environment so that you can begin developing blocks with Element.

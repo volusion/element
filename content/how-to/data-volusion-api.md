@@ -1,7 +1,7 @@
 ---
 title: "Fetch Data from Volusion's API"
 metaTitle: "Fetch Data from Volusion's API"
-metaDescription: "In Element, the product data comes from the Volusion API, along with other information about the store and data organization such as menus and categories."
+metaDescription: "This how-to guide will teach you how to fetch data from Volusion's API."
 ---
 
 The primary goal of an ecommerce store is to sell products. In Element, the product data comes from the Volusion API, along with other information about the store and data organization such as menus and categories. See "[Element SDK Client](/references/sdk)" for all available data.
