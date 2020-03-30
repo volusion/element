@@ -1,7 +1,7 @@
 ---
 title: 'Use React Hooks in an Element Block'
 metaTitle: 'Use React Hooks in an Element Block'
-metaDescription: 'In Element, React hooks allow you add a state to React functional components without using a class.'
+metaDescription: 'This how-to guide will teach you how to add a state to React functional components without using a class.'
 ---
 
 # Write a Block Using React Hooks

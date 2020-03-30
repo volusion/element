@@ -1,7 +1,7 @@
 ---
 title: 'Communicate Between Blocks'
 metaTitle: 'Communicate Between Blocks'
-metaDescription: 'This guide will explain how to send information between two (or more) blocks.'
+metaDescription: 'This how-to guide will explain how to send information between two (or more) blocks.'
 ---
 
 Sometimes, it may be necessary for one block to send information to another block on the same page. In Element, blocks can communicate with each other via a pub-sub mechanism. This guide will explain how to send information between two (or more) blocks.

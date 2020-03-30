@@ -1,5 +1,7 @@
 ---
-title: 'How to Get Approved to Develop Blocks'
+title: 'Get Approved to Develop Blocks'
+metaTitle: 'Get Approved to Develop Blocks'
+metaDescription: 'This how-to guide will explain how to get approved to develop blocks on Element.'
 ---
 
 Only authorized block developers can develop blocks in the Element ecosystem.

@@ -1,7 +1,7 @@
 ---
 title: 'Preview Block Changes'
 metaTitle: 'Preview Block Changes'
-metaDescription: 'Learn how to preview changes made to your block in Element.'
+metaDescription: 'This how-to guide will help you learn how to preview changes made to your block in Element.'
 ---
 
 ## 1. Make Changes to Your Block

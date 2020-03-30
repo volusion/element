@@ -1,7 +1,7 @@
 ---
 title: 'Set SEO Data from a Block'
 metaTitle: 'Set SEO Data from a Block'
-metaDescription: 'The SEO library available from Block Utils lets you set the title and meta tags in the header. Use this when you have a block that loads the primary piece of data for a page, such as a blog post or product detail.'
+metaDescription: 'This how-to guide covers setting SEO data from a block in Element.'
 ---
 
 The `seo` library available from [Block Utils](/references/block-utils) lets you set the title and meta tags in the header. The server-side rendering will ensure that they are correct when the site is crawled.
