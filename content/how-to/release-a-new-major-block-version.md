@@ -1,7 +1,7 @@
 ---
 title: 'Release A New Major Block Version'
 metaTitle: 'Release A New Major Block Version'
-metaDescription: "This how-to guide will teach you how to release a new major (opt-in) version of your block that your block users will need to manually upgrade to."
+metaDescription: 'This how-to guide will teach you how to release a new major (opt-in) version of your block that your block users will need to manually upgrade to.'
 ---
 
 In this how-to guide, you'll learn how to release a new major (opt-in) version of your block that your block users will need to manually upgrade to. This is often necessary when you are introducing breaking changes to your block, such as changes to the block appearance or config schema. You can also [release non-breaking block changes that automatically propagate to all your block users](/how-to/release-a-minor-block-change).

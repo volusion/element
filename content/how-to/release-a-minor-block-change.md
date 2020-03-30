@@ -1,7 +1,7 @@
 ---
 title: 'Release A Minor Block Change'
 metaTitle: 'Release A Minor Block Change'
-metaDescription: "This how-to guide will teach you how to identify whether changes made to a specific block are non-breaking, and if so, how to release those changes to your block users."
+metaDescription: 'This how-to guide will teach you how to identify whether changes made to a specific block are non-breaking, and if so, how to release those changes to your block users.'
 ---
 
 In this how-to guide, you'll learn how to identify whether changes made to a specific block are non-breaking, and if so, how to release those changes to your block users.
