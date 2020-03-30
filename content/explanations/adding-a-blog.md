@@ -1,5 +1,7 @@
 ---
 title: 'Adding a Blog'
+metaTitle: 'Adding a Blog'
+metaDescription: 'This explanation covers the ease of adding a blog component to your online store with Element.'
 ---
 
 Usually, incorporating a blog into your store involves redirecting your users to another domain (or subdomain) like `blog.mystore.com`. This means that your blog is hosted on a totally separate platform, so you must invest time and money creating a similar look and feel for your blog while keeping up with two different domains. Additionally, you are sacrificing SEO value by not having your blog hosted as a route in your main domain (`www.yourstore.com/blog`)

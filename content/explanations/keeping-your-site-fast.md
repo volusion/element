@@ -1,5 +1,7 @@
 ---
 title: 'Keeping Your Site Fast'
+metaTitle: 'Keeping Your Site Fast'
+metaDescription: 'This explanation lays out the best ways to keep your site fast when building on Element.'
 ---
 
 As you may already know, Element is optimized for speed. By following the advice in this document, you can keep your speed indicators in the green. Offering the fastest experience possible will please your users and increase your earnings.

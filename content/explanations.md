@@ -1,7 +1,7 @@
 ---
 title: 'Explanations'
-metaTitle: 'e'
-metaDescription: ''
+metaTitle: 'Explanations'
+metaDescription: 'Find links to explanations of different aspects of Element to help you build on VOLT.'
 ---
 
 - [What Is Element?](explanations/what-is-element)

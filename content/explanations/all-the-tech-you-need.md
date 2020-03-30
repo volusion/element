@@ -1,5 +1,7 @@
 ---
 title: 'All The Tech You Need'
+metaTitle: 'All The Tech You Need'
+metaDescription: 'This explanation goes into depth about the tech behind Element you will need to be familiar with to build successfully.'
 ---
 
 Developing on Element should be straightforward for developers who are familiar with React. Element follows standard conventions and strives for a developer-friendly experience.
