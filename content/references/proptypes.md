@@ -113,8 +113,8 @@ nextWeek.setDate(nextWeek + 7);
 
 export const defaultConfig = {
   dateRange: [
-    new today,    // start date
-    new nextWeek  // end date
+    today,    // start date
+    nextWeek  // end date
   ]
 }
 ```
