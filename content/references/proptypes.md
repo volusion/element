@@ -91,9 +91,11 @@ date: {
 }
 
 export const defaultConfig = {
-  date: new Date('March 16, 2020')
+  date: new Date()
 }
 ```
+
+The above example is the recommended method for setting the default date as it will use the date the block is added to page.
 
 ### dateRange
 
@@ -117,7 +119,7 @@ export const defaultConfig = {
 }
 ```
 
-The above example is the recommended method for setting default dates as it will use the date the block is added as the starting point.
+The above example is the recommended method for setting default dates as it will use the date the block is added to the page as the starting point.
 
 ### editorFull
 
