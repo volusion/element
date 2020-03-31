@@ -10,6 +10,8 @@ metaDescription: 'This reference will teach you everything you need to know abou
   - [bool](#bool)
   - [category](#category)
   - [color](#color)
+  - [date](#date)
+  - [dateRange](#daterange)
   - [editorFull](#editorfull)
   - [editorMinimal](#editorminimal)
   - [embeddable](#embeddable)
@@ -77,6 +79,47 @@ export const defaultConfig = {
 ```
 
 Merchant edits to color fields are stored in RGBA format.
+
+### date
+
+![Date Picker](proptype-date.png)
+
+```javascript
+date: {
+  label: 'Date',
+  type: ElementPropTypes.date
+}
+
+export const defaultConfig = {
+  date: new Date()
+}
+```
+
+The above example is the recommended method for setting the default date as it will use the date the block is added to page.
+
+### dateRange
+
+![DateRange Picker](proptype-dateRange.png)
+
+```javascript
+dateRange: {
+  label: 'Date Range',
+  type: ElementPropTypes.dateRange
+}
+
+const today = new Date();
+const nextWeek = new Date();
+nextWeek.setDate(nextWeek + 7);
+
+export const defaultConfig = {
+  dateRange: [
+    today,    // start date
+    nextWeek  // end date
+  ]
+}
+```
+
+The above example is the recommended method for setting default dates as it will use the date the block is added to the page as the starting point.
 
 ### editorFull
 
