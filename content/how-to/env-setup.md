@@ -1,6 +1,6 @@
 ---
-title: 'Set up Your Setup'
-metaTitle: 'Set up Your Environment'
+title: 'Set up Your Local Environment'
+metaTitle: 'Set up Your Local Environment'
 metaDescription: 'This how-to guide covers setting up your environment so that you can begin developing blocks with Element.'
 ---
 
