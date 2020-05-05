@@ -14,10 +14,10 @@ Open up your block's code and find `/src/configs.js`. It will look something lik
 import { ElementPropTypes } from '@volusion/element-proptypes';
 
 export const configSchema = {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
 }
 
 export const defaultConfig = {
@@ -33,14 +33,13 @@ Add another proptype to the schema. You will need to provide a label property an
 import { ElementPropTypes } from '@volusion/element-proptypes';
 
 export const configSchema = {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  textColor: {
+    label: 'Text color',
+  },
 }
 ```
 
@@ -71,18 +70,18 @@ Return to `/src/configs.js` and add another prop: `backgroundColor`.
 import { ElementPropTypes } from '@volusion/element-proptypes';
 
 export const configSchema = {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
-    backgroundColor: {
-      label: 'Background color',
-      type: ElementPropTypes.color,
-    },
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  textColor: {
+    label: 'Text color',
+    type: ElementPropTypes.color,
+  },
+  backgroundColor: {
+    label: 'Background color',
+    type: ElementPropTypes.color,
+  },
 }
 ```
 
@@ -94,21 +93,21 @@ Group the colors together under an `ElementPropTypes.sectionHeader`:
 import { ElementPropTypes } from '@volusion/element-proptypes';
 
 export const configSchema = {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    colorsHeader: {
-      type: ElementPropTypes.sectionHeader,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
-    backgroundColor: {
-      label: 'Background color',
-      type: ElementPropTypes.color,
-    },
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  colorsHeader: {
+    type: ElementPropTypes.sectionHeader,
+  },
+  textColor: {
+    label: 'Text color',
+    type: ElementPropTypes.color,
+  },
+  backgroundColor: {
+    label: 'Background color',
+    type: ElementPropTypes.color,
+  },
 }
 ```
 
