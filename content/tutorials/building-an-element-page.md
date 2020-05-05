@@ -110,13 +110,13 @@ import React from 'react'
 
 import { defaultConfig } from './configs'
 
-function StarterBlock(props) {
+function Block(props) {
   return <h1>{props.text}</h1>
 }
 
-StarterBlock.defaultProps = defaultConfig
+Block.defaultProps = defaultConfig
 
-export default StarterBlock
+export default Block
 ```
 
 You're going to modify this block so that it does some new things:
@@ -175,9 +175,9 @@ function StarterBlock(props) {
     </React.Fragment>
   )
 }
-StarterBlock.defaultProps = defaultConfig
+Block.defaultProps = defaultConfig
 
-export default StarterBlock
+export default Block
 ```
 
 In your browser, your block should now be showing the titles of blog posts from the sample API:
@@ -223,7 +223,7 @@ import { StyleSheet, css } from 'aphrodite'
 import { defaultConfig } from './configs'
 import { getStyles } from './getStyles'
 
-function StarterBlock(props) {
+function Block(props) {
   // the blog posts are now available as props.data
   const { data = [] } = props
 
@@ -248,9 +248,9 @@ function StarterBlock(props) {
     </React.Fragment>
   )
 }
-StarterBlock.defaultProps = defaultConfig
+Block.defaultProps = defaultConfig
 
-export default StarterBlock
+export default Block
 ```
 
 Your block should now look something like this and have a hover effect for the blog links:
@@ -407,7 +407,7 @@ import React from 'react'
 
 import { defaultConfig } from './configs'
 
-function StarterBlock(props) {
+function Block(props) {
   const { data: blog = {} } = props
   return (
     <React.Fragment>
@@ -417,9 +417,9 @@ function StarterBlock(props) {
     </React.Fragment>
   )
 }
-StarterBlock.defaultProps = defaultConfig
+Block.defaultProps = defaultConfig
 
-export default StarterBlock
+export default Block
 ```
 
 ### 6. Publish the Blog Details Block
