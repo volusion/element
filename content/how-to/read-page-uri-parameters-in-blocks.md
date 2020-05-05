@@ -17,13 +17,15 @@ Locate the definition of your `configSchema` in your block code. Add a new `Elem
 Example with a property called `productSlug`:
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => ({
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
   productSlug: {
     label: 'Product Slug URI Identifier',
     type: ElementPropTypes.readOnly,
     isPrivate: true,
   },
-})
+}
 ```
 
 **Note:** If you want this value to be editable in the block's settings panel by you or your agency members, you can use `ElementPropTypes.string` instead.
