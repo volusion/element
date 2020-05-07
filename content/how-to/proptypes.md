@@ -39,6 +39,7 @@ export const configSchema = {
   },
   textColor: {
     label: 'Text color',
+    type: ElementPropTypes.color,
   },
 }
 ```
