@@ -109,7 +109,9 @@ You're going to use a pageVar to get the product slug from the page's URL. The f
 Open `src/configs.js` in your text editor and replace the entire code with this:
 
 ```js
-export const getConfigSchema = ElementPropTypes => {}
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {}
 
 export const defaultConfig = {
   productSlug: 'pageVar:pageUrlText',
@@ -335,10 +337,10 @@ Now that you know that product data is loading, you can update the block with a 
 
 ### 'src/Block.js'
 
-In `src/Block.js`, replace the `StarterBlock` function with this code. Remember, replace only that function, not the whole file.
+In `src/Block.js`, replace the `Block` function with this code. Remember, replace only that function, not the whole file.
 
 ```jsx
-function StarterBlock(props) {
+function Block(props) {
   const product = props.data
 
   if (!product.id) {
@@ -422,10 +424,10 @@ In `src/Block.js`, update the React import statement at the top of the file to i
 import React, { useState } from 'react'
 ```
 
-Then, in the same file, replace just the `StarterBlock` function with this code:
+Then, in the same file, replace just the `Block` function with this code:
 
 ```jsx
-function StarterBlock(props) {
+function Block(props) {
   const product = props.data
 
   if (!product.id) {
@@ -546,7 +548,7 @@ What you've created here is the most basic functional version of a Product block
 1. Hidden variants will show the message `"Option not available."`, but they will throw an error if you try to add them to the cart. It would be wise to disable the "Add to Cart" button if selectedVariant is `undefined`.
 2. You may wish to add form controls that allow the user to change the quantity of the item in the cart using [props.events.cart.updateCartCount](/references/cart-events#updatecartcount).
 3. Utility functions such as `getVariantFromOptions` should be pulled out into a service where they would be easier to cover with unit tests. The tests would also serve the dual purpose of documenting the function.
-4. You should rename the `StarterBlock` component to something else, maybe `ProductLanding`? We're using the default export, so the name change will be limited to `src/Block.js`.
+4. You should rename the `Block` component to something else, maybe `ProductLanding`? We're using the default export, so the name change will be limited to `src/Block.js`.
 5. The component in `src/Block.js` is about ready to be split up into smaller components. You could move the code that displays the select menus, starting with `product.variantOptions.map`, to a new component.
 6. If you log the `product` and `selectedVariant` (see below) and update the block, you may see they have data that this component is not using yet. One piece that you probably want to display is the images. You should also know that Product Variants have images too, and you may decide to change which image is visible when a shopper chooses a variant that has images. (see [Images for Variants](https://help.volusion.com/en/articles/1724914-product-variants-images-for-variants))
 

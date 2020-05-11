@@ -11,13 +11,13 @@ In this how-to guide, we will add new Element Proptypes to an existing Element B
 Open up your block's code and find `/src/configs.js`. It will look something like this:
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
 }
 
 export const defaultConfig = {
@@ -30,17 +30,17 @@ export const defaultConfig = {
 Add another proptype to the schema. You will need to provide a label property and a type. For this example, we'll add a `textColor` prop with a PropType of `color`, but look at the "[Proptypes](/references/proptypes)" reference for other available types.
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  textColor: {
+    label: 'Text color',
+    type: ElementPropTypes.color,
+  },
 }
 ```
 
@@ -60,7 +60,7 @@ export const defaultConfig = {
 We can now use that new proptype in the block. Open `/src/Block.js` and add a style attribute to the `<h1>` tag assigning our new textColor prop to the color.
 
 ```html
-<h1 style="{{color:" props.textColor}}></h1>
+<h1 style={{color: props.textColor}}>
 ```
 
 ## 5. Add Another Related Element Proptype
@@ -68,21 +68,21 @@ We can now use that new proptype in the block. Open `/src/Block.js` and add a st
 Return to `/src/configs.js` and add another prop: `backgroundColor`.
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
-    backgroundColor: {
-      label: 'Background color',
-      type: ElementPropTypes.color,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  textColor: {
+    label: 'Text color',
+    type: ElementPropTypes.color,
+  },
+  backgroundColor: {
+    label: 'Background color',
+    type: ElementPropTypes.color,
+  },
 }
 ```
 
@@ -91,24 +91,24 @@ export const getConfigSchema = ElementPropTypes => {
 Group the colors together under an `ElementPropTypes.sectionHeader`:
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    colorsHeader: {
-      type: ElementPropTypes.sectionHeader,
-    },
-    textColor: {
-      label: 'Text color',
-      type: ElementPropTypes.color,
-    },
-    backgroundColor: {
-      label: 'Background color',
-      type: ElementPropTypes.color,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  colorsHeader: {
+    type: ElementPropTypes.sectionHeader,
+  },
+  textColor: {
+    label: 'Text color',
+    type: ElementPropTypes.color,
+  },
+  backgroundColor: {
+    label: 'Background color',
+    type: ElementPropTypes.color,
+  },
 }
 ```
 

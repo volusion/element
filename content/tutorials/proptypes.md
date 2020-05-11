@@ -23,35 +23,35 @@ element new Solarized
 
 ## Locate the Block Configuration and Schema
 
-Open up your block's code and find `/src/configs.js`. In that file, you'll see `getConfigSchema`—this is where you tell Site Designer what configuration fields are available for your block. Store admins will be able to edit the settings of your block using those fields. By default, `getConfigSchema` looks like this:
+Open up your block's code and find `/src/configs.js`. In that file, you'll see `configSchema`—this is where you tell Site Designer what configuration fields are available for your block. Store admins will be able to edit the settings of your block using those fields. By default, `configSchema` looks like this:
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
 }
 ```
 
 ## Add a New Element Proptype
 
-In the object literal returned by `getConfigSchema`, we will add the property `isDarkModeEnabled`, which is how we'll reference it from the block's component code. We'll give it the `label` "Enable Dark Mode," which appears above the field in the Site Designer's edit panel. For the `type`, make it an `ElementPropTypes.bool`, which represents a boolean field. Your `getConfigSchema` should now look like this:
+In `configSchema` object, we will add the property `isDarkModeEnabled`, which is how we'll reference it from the block's component code. We'll give it the `label` "Enable Dark Mode," which appears above the field in the Site Designer's edit panel. For the `type`, make it an `ElementPropTypes.bool`, which represents a boolean field. Your `configSchema` should now look like this:
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-    isDarkModeEnabled: {
-      label: 'Enable Dark Mode',
-      type: ElementPropTypes.bool,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
+  isDarkModeEnabled: {
+    label: 'Enable Dark Mode',
+    type: ElementPropTypes.bool,
+  },
 }
 ```
 
@@ -128,7 +128,7 @@ This will launch a browser window, where you'll get a preview of the block that 
 
 ## Add a New Config Section
 
-Let's create a section in the Site Designer for configuring the Dark Mode fields. To do this, we'll first add the configurable fields to our schema and then add a `sectionHeader` for Dark Mode. Back in `config.js`, inside `getConfigSchema`, add this new `sectionHeader` and the two number fields below `isDarkModeEnabled`.
+Let's create a section in the Site Designer for configuring the Dark Mode fields. To do this, we'll first add the configurable fields to our schema and then add a `sectionHeader` for Dark Mode. Back in `config.js`, inside `configSchema`, add this new `sectionHeader` and the two number fields below `isDarkModeEnabled`.
 
 ```javascript
 isDarkModeEnabled: {

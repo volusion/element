@@ -101,23 +101,9 @@ Congratulations! Your block is running locally and is ready for some changes. If
 
 ### 4. Open the Files of the Bloglist Directory in Your Text Editor
 
-Use your favorite text editor or IDE to open the files of the Bloglist directory and take a look around. Notice the /src directory: this is where the code for your block lives. Open `/src/Block.js` and look at the source code. So far it's pretty simplistic:
+Use your favorite text editor or IDE to open the files of the Bloglist directory and take a look around. Notice the /src directory: this is where the code for your block lives. Open `/src/Block.js` and look at the [source code](https://github.com/volusion/element-BlockStarter/blob/master/src/Block.js). So far it's pretty simplistic.
 
 #### '/src/Block.js' (initial)
-
-```javascript
-import React from 'react'
-
-import { defaultConfig } from './configs'
-
-function StarterBlock(props) {
-  return <h1>{props.text}</h1>
-}
-
-StarterBlock.defaultProps = defaultConfig
-
-export default StarterBlock
-```
 
 You're going to modify this block so that it does some new things:
 
@@ -148,36 +134,28 @@ export const getDataProps = (utils, props) => {
 }
 ```
 
-Now that `getDataProps` is requesting the blog posts, you need to set up the block to receive and display them. Switch over to `/src/Block.js` and modify the code as follows:
+Now that `getDataProps` is requesting the blog posts, you need to set up the block to receive and display them. Switch over to `/src/Block.js` and modify the `Block` function as follows:
 
 #### '/src/Block.js'
-
 ```javascript
-import React from 'react'
-
-import { defaultConfig } from './configs'
-
-function StarterBlock(props) {
-  // the blog posts are now available as props.data
-  const { data = [] } = props
-  return (
-    <React.Fragment>
-      <h1>{props.text}</h1>
-      <ul>
-        {data.map(blog => {
-          return (
-            <li key={blog.id}>
-              <a href={`/blog/${blog.id}`}>{blog.title}</a>
-            </li>
-          )
-        })}
-      </ul>
-    </React.Fragment>
-  )
-}
-StarterBlock.defaultProps = defaultConfig
-
-export default StarterBlock
+const Block = props => {
+    // the blog posts are now available as props.data
+    const { data = [] } = props
+    return (
+      <React.Fragment>
+        <h1>{props.text}</h1>
+        <ul>
+          {data.map(blog => {
+            return (
+              <li key={blog.id}>
+                <a href={`/blog/${blog.id}`}>{blog.title}</a>
+              </li>
+            )
+          })}
+        </ul>
+      </React.Fragment>
+    )
+};
 ```
 
 In your browser, your block should now be showing the titles of blog posts from the sample API:
@@ -186,15 +164,9 @@ In your browser, your block should now be showing the titles of blog posts from 
 
 ### 6. Make the Blog Titles into Links and Add Some Basic Styling
 
-The block functions alright, but you should enhance its styling. Open `/src/getStyles.js` in your text editor and take a look at it:
+The block functions alright, but you should enhance its styling. Open `/src/getStyles.js` in your text editor and (take a look at it)[https://github.com/volusion/element-BlockStarter/blob/master/src/getStyles.js]:
 
-#### '/src/getStyles.js' (initial)
-
-```javascript
-export const getStyles = blockProps => ({})
-```
-
-So far, the styles object it returns is empty. To change that, replace the source code with this:
+Now, add your own style to the object returned by `getStyles`:
 
 #### '/src/getStyles.js'
 
@@ -212,45 +184,33 @@ export const getStyles = blockProps => ({
 })
 ```
 
-Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodite is already included in the Starter Block. Import it, and add the new style to your block:
+Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodite is already included in the Starter Block. All you need to do is add the new style to your block:
 
 #### 'src/Block.js'
 
 ```javascript
-import React from 'react'
-import { StyleSheet, css } from 'aphrodite'
+const Block = props => {
+    // the blog posts are now available as props.data
+    const { data = [] } = props
 
-import { defaultConfig } from './configs'
-import { getStyles } from './getStyles'
+    // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
+    const styles = StyleSheet.create(getStyles(props))
 
-function StarterBlock(props) {
-  // the blog posts are now available as props.data
-  const { data = [] } = props
-
-  // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
-  const styles = StyleSheet.create(getStyles(props))
-
-  return (
-    <React.Fragment>
-      <h1>{props.text}</h1>
-      <ul>
-        {data.map(blog => {
-          return (
-            <li key={blog.id}>
-              {/* add the aphrodite class to your rendered HTML. */}
-              <a href={`/blog/${blog.id}`} className={css(styles.blogLink)}>
-                {blog.title}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
-    </React.Fragment>
-  )
-}
-StarterBlock.defaultProps = defaultConfig
-
-export default StarterBlock
+    return (
+      <React.Fragment>
+        <h1>{props.text}</h1>
+        <ul>
+          {data.map(blog => {
+            return (
+              <li key={blog.id}>
+                <a href={`/blog/${blog.id}`} className={css(styles.blogLink)}>{blog.title}</a>
+              </li>
+            )
+          })}
+        </ul>
+      </React.Fragment>
+    )
+};
 ```
 
 Your block should now look something like this and have a hover effect for the blog links:
@@ -356,13 +316,13 @@ Open `/src/configs.js` in your text editor and replace the entire code with this
 #### '/src/configs.js'
 
 ```javascript
-export const getConfigSchema = ElementPropTypes => {
-  return {
-    text: {
-      label: 'Text content',
-      type: ElementPropTypes.string,
-    },
-  }
+import { ElementPropTypes } from '@volusion/element-proptypes';
+
+export const configSchema = {
+  text: {
+    label: 'Text content',
+    type: ElementPropTypes.string,
+  },
 }
 
 export const defaultConfig = {
@@ -407,7 +367,7 @@ import React from 'react'
 
 import { defaultConfig } from './configs'
 
-function StarterBlock(props) {
+function Block(props) {
   const { data: blog = {} } = props
   return (
     <React.Fragment>
@@ -417,9 +377,9 @@ function StarterBlock(props) {
     </React.Fragment>
   )
 }
-StarterBlock.defaultProps = defaultConfig
+Block.defaultProps = defaultConfig
 
-export default StarterBlock
+export default Block
 ```
 
 ### 6. Publish the Blog Details Block
