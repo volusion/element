@@ -16,8 +16,8 @@ Locate the `componentDidMount` function of one of your blocks. If this function 
 
 ```javascript
 componentDidMount() {
-    this.props.pubSub.subscribe(
-        this.props.events.cart.itemAddedToCart, // must match one of the cart events
+    this.props.utils.pubSub.subscribe(
+        this.props.utils.events.cart.itemAddedToCart, // must match one of the cart events
         this.handleItemAdded
     );
 }
@@ -56,7 +56,7 @@ Example:
 ```javascript
 // in your block component body, add a function. Here we're doing it as an instance property because this component is a class.
 addItem = itemData => {
-  this.props.pubSub.publish(this.props.events.cart.addToCart, itemData)
+  this.props.utils.pubSub.publish(this.props.events.cart.addToCart, itemData)
 }
 ```
 
