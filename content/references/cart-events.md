@@ -19,7 +19,7 @@ The Element SDK provides topic names for standard cart events. Blocks can subscr
 
 ### Event Definitions
 
-`this.props.events.cart`, available within block component definitions, is defined as follows:
+`props.utils.events.cart`, available within block component definitions, is defined as follows:
 
 ```javascript
 {
@@ -32,9 +32,9 @@ The Element SDK provides topic names for standard cart events. Blocks can subscr
 }
 ```
 
-Subscriptions using these topics should be referenced as properties of `this.props.events.cart`, not as strings, because these topic names are provided by Element SDK and could change. By using the property values from `this.props.events.cart`, you are guaranteed to have a valid topic name. Using the string is not as safe.
+Subscriptions using these topics should be referenced as properties of `props.utils.events.cart`, not as strings, because these topic names are provided by Element SDK and could change. By using the property values from `props.utils.events.cart`, you are guaranteed to have a valid topic name. Using the string is not as safe.
 
-For example, use `this.props.events.cart.addToCart`, not `"cart.addToCart"`.
+For example, use `props.utils.events.cart.addToCart`, not `"cart.addToCart"`.
 
 ## Events
 
@@ -47,7 +47,7 @@ The cart subscribes this event, and you can publish it from your own blocks to a
 When publishing an `addToCart` event, you must provide an object as the second argument of the `publish` function with the following properties:
 
 ```javascript
-this.props.pubSub.publish(this.props.events.cart.addToCart, {
+props.utils.pubSub.publish(props.utils.events.cart.addToCart, {
   productId, // type: string, from product data
   quantity, // type: int, whatever quantity you want to add to the cart, ex: 1
   variantId, // type: string, from product data
@@ -63,8 +63,8 @@ The cart publishes this event after the shopper adds an item to the cart. Your b
 
 ```javascript
 // subscribe to the event
-this.props.pubSub.subscribe(
-  this.props.events.cart.itemAddedToCart,
+props.utils.pubSub.subscribe(
+  props.utils.events.cart.itemAddedToCart,
   this.handleItemAdded
 )
 
@@ -94,8 +94,8 @@ The cart publishes this event after the shopper removes an item from the cart. Y
 
 ```javascript
 // subscribe to the event
-this.props.pubSub.subscribe(
-  this.props.events.cart.itemRemovedFromCart,
+props.utils.pubSub.subscribe(
+  props.utils.events.cart.itemRemovedFromCart,
   this.handleItemRemoved
 )
 
@@ -126,7 +126,7 @@ The cart block subscribes to this event, and your blocks can publish the event t
 No data is necessary when publishing this event.
 
 ```javascript
-this.props.pubSub.publish(this.props.events.cart.openAccountPanel)
+props.utils.pubSub.publish(props.utils.events.cart.openAccountPanel)
 ```
 
 ### 'openCart'
@@ -138,7 +138,7 @@ The cart block subscribes to this event, and your blocks can publish the event t
 No data is necessary when publishing this event.
 
 ```javascript
-this.props.pubSub.publish(this.props.events.cart.openCart)
+props.utils.pubSub.publish(props.utils.events.cart.openCart)
 ```
 
 ### 'updateCartCount'
@@ -149,8 +149,8 @@ The cart publishes this event after the shopper updates the count of total items
 
 ```javascript
 // subscribe to the event
-this.props.pubSub.subscribe(
-  this.props.events.cart.updateCartCount,
+props.utils.pubSub.subscribe(
+  props.utils.events.cart.updateCartCount,
   this.handleUpdatedCartCount
 )
 
