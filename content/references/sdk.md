@@ -33,6 +33,7 @@ window.ElementSdk.client.categories
 
 - [Categories](#categories)
   - [`categories.get()`](<#'categories.get()'>)
+  - [`categories.getBySlug()`](<#'categories.getbyslug()'>)
 - [Content Pages](#contentpages)
   - [`contentPages.getBySeoFriendlyName()`](<#'contentpages.getbyseofriendlyname()'>)
 - [Menus](#menus)
@@ -40,6 +41,7 @@ window.ElementSdk.client.categories
 - [Products](#products)
   - [`products.getById()`](<#'products.getbyid()'>)
   - [`products.getBySlug()`](<#'products.getbyslug()'>)
+  - [`products.getByCategorySlug()`](<#'products.getbycategoryslug()'>)
   - [`products.getRelatedById()`](<#'products.getrelatedbyid()'>)
   - [`products.getRelatedBySlug()`](<#'products.getrelatedbyslug()'>)
   - [`products.getByCategoryId()`](<#'products.getbycategoryid()'>)
@@ -106,6 +108,82 @@ utils.client.categories.get()
     subCategories: [],
   },
 ]
+```
+
+#### 'categories.getBySlug()'
+
+This method returns a Promise that resolves with an object containing the category details including any children.
+
+#### Usage
+
+```javascript
+utils.client.categories.getBySlug('category-slug')
+```
+
+#### Response
+
+```javascript
+{
+    contentPageId: '',
+    descriptions: {
+      short: '',
+      long: '',
+      extended: '',
+    },
+    id: '123',
+    images: [],
+    name: 'Category 1',
+    productCount: 5,
+    seo: {
+      title: '',
+      metaDescription: '',
+      friendlyName: '',
+    },
+    state: 'Active',
+    subCategories: [
+        {
+          state: 'Active',
+          id: '345',
+          images: [],
+          subCategories: [
+              {
+                  state: 'Active',
+                  id: '678',
+                  images: [],
+                  subCategories: [],
+                  name: 'SubCategory 2',
+                  parentId: '345',
+                  productCount: 1,
+                  contentPageId: '',
+                  descriptions: {
+                      short: '',
+                      long: '',
+                      extended: ''
+                  },
+                  seo: {
+                      title: '',
+                      metaDescription: '',
+                      friendlyName: ''
+                  }
+              }
+          ],
+          name: 'subcategory1',
+          parentId: '123',
+          productCount: 1,
+          contentPageId: '',
+          descriptions: {
+              short: '',
+              long: '',
+              extended: ''
+          },
+          seo: {
+              title: 'subcategory1',
+              metaDescription: '',
+              friendlyName: 'subcategory1'
+          }
+        }
+    ],
+}
 ```
 
 ### Content Pages
@@ -449,6 +527,102 @@ Note: `page` will be used if both `page` and `offset` are present.
   },
 ]
 ```
+
+#### 'products.getByCategorySlug()'
+
+This method returns a Promise that resolves with an object containing product items and pagination information.
+
+#### Usage
+
+```javascript
+utils.client.products.getByCategorySlug({ slug: 'category123' })
+```
+
+#### Advanced Usage
+
+```javascript
+utils.client.products.getByCategorySlug({
+  slug: 'category123',
+  page: 1, // one based
+  pageSize: 20, // default 20
+})
+```
+
+#### Response
+
+```javascript
+{
+  currentPage: 1,
+  items: [
+           {
+             availability: {
+               preOrder: {
+                 enabled: false,
+               },
+             },
+             categoryIds: ['category123'],
+             description: '',
+             id: '',
+             images: [],
+             listPrice: 1,
+             name: '',
+             price: 1,
+             productVariants: [
+               {
+                 id: '',
+                 images: [],
+                 isInventoryTracked: false,
+                 price: 1,
+                 quantity: 0,
+                 sku: '',
+                 variants: [],
+               },
+             ],
+             relatedProductIds: [],
+             seo_friendlyName: '',
+             seo_metaDescription: '',
+             seo_title: '',
+             sku: '',
+             variantOptions: [],
+           },
+           {
+             availability: {
+               preOrder: {
+                 enabled: false,
+               },
+             },
+             categoryIds: ['category123'],
+             description: '',
+             id: '',
+             images: [],
+             listPrice: 1,
+             name: '',
+             price: 1,
+             productVariants: [
+               {
+                 id: '',
+                 images: [],
+                 isInventoryTracked: false,
+                 price: 1,
+                 quantity: 0,
+                 sku: '',
+                 variants: [],
+               },
+             ],
+             relatedProductIds: [],
+             seo_friendlyName: '',
+             seo_metaDescription: '',
+             seo_title: '',
+             sku: '',
+             variantOptions: [],
+           },
+         ],
+  totalItems: 2,
+  totalPages: 1
+}
+```
+
+Note: If there're no products for a given category or there is no category by the given slug, an empty array will be returned for `items`.
 
 #### 'products.getWithChildCategories()'
 
