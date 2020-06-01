@@ -33,6 +33,7 @@ window.ElementSdk.client.categories
 
 - [Categories](#categories)
   - [`categories.get()`](<#'categories.get()'>)
+  - [`categories.getBySlug()`](<#'categories.getBySlug()'>)
 - [Content Pages](#contentpages)
   - [`contentPages.getBySeoFriendlyName()`](<#'contentpages.getbyseofriendlyname()'>)
 - [Menus](#menus)
@@ -106,6 +107,82 @@ utils.client.categories.get()
     subCategories: [],
   },
 ]
+```
+
+#### 'categories.getBySlug()'
+
+This method returns a Promise that resolves with an object containing the category details including any children.
+
+#### Usage
+
+```javascript
+utils.client.categories.getBySlug("category-slug");
+```
+
+#### Response
+
+```javascript
+{
+    contentPageId: '',
+    descriptions: {
+      short: '',
+      long: '',
+      extended: '',
+    },
+    id: '123',
+    images: [],
+    name: 'Category 1',
+    productCount: 5,
+    seo: {
+      title: '',
+      metaDescription: '',
+      friendlyName: '',
+    },
+    state: 'Active',
+    subCategories: [
+        {
+          state: 'Active',
+          id: '345',
+          images: [],
+          subCategories: [
+              {
+                  state: 'Active',
+                  id: '678',
+                  images: [],
+                  subCategories: [],
+                  name: 'SubCategory 2',
+                  parentId: '345',
+                  productCount: 1,
+                  contentPageId: '',
+                  descriptions: {
+                      short: '',
+                      long: '',
+                      extended: ''
+                  },
+                  seo: {
+                      title: '',
+                      metaDescription: '',
+                      friendlyName: ''
+                  }
+              }
+          ],
+          name: 'subcategory1',
+          parentId: '123',
+          productCount: 1,
+          contentPageId: '',
+          descriptions: {
+              short: '',
+              long: '',
+              extended: ''
+          },
+          seo: {
+              title: 'subcategory1',
+              metaDescription: '',
+              friendlyName: 'subcategory1'
+          }
+        }
+    ],
+}
 ```
 
 ### Content Pages
