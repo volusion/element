@@ -33,6 +33,7 @@ window.ElementSdk.client.categories
 
 - [Categories](#categories)
   - [`categories.get()`](<#'categories.get()'>)
+  - [`categories.getById()`](<#'categories.getbyid()'>)
   - [`categories.getBySlug()`](<#'categories.getbyslug()'>)
 - [Content Pages](#contentpages)
   - [`contentPages.getBySeoFriendlyName()`](<#'contentpages.getbyseofriendlyname()'>)
@@ -110,9 +111,106 @@ utils.client.categories.get()
 ]
 ```
 
+#### 'categories.getById()'
+
+This method returns a Promise that resolves with an object containing the category details including children and parent categories.
+
+#### Usage
+
+```javascript
+utils.client.categories.getById('123')
+```
+
+#### Response
+
+```javascript
+{
+    contentPageId: '',
+    descriptions: {
+      short: '',
+      long: '',
+      extended: '',
+    },
+    id: '345',
+    images: [],
+    name: 'Category 1',
+    productCount: 5,
+    seo: {
+      title: '',
+      metaDescription: '',
+      friendlyName: '',
+    },
+    state: 'Active',
+    parentCategories: [
+            {
+              state: 'Active',
+              id: '123',
+              images: [],
+              name: 'parentcategory1',
+              parentId: '123',
+              productCount: 1,
+              contentPageId: '',
+              descriptions: {
+                  short: '',
+                  long: '',
+                  extended: ''
+              },
+              seo: {
+                  title: 'parentcategory1',
+                  metaDescription: '',
+                  friendlyName: 'parentcategory1'
+              }
+            }
+        ],
+    subCategories: [
+        {
+          state: 'Active',
+          id: '678',
+          images: [],
+          subCategories: [
+              {
+                  state: 'Active',
+                  id: '91011',
+                  images: [],
+                  subCategories: [],
+                  name: 'SubCategory 2',
+                  parentId: '678',
+                  productCount: 1,
+                  contentPageId: '',
+                  descriptions: {
+                      short: '',
+                      long: '',
+                      extended: ''
+                  },
+                  seo: {
+                      title: '',
+                      metaDescription: '',
+                      friendlyName: ''
+                  }
+              }
+          ],
+          name: 'subcategory1',
+          parentId: '345',
+          productCount: 1,
+          contentPageId: '',
+          descriptions: {
+              short: '',
+              long: '',
+              extended: ''
+          },
+          seo: {
+              title: 'subcategory1',
+              metaDescription: '',
+              friendlyName: 'subcategory1'
+          }
+        }
+    ],
+}
+```
+
 #### 'categories.getBySlug()'
 
-This method returns a Promise that resolves with an object containing the category details including any children.
+This method returns a Promise that resolves with an object containing the category details including children and parent categories.
 
 #### Usage
 
@@ -130,7 +228,7 @@ utils.client.categories.getBySlug('category-slug')
       long: '',
       extended: '',
     },
-    id: '123',
+    id: '345',
     images: [],
     name: 'Category 1',
     productCount: 5,
@@ -140,19 +238,40 @@ utils.client.categories.getBySlug('category-slug')
       friendlyName: '',
     },
     state: 'Active',
+    parentCategories: [
+            {
+              state: 'Active',
+              id: '123',
+              images: [],
+              name: 'parentcategory1',
+              parentId: '123',
+              productCount: 1,
+              contentPageId: '',
+              descriptions: {
+                  short: '',
+                  long: '',
+                  extended: ''
+              },
+              seo: {
+                  title: 'parentcategory1',
+                  metaDescription: '',
+                  friendlyName: 'parentcategory1'
+              }
+            }
+        ],
     subCategories: [
         {
           state: 'Active',
-          id: '345',
+          id: '678',
           images: [],
           subCategories: [
               {
                   state: 'Active',
-                  id: '678',
+                  id: '91011',
                   images: [],
                   subCategories: [],
                   name: 'SubCategory 2',
-                  parentId: '345',
+                  parentId: '678',
                   productCount: 1,
                   contentPageId: '',
                   descriptions: {
@@ -168,7 +287,7 @@ utils.client.categories.getBySlug('category-slug')
               }
           ],
           name: 'subcategory1',
-          parentId: '123',
+          parentId: '345',
           productCount: 1,
           contentPageId: '',
           descriptions: {
