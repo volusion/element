@@ -29,7 +29,7 @@ In `Block.js` these methods are available via `props` (for example: `props.seo.s
 
 ### 'addAmpScript'
 
-This function loads a script from The AMP Component Catalogue. The function is currently restricted to the following: [amp-analytics](https://amp.dev/documentation/components/amp-analytics/?format=websites), [amp-bind](https://amp.dev/documentation/components/amp-bind/?format=websites), and [amp-form](https://amp.dev/documentation/components/amp-form/?format=websites).
+This function loads a script from The AMP Component Catalogue.
 
 ### 'addAmpScript' Usage
 
