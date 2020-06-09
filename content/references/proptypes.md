@@ -36,15 +36,17 @@ metaDescription: 'This reference will teach you everything you need to know abou
 ![Boolean: true](proptype-bool.png)
 
 ```javascript
-boolean: {
-    label: 'Boolean',
-    type: ElementPropTypes.bool
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourBoolPropName: {
+    label: 'Boolean',
+    type: ElementPropTypes.bool,
+  },
+}
+
 export const defaultConfig = {
-  boolean: true,
+  yourBoolPropName: true,
 }
 ```
 
@@ -53,28 +55,38 @@ export const defaultConfig = {
 ![Category](proptype-category.png)
 
 ```javascript
-category: {
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourCategoryPropName: {
     label: 'Category',
-    type: ElementPropTypes.category
+    type: ElementPropTypes.category,
+  },
+}
+
+export const defaultConfig = {
+  yourCategoryPropName: '',
 }
 ```
 
-In the block, `props.category` will be the ID of the category selected by the merchant.
+In the block, `props.yourCategoryPropName` will be the ID of the category selected by the merchant.
 
 ### color
 
 ![Color: purple](proptype-color.png)
 
 ```javascript
-color: {
-    label: 'Color',
-    type: ElementPropTypes.color
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourColorPropName: {
+    label: 'Color',
+    type: ElementPropTypes.color,
+  },
+}
+
 export const defaultConfig = {
-  color: 'purple', // all CSS color formats accepted
+  yourColorPropName: 'purple', // all CSS color formats accepted
 }
 ```
 
@@ -85,6 +97,8 @@ Merchant edits to color fields are stored in RGBA format.
 ![Date Picker](proptype-date.png)
 
 ```javascript
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
 export const configSchema = {
     yourDatePropName: {
         label: 'Date',
@@ -105,6 +119,8 @@ The above example is the recommended method for setting the default date as it w
 ![DateRange Picker](proptype-dateRange.png)
 
 ```javascript
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
 export const configSchema = {
   yourDateRangePropName: {
     label: 'Date Range',
@@ -132,15 +148,17 @@ The above example is the recommended method for setting default dates as it will
 ![Editor Full](proptype-editor-full.png)
 
 ```javascript
-editorFull: {
-    label: 'Editor Full',
-    type: ElementPropTypes.editorFull
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourEditorFullPropName: {
+    label: 'Editor Full',
+    type: ElementPropTypes.editorFull,
+  },
+}
+
 export const defaultConfig = {
-  editorFull: '<h1>Full WYSIWYG</h1>',
+  yourEditorFullPropName: `<h1>Full WYSIWYG</h1>`, // all CSS color formats accepted
 }
 ```
 
@@ -151,15 +169,17 @@ export const defaultConfig = {
 ![Editor Minimal](proptype-editor-minimal.png)
 
 ```javascript
-editorMinimal: {
-    label: 'Editor Minimal',
-    type: ElementPropTypes.editorMinimal
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourEditorMinimalPropName: {
+    label: 'Editor Minimal',
+    type: ElementPropTypes.editorMinimal,
+  },
+}
+
 export const defaultConfig = {
-  editorMinimal: '<p>Minimal text editor&#8230;</p>',
+  yourEditorMinimalPropName: `<h1>Minimal text editor</h1>`, // all CSS color formats accepted
 }
 ```
 
@@ -170,19 +190,21 @@ export const defaultConfig = {
 ![Embeddable](proptype-embeddable.png)
 
 ```javascript
-embeddable: {
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourEmbeddablePropName: {
     label: 'Embeddable Iframe',
     type: ElementPropTypes.embeddable({
-        embedType: ElementPropTypes.string,
-        url: ElementPropTypes.string,
-        height: ElementPropTypes.number
-    })
+      embedType: ElementPropTypes.string,
+      url: ElementPropTypes.string,
+      height: ElementPropTypes.number,
+    }),
+  },
 }
-```
 
-```javascript
 export const defaultConfig = {
-  embeddable: {
+  yourEmbeddablePropName: {
     embedType: 'iframe', // the only supported value
     url: 'https://www.volusion.com/login',
     height: 150,
@@ -192,35 +214,41 @@ export const defaultConfig = {
 
 ### image
 
-![Image: empty default](proptype-image.png)
+#### Image without specific default values
 
-```javascript
-image: {
-    label: 'Image',
-    type: ElementPropTypes.image
-}
-```
+![Image: empty default](proptype-image.png)
 
 ```javascript
 import { ElementPropTypes } from '@volusion/element-proptypes'
 
+export const configSchema = {
+  yourImagePropName: {
+    label: 'Image',
+    type: ElementPropTypes.image,
+  },
+}
+
 export const defaultConfig = {
-  image: ElementPropTypes.image.default,
+  yourImagePropName: ElementPropTypes.image.default,
 }
 ```
+
+#### Image with specific default values
 
 ![Image: Default URL](proptype-image-default.png)
 
 ```javascript
-imageWithPlaceholder: {
-    label: 'Image With Default',
-    type: ElementPropTypes.image
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourImagePropName: {
+    label: 'Image With Default',
+    type: ElementPropTypes.image,
+  },
+}
+
 export const defaultConfig = {
-  imageWithPlaceholder: {
+  yourImagePropName: {
     uriBase: 'http://d21ivvgspl06jm.cloudfront.net/',
     imagePath: 'element-block-assets/slideshow/slide2.jpg',
     altText: 'Monument Valley',
@@ -230,6 +258,8 @@ export const defaultConfig = {
 }
 ```
 
+##### Image picker modal
+
 ![Image Picker](image-picker.png)
 
 ### number
@@ -237,15 +267,17 @@ export const defaultConfig = {
 ![Number: 42](proptype-number.png)
 
 ```javascript
-number: {
-    label: 'Number',
-    type: ElementPropTypes.number
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourNumberPropName: {
+    label: 'Number',
+    type: ElementPropTypes.number,
+  },
+}
+
 export const defaultConfig = {
-  number: 42,
+  yourNumberPropName: 42,
 }
 ```
 
@@ -254,31 +286,17 @@ export const defaultConfig = {
 ![oneOf](proptype-one-of.png)
 
 ```javascript
-oneOf: {
-    label: 'Dropdown',
-    type: ElementPropTypes.oneOf(['News', 'Photos'])
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
-export const defaultConfig = {
-  oneOf: 'News',
-}
-```
-
-```javascript
-export const defaultConfig = {
-  arrayOfShapes: [],
+export const configSchema = {
+  yourOneOfPropName: {
+    label: 'One Of',
+    type: ElementPropTypes.oneOf(['Photos', 'News']),
+  },
 }
 
-// or pre-populated
 export const defaultConfig = {
-  arrayOfShapes: [
-    {
-      text: 'Link',
-      url: 'https://',
-    },
-  ],
+  yourOneOfPropName: 'News',
 }
 ```
 
@@ -287,56 +305,68 @@ export const defaultConfig = {
 ![Product](proptype-product.png)
 
 ```javascript
-product: {
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourProductPropName: {
     label: 'Product',
-    type: ElementPropTypes.product
+    type: ElementPropTypes.product,
+  },
+}
+
+export const defaultConfig = {
+  yourProductPropName: '',
 }
 ```
 
-In the block, `props.product` will be the ID of the product selected by the merchant.
+In the block, `props.yourProductPropName` will be the ID of the product selected by the merchant.
 
 ### slider
 
 ![Slider: options](proptype-slider.png)
 
 ```javascript
-sliderOptions: {
-    label: 'Slider Options',
-    type: ElementPropTypes.slider
-}
-```
-
-```javascript
 import { ElementPropTypes } from '@volusion/element-proptypes'
 
+export const configSchema = {
+  yourSliderPropName: {
+    label: 'Slider',
+    type: ElementPropTypes.slider,
+  },
+}
+
 export const defaultConfig = {
-  sliderOptions: {
+  yourSliderPropName: {
     labelPrefix: '~',
     labelStepSize: 10,
     labelSuffix: ' oz',
-    min: 50,
-    max: 100,
+    min: 50, // required
+    max: 100, // required
     stepSize: 5,
-    selectedValue: 75,
+    selectedValue: 75, // required
     vertical: false,
   },
 }
 ```
+
+Make sure to reference `props.yourSliderPropName.selectedValue` in your block code.
 
 ### string
 
 ![String: Default string](proptype-string.png)
 
 ```javascript
-string: {
-    label: 'String',
-    type: ElementPropTypes.string
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourStringPropName: {
+    label: 'String',
+    type: ElementPropTypes.string,
+  },
+}
+
 export const defaultConfig = {
-  string: 'Default string',
+  yourStringPropName: 'Default string',
 }
 ```
 
@@ -347,20 +377,39 @@ export const defaultConfig = {
 ![arrayOf Shape](proptype-array-of-shape.png)
 
 ```javascript
-arrayOfShapes: {
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourArrayOfPropName: {
     label: 'Array of Shapes',
     type: ElementPropTypes.arrayOf(
-        ElementPropTypes.shape({
-            text: {
-                label: 'Text',
-                type: ElementPropTypes.string
-            },
-            url: {
-                label: 'Link',
-                type: ElementPropTypes.string
-            }
-        })
-    )
+      ElementPropTypes.shape({
+        yourTextPropName: {
+          label: 'Text',
+          type: ElementPropTypes.string,
+        },
+        yourLinkPropName: {
+          label: 'Link',
+          type: ElementPropTypes.string,
+        },
+      })
+    ),
+  },
+}
+
+// unpopulated example
+export const defaultConfig = {
+  yourArrayOfPropName: [],
+}
+
+// pre-populated example
+export const defaultConfig = {
+  yourArrayOfPropName: [
+    {
+      yourTextPropName: 'Link',
+      yourLinkPropName: 'https://',
+    },
+  ],
 }
 ```
 
@@ -369,10 +418,14 @@ arrayOfShapes: {
 The `isPrivate` property set to true hides a field from merchants. Agency accounts will still be able to see it.
 
 ```javascript
-string: {
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourStringPropName: {
     label: 'String',
     type: ElementPropTypes.string,
-    isPrivate: true
+    isPrivate: true, // <= isPrivate
+  },
 }
 ```
 
@@ -381,15 +434,17 @@ string: {
 ![Read-only](proptype-read-only.png)
 
 ```javascript
-readOnly: {
-    label: '',
-    type: ElementPropTypes.readOnly
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourReadOnlyPropName: {
+    label: '',
+    type: ElementPropTypes.readOnly,
+  },
+}
+
 export const defaultConfig = {
-  readOnly: 'Read-only text.', // use for instructions, help text
+  yourReadOnlyPropName: 'Read only text.', // use for instructions, help text
 }
 ```
 
@@ -398,14 +453,17 @@ export const defaultConfig = {
 ![Section Header](proptype-section-header.png)
 
 ```javascript
-sectionHeader: {
-  type: ElementPropTypes.sectionHeader
-}
-```
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
-```javascript
+export const configSchema = {
+  yourSectionHeaderPropName: {
+    label: '',
+    type: ElementPropTypes.sectionHeader,
+  },
+}
+
 export const defaultConfig = {
-  sectionHeader: 'Section Header',
+  yourSectionHeaderPropName: 'Section Header',
 }
 ```
 
