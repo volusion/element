@@ -109,7 +109,7 @@ You're going to use a pageVar to get the product slug from the page's URL. The f
 Open `src/configs.js` in your text editor and replace the entire code with this:
 
 ```js
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {}
 

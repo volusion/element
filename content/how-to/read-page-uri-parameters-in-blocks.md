@@ -17,7 +17,7 @@ Locate the definition of your `configSchema` in your block code. Add a new `Elem
 Example with a property called `productSlug`:
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   productSlug: {

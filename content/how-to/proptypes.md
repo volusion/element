@@ -11,7 +11,7 @@ In this how-to guide, we will add new Element Proptypes to an existing Element B
 Open up your block's code and find `/src/configs.js`. It will look something like this:
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
@@ -30,7 +30,7 @@ export const defaultConfig = {
 Add another proptype to the schema. You will need to provide a label property and a type. For this example, we'll add a `textColor` prop with a PropType of `color`, but look at the "[Proptypes](/references/proptypes)" reference for other available types.
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
@@ -60,7 +60,7 @@ export const defaultConfig = {
 We can now use that new proptype in the block. Open `/src/Block.js` and add a style attribute to the `<h1>` tag assigning our new textColor prop to the color.
 
 ```html
-<h1 style={{color: props.textColor}}>
+<h1 style="{{color:" props.textColor}}></h1>
 ```
 
 ## 5. Add Another Related Element Proptype
@@ -68,7 +68,7 @@ We can now use that new proptype in the block. Open `/src/Block.js` and add a st
 Return to `/src/configs.js` and add another prop: `backgroundColor`.
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
@@ -91,7 +91,7 @@ export const configSchema = {
 Group the colors together under an `ElementPropTypes.sectionHeader`:
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
