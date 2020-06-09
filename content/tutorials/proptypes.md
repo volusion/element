@@ -26,7 +26,7 @@ element new Solarized
 Open up your block's code and find `/src/configs.js`. In that file, you'll see `configSchema`—this is where you tell Site Designer what configuration fields are available for your block. Store admins will be able to edit the settings of your block using those fields. By default, `configSchema` looks like this:
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
@@ -41,7 +41,7 @@ export const configSchema = {
 In `configSchema` object, we will add the property `isDarkModeEnabled`, which is how we'll reference it from the block's component code. We'll give it the `label` "Enable Dark Mode," which appears above the field in the Site Designer's edit panel. For the `type`, make it an `ElementPropTypes.bool`, which represents a boolean field. Your `configSchema` should now look like this:
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {

@@ -137,25 +137,26 @@ export const getDataProps = (utils, props) => {
 Now that `getDataProps` is requesting the blog posts, you need to set up the block to receive and display them. Switch over to `/src/Block.js` and modify the `Block` function as follows:
 
 #### '/src/Block.js'
+
 ```javascript
 const Block = props => {
-    // the blog posts are now available as props.data
-    const { data = [] } = props
-    return (
-      <React.Fragment>
-        <h1>{props.text}</h1>
-        <ul>
-          {data.map(blog => {
-            return (
-              <li key={blog.id}>
-                <a href={`/blog/${blog.id}`}>{blog.title}</a>
-              </li>
-            )
-          })}
-        </ul>
-      </React.Fragment>
-    )
-};
+  // the blog posts are now available as props.data
+  const { data = [] } = props
+  return (
+    <React.Fragment>
+      <h1>{props.text}</h1>
+      <ul>
+        {data.map(blog => {
+          return (
+            <li key={blog.id}>
+              <a href={`/blog/${blog.id}`}>{blog.title}</a>
+            </li>
+          )
+        })}
+      </ul>
+    </React.Fragment>
+  )
+}
 ```
 
 In your browser, your block should now be showing the titles of blog posts from the sample API:
@@ -190,27 +191,29 @@ Blocks use [Aphrodite](https://github.com/Khan/aphrodite) for CSS-in-JS. Aphrodi
 
 ```javascript
 const Block = props => {
-    // the blog posts are now available as props.data
-    const { data = [] } = props
+  // the blog posts are now available as props.data
+  const { data = [] } = props
 
-    // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
-    const styles = StyleSheet.create(getStyles(props))
+  // Pass the style object returned by `getStyles()` to aphrodite's `StyleSheet.create()`.
+  const styles = StyleSheet.create(getStyles(props))
 
-    return (
-      <React.Fragment>
-        <h1>{props.text}</h1>
-        <ul>
-          {data.map(blog => {
-            return (
-              <li key={blog.id}>
-                <a href={`/blog/${blog.id}`} className={css(styles.blogLink)}>{blog.title}</a>
-              </li>
-            )
-          })}
-        </ul>
-      </React.Fragment>
-    )
-};
+  return (
+    <React.Fragment>
+      <h1>{props.text}</h1>
+      <ul>
+        {data.map(blog => {
+          return (
+            <li key={blog.id}>
+              <a href={`/blog/${blog.id}`} className={css(styles.blogLink)}>
+                {blog.title}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </React.Fragment>
+  )
+}
 ```
 
 Your block should now look something like this and have a hover effect for the blog links:
@@ -316,7 +319,7 @@ Open `/src/configs.js` in your text editor and replace the entire code with this
 #### '/src/configs.js'
 
 ```javascript
-import { ElementPropTypes } from '@volusion/element-proptypes';
+import { ElementPropTypes } from '@volusion/element-proptypes'
 
 export const configSchema = {
   text: {
