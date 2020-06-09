@@ -50,6 +50,8 @@ element login
 
 Then, enter the email address and password for your Volusion account.
 
+If you signed up for your Volusion account using your Google account, you can use the "Forgot Password?" link at [volusion.com/login](https://www.volusion.com/login) to set a password for use with Element CLI.
+
 ## 7. Get Approved to Develop Blocks
 
 You need approval from Volusion to begin developing blocks.
