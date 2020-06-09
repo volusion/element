@@ -85,41 +85,47 @@ Merchant edits to color fields are stored in RGBA format.
 ![Date Picker](proptype-date.png)
 
 ```javascript
-date: {
-  label: 'Date',
-  type: ElementPropTypes.date
-}
+export const configSchema = {
+    yourDatePropName: {
+        label: 'Date',
+        type: ElementPropTypes.date
+    }
+};
 
 export const defaultConfig = {
-  date: new Date()
-}
+    yourDatePropName: new Date().toISOString();
+};
+
 ```
 
-The above example is the recommended method for setting the default date as it will use the date the block is added to page.
+The above example is the recommended method for setting the default date as it will use the date the block is added to page. This proptype will return the date as an ISO string, so be sure your local environment and test prop is also an ISO string.
 
 ### dateRange
 
 ![DateRange Picker](proptype-dateRange.png)
 
 ```javascript
-dateRange: {
-  label: 'Date Range',
-  type: ElementPropTypes.dateRange
+export const configSchema = {
+  yourDateRangePropName: {
+    label: 'Date Range',
+    type: ElementPropTypes.dateRange,
+  },
 }
 
-const today = new Date();
-const nextWeek = new Date();
-nextWeek.setDate(nextWeek + 7);
+const today = new Date().toISOString()
+let nextWeek = new Date()
+nextWeek.setDate(nextWeek.getDate() + 7)
+nextWeek = nextWeek.toISOString()
 
 export const defaultConfig = {
-  dateRange: [
-    today,    // start date
-    nextWeek  // end date
-  ]
+  yourDateRangePropName: [
+    today, // start date
+    nextWeek, // end date
+  ],
 }
 ```
 
-The above example is the recommended method for setting default dates as it will use the date the block is added to the page as the starting point.
+The above example is the recommended method for setting default dates as it will use the date the block is added to the page as the starting point. This proptype will return the dates as an ISO string, so be sure your local environment and test props are also ISO strings.
 
 ### editorFull
 
