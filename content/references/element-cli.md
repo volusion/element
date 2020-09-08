@@ -15,6 +15,8 @@ This reference looks at the [Element CLI](https://github.com/volusion/element-cl
 - [Update](#update)
 - [Rollback](#rollback)
 - [Release](#release)
+- [Categories](#categories)
+- [Info](#info)
 
 ## Installing Element CLI
 
@@ -78,6 +80,7 @@ element update
 
 - **[-p, --toggle-public]** If your agency has permission to change this, it will allow you to make the block available to users outside of our organization.
 - **[-u, --unminified]** This is an option for skipping the minification process and is useful for debugging.
+- **[-c, --category CATEGORY]** This is an option to change the block's category. See [categories](#categories) to view a list of valid categories.
 
 ### Rollback
 
@@ -106,3 +109,31 @@ element release
 #### Release Options
 
 - **[-n, --note]** This is a release note viewable in Site Designer that displays the note from the major release or the most recent minor release.
+
+### Categories
+
+This command retrieves the list of valid categories.
+
+#### Categories Usage
+
+```shell
+element categories
+```
+
+#### Categories Options
+
+No options.
+
+### Info
+
+This command retrieves information on your block from the server.
+
+#### Info Usage
+
+```shell
+element info
+```
+
+#### Info Options
+
+No options.
