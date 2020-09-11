@@ -66,7 +66,7 @@ git tag 1.0
 
 ## 6. Create a Minor Release
 
-Once you have published your first major release, you can publish as many minor releases as you want. The minor releases are linked to your major release.
+Once you have published your first major release, you can publish as many minor releases as you want. The minor releases are linked to your major release. Wondering if your changes warrant a minor release? [Check out our minor releases page for more info.](/how-to/release-a-minor-block-change)
 
 ```bash
 element update
@@ -109,7 +109,7 @@ git checkout 1.0
 
 ## 9. Creating a New Major Version
 
-Sometimes you will need to publish a new version of your block that has a new feature, breaks changes, or diverges a bit from the original one. Wondering if your changes constitute a breaking change? [See our flowchart here.](https://whimsical.com/38gedXF7Vog1hLXa4cqd2h)
+Sometimes you will need to publish a new version of your block that has a new feature, breaks changes, or diverges a bit from the original one. Wondering if your changes warrant a major release? [Check out our major releases page for more info.](/how-to/release-a-new-major-block-version)
 
 ```
 element publish -m

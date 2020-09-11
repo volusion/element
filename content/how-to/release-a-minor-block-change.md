@@ -16,14 +16,9 @@ You need to be certain that the changes you're making to your block are actually
 
 ### How Can You Tell?
 
-Look at this chart and determine what kind of changes you're making. If any of them are breaking changes, consider either only making the non-breaking changes, or [releasing the changes as an opt-in new version of your block](/how-to/release-a-new-major-block-version).
+Look at this flowchart and determine what kind of changes you're making. If any of them are breaking changes, consider either only making the non-breaking changes, or [releasing the changes as an opt-in new version of your block](/how-to/release-a-new-major-block-version).
 
-| Breaking Changes                 | Non-Breaking Changes                        |
-| -------------------------------- | ------------------------------------------- |
-| Change the look of the block     | Change data processing                      |
-| Change the block's config schema | Refactor code but functionality is the same |
-|                                  | SEO optimizations                           |
-|                                  | Bug fixes                                   |
+<img src="./whatKindOfChanges.png" />
 
 ## 2. Verify Your Changes in Staging
 
