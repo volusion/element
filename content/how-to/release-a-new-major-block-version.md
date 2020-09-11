@@ -10,6 +10,12 @@ In this how-to guide, you'll learn how to release a new major (opt-in) version o
 
 This guide assumes that you already have a published block that you are modifying. If you don't have a published block yet, see "[Building an Element Page Tutorial](/tutorials/building-an-element-page)," which covers creating and publishing blocks.
 
+### How Can You Tell?
+
+Look at this flowchart and determine what kind of changes you're making. If you are making non-breaking changes, [consider making a minor release](/how-to/release-a-minor-block-change).
+
+<img src="./whatKindOfChanges.png" />
+
 ## 1. Create a New Major Version of Your Block
 
 For opt-in or breaking changes, you'll want a new version branch to do your work in. Go to your terminal and navigate to your block's home directory, then type this command to create a new major version for your block:
