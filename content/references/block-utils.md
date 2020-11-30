@@ -6,7 +6,7 @@ metaDescription: 'This reference will teach you about blocks utils in ELement.'
 
 Blocks have access to the following utils, passed to them as props. Some are only available when the block is initially rendered by the server, and are not available later on the client side.
 
-In `Block.js` these methods are available via `props` (for example: `props.seo.setTitle()`). In `getDataProps`, they are passed as part of `utils`, which is how we will reference them in this document.
+In `Block.js` these methods are available via `props.utils` (for example: `props.utils.seo.setTitle()`). In `getDataProps`, they are passed as part of `utils`. In this document, we will reference them as belonging to `utils`.
 
 ## Table of Contents
 
@@ -24,6 +24,7 @@ In `Block.js` these methods are available via `props` (for example: `props.seo.s
   - [pubSub](#'pubsub')
   - [queryParams](#'queryparams')
   - [seo](#'seo')
+  - [storeUrl](#'storeUrl')
 
 ## Server Side Only
 
@@ -244,3 +245,19 @@ utils.seo.addExtraTag('twitter:title', 'Your Page Title')
 | getDataProps utils | Block props |
 | ------------------ | ----------- |
 | &check;            | &cross;     |
+
+### 'storeUrl'
+
+This is a string value equal to the base URL of the current store.
+
+#### 'seo' Usage
+
+```javascript
+utils.storeUrl === "https://www.my-store.com"
+```
+
+#### 'storeUrl' Availability
+
+| getDataProps utils | Block props |
+| ------------------ | ----------- |
+| &check;            | &check;     |
