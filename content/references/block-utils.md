@@ -248,12 +248,13 @@ utils.seo.addExtraTag('twitter:title', 'Your Page Title')
 
 ### 'storeUrl'
 
-This is a string value equal to the base URL of the current store.
+This is a string value equal to the base URL of the current store. For some storefronts, you can use this to construct API requests.
 
 #### 'seo' Usage
 
 ```javascript
 utils.storeUrl === "https://www.my-store.com"
+`${utils.storeUrl}/api/v2/storefront/products/${productCode}`
 ```
 
 #### 'storeUrl' Availability
