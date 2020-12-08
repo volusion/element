@@ -13,11 +13,11 @@ In `Block.js` these methods are available via `props` (for example: `props.seo.s
 - **Server Side Only**
   - [addAmpScript](#'addampscript')
   - [addLink](#'addlink')
-  - [addScript](#'addscript')
   - [isAmpRequest](#'isamprequest')
   - [isRendering](#'isrendering')
   - [throwNotFound](#'thrownotfound')
 - **Server and Client Side**
+  - [addScript](#'addscript')
   - [canonicalUrl](#'canonicalurl')
   - [client](#'client')
   - [events](#'events')
@@ -72,6 +72,8 @@ utils.addScript(
   false // optional boolean:  include the async attribute
 )
 ```
+
+NOTE: `async` is set to true by default when calling this from `getDataProps`.
 
 #### 'addScript' Availability
 
