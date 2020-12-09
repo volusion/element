@@ -855,6 +855,7 @@ This asynchronous function behaves exactly like [fetch](https://developer.mozill
 #### Usage
 
 ##### Standard Usage:
+
 ```javascript
 utils.client
   .request('https://jsonplaceholder.typicode.com/posts')
@@ -863,20 +864,19 @@ utils.client
 ```
 
 ##### With Custom Options:
-For advanced configuration, the `request` util takes an optional second argument containing an options object. `utils.client.request` can accept any of the [options accepted](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/560c921e8b9ddec7a50a6d57793a0211ea696d81/types/node-fetch/index.d.ts#L46-L62) by [`node-fetch`](https://github.com/node-fetch/node-fetch).
 
+For advanced configuration, the `request` util takes an optional second argument containing an options object. `utils.client.request` can accept any of the [options accepted](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/560c921e8b9ddec7a50a6d57793a0211ea696d81/types/node-fetch/index.d.ts#L46-L62) by [`node-fetch`](https://github.com/node-fetch/node-fetch).
 
 ```javascript
 utils.client
   .request('https://jsonplaceholder.typicode.com/posts', {
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   })
   .then(res => res.json())
   .catch(e => [])
 ```
-
 
 ### Store Information
 
