@@ -850,8 +850,11 @@ Note: `page` will be used if both `page` and `offset` are present.
 
 This asynchronous function behaves exactly like [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), returning a promise that resolves with a response from a third-party API endpoint.
 
+**TIP:** always use this when [calling third-party services](/how-to/data-third-party-services) so that your block behaves consistently when rendered by the server or on the client side.
+
 #### Usage
 
+##### Standard Usage:
 ```javascript
 utils.client
   .request('https://jsonplaceholder.typicode.com/posts')
@@ -859,7 +862,21 @@ utils.client
   .catch(e => [])
 ```
 
-**TIP:** always use this when [calling third-party services](/how-to/data-third-party-services) so that your block behaves consistently when rendered by the server or on the client side.
+##### With Custom Options:
+For advanced configuration, the `request` util takes an optional second argument containing an options object. `utils.client.request` can accept any of the [options accepted](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/560c921e8b9ddec7a50a6d57793a0211ea696d81/types/node-fetch/index.d.ts#L46-L62) by [`node-fetch`](https://github.com/node-fetch/node-fetch).
+
+
+```javascript
+utils.client
+  .request('https://jsonplaceholder.typicode.com/posts', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+  .catch(e => [])
+```
+
 
 ### Store Information
 
