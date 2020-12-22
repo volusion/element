@@ -253,8 +253,8 @@ This is a string value equal to the base URL of the current store. For some stor
 #### 'seo' Usage
 
 ```javascript
-utils.storeUrl === "https://www.my-store.com"
-`${utils.storeUrl}/api/v2/storefront/products/${productCode}`
+// utils.storeUrl === "https://www.my-store.com"
+const apiUrl = `${utils.storeUrl}/api/v2/storefront/products/${productCode}`;
 ```
 
 #### 'storeUrl' Availability
