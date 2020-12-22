@@ -24,7 +24,7 @@ In `Block.js` these methods are available via `props.utils` (for example: `props
   - [pubSub](#'pubsub')
   - [queryParams](#'queryparams')
   - [seo](#'seo')
-  - [storeUrl](#'storeUrl')
+  - [storeUrl](#'storeurl')
 
 ## Server Side Only
 
@@ -252,7 +252,7 @@ utils.seo.addExtraTag('twitter:title', 'Your Page Title')
 
 This is a string value equal to the base URL of the current store. For some storefronts, you can use this to construct API requests.
 
-#### 'seo' Usage
+#### 'storeUrl' Usage
 
 ```javascript
 // utils.storeUrl === "https://www.my-store.com"
