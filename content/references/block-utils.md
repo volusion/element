@@ -54,6 +54,14 @@ This function adds a link to an external style sheet.
 utils.addLink('https://your-style-sheet.css')
 ```
 
+Volt will automatically optimize your CSS when rendering. This optimization can sometimes cause problems, such as with relative paths (including in `@import`s). To turn off the optimization, pass the `optimize: false` flag:
+
+```javascript
+utils.addLink('./your-style-sheet.css', { optimize: false })
+```
+
+NOTE: this may increase page load times, and will disable this stylesheet entirely for AMP.
+
 #### 'addLink' Availability
 
 | getDataProps utils | Block props |
