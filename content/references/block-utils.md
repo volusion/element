@@ -57,7 +57,7 @@ utils.addLink('https://your-style-sheet.css')
 By default, Volt will automatically optimize any stylesheets added this way by inlining them as `<style>` tags in the page's `<head>`. However, this optimization can sometimes break, such as with relative paths (including in `@import`s). To turn off the optimization and instead add the stylesheet as a `<link>` tag, you can pass the `optimize: false` flag:
 
 ```javascript
-utils.addLink('./your-style-sheet.css', { optimize: false })
+utils.addLink('/your-style-sheet.css', { optimize: false })
 ```
 
 Stylesheets added with this option will be included after any optimized stylesheets. 
