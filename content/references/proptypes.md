@@ -16,6 +16,7 @@ metaDescription: 'This reference will teach you everything you need to know abou
   - [editorMinimal](#editorminimal)
   - [embeddable](#embeddable)
   - [image](#image)
+  - [icon](#icon)
   - [number](#number)
   - [oneOf](#oneof)
   - [product](#product)
@@ -261,6 +262,33 @@ export const defaultConfig = {
 ##### Image picker modal
 
 ![Image Picker](image-picker.png)
+
+
+### icon
+
+![Icon Picker](proptype-icon.png)
+
+```javascript
+import { ElementPropTypes } from '@volusion/element-proptypes'
+
+export const configSchema = {
+  yourIconPropName: {
+    label: 'Pick an Icon',
+    tooltip: 'This is the Icon Picker',
+    type: ElementPropTypes.icon,
+  },
+}
+
+export const defaultConfig = {
+  yourIconPropName: {
+    iconName: '',
+    iconPrefix: '',
+    defaultFilter: 'social',
+  },
+}
+```
+
+The `defaultFilter` is the string that will pre-populate the filter/search field in the icon picker. Use it to guide the store owner towards a particular set of icons.
 
 ### number
 
