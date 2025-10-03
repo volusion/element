@@ -55,7 +55,8 @@
     "react-loadable": "^5.5.0",
     "safe-buffer": "^5.2.1",
     "styled-components": "^4.4.1",
-    "styled-icons": "^9.5.0"
+    "styled-icons": "^9.5.0",
+    "y18n": "^4.0.1"
   },
   "license": "MIT",
   "main": "n/a",
