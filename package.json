@@ -15,6 +15,8 @@
     "@philpl/buble": "^0.19.7",
     "@playlyfe/gql": "^2.6.2",
     "algoliasearch": "^3.35.1",
+    "bl": "^4.0.3",
+    "buffer": "^5.7.1",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.23",
     "emotion-server": "^10.0.17",
@@ -49,6 +51,7 @@
     "react-instantsearch-dom": "^6.4.0",
     "react-live": "^2.2.2",
     "react-loadable": "^5.5.0",
+    "safe-buffer": "^5.2.1",
     "styled-components": "^4.4.1",
     "styled-icons": "^9.5.0"
   },
