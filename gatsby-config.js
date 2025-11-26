@@ -11,7 +11,6 @@ const plugins = [
     },
   },
   'gatsby-plugin-emotion',
-  'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-react-helmet',
   {
     resolve: 'gatsby-source-filesystem',
@@ -28,7 +27,6 @@ const plugins = [
           resolve: 'gatsby-remark-images',
           options: {
             maxWidth: 1035,
-            sizeByPixelDensity: true,
           },
         },
         {
@@ -36,6 +34,10 @@ const plugins = [
         },
       ],
       extensions: ['.mdx', '.md'],
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [],
+      },
     },
   },
   {
