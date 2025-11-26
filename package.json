@@ -56,7 +56,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
+    "develop": "set NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
     "format": "prettier --write '**/*.{js,md}'",
     "deploy": "gatsby clean && npm run format && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
