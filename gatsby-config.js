@@ -4,12 +4,6 @@ const config = require('./config')
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
-  {
-    resolve: `gatsby-plugin-layout`,
-    options: {
-      component: require.resolve(`./src/templates/docs.js`),
-    },
-  },
   'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   {

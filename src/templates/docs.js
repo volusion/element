@@ -37,7 +37,7 @@ const Edit = styled('div')`
 
 export default class MDXRuntimeTest extends Component {
   render() {
-    const { data } = this.props
+    const { data, children } = this.props
     if (!data) {
       return null
     }
@@ -124,7 +124,9 @@ export default class MDXRuntimeTest extends Component {
             </Link>
           </Edit>
         </div>
-        <div className={'mainWrapper'}>{mdx.body}</div>
+        <div className={'mainWrapper'}>
+          {children}
+        </div>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>

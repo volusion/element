@@ -1,5 +1,6 @@
 const path = require('path')
 const startCase = require('lodash.startcase')
+const template = path.resolve('./src/templates/docs.js');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -18,6 +19,9 @@ exports.createPages = ({ graphql, actions }) => {
                   fields {
                     slug
                   }
+                  internal {
+                    contentFilePath
+                  }
                 }
               }
             }
@@ -33,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug ? node.fields.slug : '/',
-            component: path.resolve('./src/templates/docs.js'),
+            component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
             context: {
               id: node.fields.id,
             },
