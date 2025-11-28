@@ -1,12 +1,14 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es2022": true,
+    "node": true
   },
   "globals": {
     "graphql": false
   },
   "parserOptions": {
-    "ecmaVersion": 10,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true

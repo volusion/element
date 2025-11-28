@@ -2,8 +2,8 @@ import 'dotenv/config'
 import queries from './src/utils/algolia.mjs'
 import config from './config.mjs'
 import remarkGfm from 'remark-gfm'
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
