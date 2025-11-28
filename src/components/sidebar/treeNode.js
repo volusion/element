@@ -1,7 +1,7 @@
 import React from 'react'
 import OpenedSvg from '../images/opened'
 import ClosedSvg from '../images/closed'
-import config from '../../../config'
+import config from '../../../config.mjs'
 import Link from '../link'
 
 const TreeNode = ({

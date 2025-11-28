@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { ExternalLink } from 'react-feather'
 import '../styles.css'
-import config from '../../../config'
+import config from '../../../config.mjs'
 
 const forcedNavOrder = config.sidebar.forcedNavOrder
 
