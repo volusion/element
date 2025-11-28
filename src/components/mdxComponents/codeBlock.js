@@ -26,6 +26,10 @@ const LoadableComponent = Loadable({
 
 /* eslint-disable react/jsx-key */
 const CodeBlock = ({ children: exampleCode, ...props }) => {
+  if (typeof props.className === 'undefined') {
+    return <code {...props}>{exampleCode}</code>
+  }
+
   if (props['react-live']) {
     return <LoadableComponent code={exampleCode} />
   } else {
