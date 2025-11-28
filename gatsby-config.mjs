@@ -1,6 +1,12 @@
-require('dotenv').config()
-const queries = require('./src/utils/algolia')
-const config = require('./config')
+import 'dotenv/config'
+import queries from './src/utils/algolia.mjs'
+import config from './config.mjs'
+import remarkGfm from 'remark-gfm'
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
@@ -29,7 +35,7 @@ const plugins = [
       ],
       extensions: ['.mdx', '.md'],
       mdxOptions: {
-        remarkPlugins: [],
+        remarkPlugins: [remarkGfm],
         rehypePlugins: [],
       },
     },
@@ -78,7 +84,7 @@ if (config.pwa && config.pwa.enabled && config.pwa.manifest) {
 } else {
   plugins.push('gatsby-plugin-remove-serviceworker')
 }
-module.exports = {
+export default {
   pathPrefix: config.gatsby.pathPrefix,
   siteMetadata: {
     title: config.siteMetadata.title,

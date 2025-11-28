@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { Layout, Link } from '$components'
 import NextPrevious from '../components/NextPrevious'
 import '../components/styles.css'
-import config from '../../config'
+import config from '../../config.mjs'
 
 const forcedNavOrder = config.sidebar.forcedNavOrder
 

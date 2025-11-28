@@ -1,8 +1,12 @@
-const path = require('path')
-const startCase = require('lodash.startcase')
+import path from 'path'
+import { fileURLToPath } from 'url'
+import startCase from 'lodash.startcase'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const template = path.resolve('./src/templates/docs.js');
 
-exports.createPages = ({ graphql, actions }) => {
+export const createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
     resolve(
@@ -48,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -60,13 +64,13 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.onCreateBabelConfig = ({ actions }) => {
+export const onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from',
   })
 }
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+export const onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {
