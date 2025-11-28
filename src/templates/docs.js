@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { Layout, Link } from '$components'
@@ -87,35 +86,8 @@ export default class MDXRuntimeTest extends Component {
       })
 
     // meta tags
-    const metaTitle = mdx.frontmatter.metaTitle
-    const metaDescription = mdx.frontmatter.metaDescription
-    let canonicalUrl = config.gatsby.siteUrl
-    canonicalUrl =
-      config.gatsby.pathPrefix !== '/'
-        ? canonicalUrl + config.gatsby.pathPrefix
-        : canonicalUrl
-    canonicalUrl = canonicalUrl + mdx.fields.slug
-
     return (
       <Layout {...this.props}>
-        <Helmet>
-          {metaTitle ? <title>{metaTitle}</title> : null}
-          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
-          {metaDescription ? (
-            <meta name="description" content={metaDescription} />
-          ) : null}
-          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
-          {metaDescription ? (
-            <meta property="og:description" content={metaDescription} />
-          ) : null}
-          {metaTitle ? (
-            <meta property="twitter:title" content={metaTitle} />
-          ) : null}
-          {metaDescription ? (
-            <meta property="twitter:description" content={metaDescription} />
-          ) : null}
-          <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
         <div className={'titleWrapper'}>
           <h1 className={'title'}>{mdx.fields.title}</h1>
           <Edit className={'mobileView'}>

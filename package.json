@@ -4,6 +4,16 @@
   "description": "Documentation, built with mdx",
   "author": "Praveen <praveen@hasura.io> (@praveenweb)",
   "version": "0.0.1",
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.{js,md}'",
+    "deploy": "gatsby clean && npm run format && gatsby build --prefix-paths && gh-pages -d public",
+    "serve": "gatsby serve --prefix-paths",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.24.0",
     "@emotion/react": "^11.11.0",
@@ -21,8 +31,7 @@
     "gatsby-plugin-layout": "^4.13.0",
     "gatsby-plugin-manifest": "^5.13.0",
     "gatsby-plugin-mdx": "^5.13.0",
-    "gatsby-plugin-offline": "^6.13.0",
-    "gatsby-plugin-react-helmet": "^6.13.0",
+    "gatsby-plugin-offline": "^6.15.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-plugin-sitemap": "^6.13.0",
@@ -34,11 +43,10 @@
     "is-absolute-url": "^4.0.1",
     "lodash.flatten": "^4.4.0",
     "lodash.startcase": "^4.4.0",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-github-btn": "^1.4.0",
-    "react-helmet": "^6.1.0",
     "react-id-generator": "^3.0.2",
     "react-instantsearch-dom": "^6.40.0",
     "react-live": "^4.1.0",
@@ -47,21 +55,26 @@
     "styled-components": "^6.1.0",
     "styled-icons": "^10.47.0"
   },
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.{js,md}'",
-    "deploy": "gatsby clean && npm run format && gatsby build --prefix-paths && gh-pages -d public",
-    "serve": "gatsby serve --prefix-paths",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
     "gh-pages": "^6.1.0",
     "prettier": "^3.1.0",
     "prism-react-renderer": "^2.3.0"
+  },
+  "overrides": {
+    "json5": "^2.2.3",
+    "lodash": "^4.17.21",
+    "minimatch": "^3.1.2",
+    "node-fetch": "^2.7.0",
+    "lodash.template": "^4.5.0",
+    "cookie": "^0.7.0",
+    "tmp": "^0.2.3",
+    "workbox-build": "6.0.2",
+    "rollup": "^2.79.2",
+    "ejs": "^3.1.9",
+    "react-server-dom-webpack": {
+      "react": "$react"
+    }
   }
 }
