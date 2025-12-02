@@ -3,12 +3,12 @@ import { StaticQuery, graphql } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Link from './link'
 import './styles.css'
-import config from '../../config.js'
+import config from '../../config.mjs'
 
 import Loadable from 'react-loadable'
 import LoadingProvider from './mdxComponents/loading'
 
-const help = require('./images/help.svg')
+const help = require('./images/help.svg').default
 const isSearchEnabled =
   config.header.search && config.header.search.enabled ? true : false
 
@@ -60,8 +60,8 @@ const Header = ({ location }) => (
       }
     `}
     render={data => {
-      const logoImg = require('./images/Element-logo-mark-reversed.png')
-      const twitter = require('./images/twitter.svg')
+      const logoImg = require('./images/Element-logo-mark-reversed.png').default
+      const twitter = require('./images/twitter.svg').default
       const {
         site: {
           siteMetadata: {

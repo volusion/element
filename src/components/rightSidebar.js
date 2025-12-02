@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Link from './link'
 import './styles.css'
-import config from '../../config'
+import config from '../../config.mjs'
 
 const forcedNavOrder = config.sidebar.forcedNavOrder
 
@@ -80,19 +80,18 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      let navItems = []
       let finalNavItems
       if (allMdx.edges !== undefined && allMdx.edges.length > 0) {
-        const navItems = allMdx.edges.map((item, index) => {
-          let innerItems
-          if (item !== undefined) {
-            if (
-              item.node.fields.slug === location.pathname ||
-              config.gatsby.pathPrefix + item.node.fields.slug ===
-                location.pathname
-            ) {
-              if (item.node.tableOfContents.items) {
-                innerItems = item.node.tableOfContents.items.map(
+        allMdx.edges.forEach((item) => {
+          if (item !== undefined && item.node) {
+            const itemPath = item.node.fields.slug
+            const currentPath = location.pathname.replace(/\/$/, '') // Remove trailing slash
+            const itemPathNormalized = itemPath.replace(/\/$/, '') // Remove trailing slash
+            const pathWithPrefix = (config.gatsby.pathPrefix + itemPath).replace(/\/$/, '')
+            
+            if (itemPathNormalized === currentPath || pathWithPrefix === currentPath) {
+              if (item.node.tableOfContents && item.node.tableOfContents.items) {
+                finalNavItems = item.node.tableOfContents.items.map(
                   (innerItem, index) => {
                     const itemId = innerItem.title
                       ? innerItem.title.replace(/\s+/g, '').toLowerCase()
@@ -106,9 +105,6 @@ const SidebarLayout = ({ location }) => (
                 )
               }
             }
-          }
-          if (innerItems) {
-            finalNavItems = innerItems
           }
         })
       }

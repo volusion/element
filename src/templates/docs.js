@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import styled from '@emotion/styled'
 import { Layout, Link } from '$components'
 import NextPrevious from '../components/NextPrevious'
 import '../components/styles.css'
-import config from '../../config'
+import config from '../../config.mjs'
 
 const forcedNavOrder = config.sidebar.forcedNavOrder
 
@@ -38,7 +36,7 @@ const Edit = styled('div')`
 
 export default class MDXRuntimeTest extends Component {
   render() {
-    const { data } = this.props
+    const { data, children } = this.props
     if (!data) {
       return null
     }
@@ -49,7 +47,7 @@ export default class MDXRuntimeTest extends Component {
         siteMetadata: { docsLocation, title },
       },
     } = data
-    const gitHub = require('../components/images/github.svg')
+    const gitHub = require('../components/images/github.svg').default
 
     const navItems = allMdx.edges
       .map(({ node }) => node.fields.slug)
@@ -88,35 +86,8 @@ export default class MDXRuntimeTest extends Component {
       })
 
     // meta tags
-    const metaTitle = mdx.frontmatter.metaTitle
-    const metaDescription = mdx.frontmatter.metaDescription
-    let canonicalUrl = config.gatsby.siteUrl
-    canonicalUrl =
-      config.gatsby.pathPrefix !== '/'
-        ? canonicalUrl + config.gatsby.pathPrefix
-        : canonicalUrl
-    canonicalUrl = canonicalUrl + mdx.fields.slug
-
     return (
       <Layout {...this.props}>
-        <Helmet>
-          {metaTitle ? <title>{metaTitle}</title> : null}
-          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
-          {metaDescription ? (
-            <meta name="description" content={metaDescription} />
-          ) : null}
-          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
-          {metaDescription ? (
-            <meta property="og:description" content={metaDescription} />
-          ) : null}
-          {metaTitle ? (
-            <meta property="twitter:title" content={metaTitle} />
-          ) : null}
-          {metaDescription ? (
-            <meta property="twitter:description" content={metaDescription} />
-          ) : null}
-          <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
         <div className={'titleWrapper'}>
           <h1 className={'title'}>{mdx.fields.title}</h1>
           <Edit className={'mobileView'}>
@@ -126,7 +97,7 @@ export default class MDXRuntimeTest extends Component {
           </Edit>
         </div>
         <div className={'mainWrapper'}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </div>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />

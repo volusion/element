@@ -50,9 +50,14 @@ export default {
   pre: props => <pre className="pre" {...props} />,
   code: CodeBlock,
   a: AnchorTag,
+  table: props => <table className="table" {...props} />,
+  thead: props => <thead {...props} />,
+  tbody: props => <tbody {...props} />,
+  tr: props => <tr {...props} />,
+  th: props => <th {...props} />,
+  td: props => <td {...props} />,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`
   // TODO add `li`
-  // TODO add `table`
 }

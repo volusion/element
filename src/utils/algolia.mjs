@@ -1,4 +1,4 @@
-const config = require('../../config.js')
+import config from '../../config.mjs'
 
 const pageQuery = `{
   pages: allMdx {
@@ -40,4 +40,4 @@ const queries = [
   },
 ]
 
-module.exports = queries
+export default queries

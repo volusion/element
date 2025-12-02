@@ -1,8 +1,12 @@
-const componentWithMDXScope = require('gatsby-plugin-mdx/component-with-mdx-scope')
-const path = require('path')
-const startCase = require('lodash.startcase')
+import path from 'path'
+import { fileURLToPath } from 'url'
+import startCase from 'lodash.startcase'
 
-exports.createPages = ({ graphql, actions }) => {
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const template = path.resolve('./src/templates/docs.js');
+
+export const createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
     resolve(
@@ -19,6 +23,9 @@ exports.createPages = ({ graphql, actions }) => {
                   fields {
                     slug
                   }
+                  internal {
+                    contentFilePath
+                  }
                 }
               }
             }
@@ -34,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug ? node.fields.slug : '/',
-            component: path.resolve('./src/templates/docs.js'),
+            component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
             context: {
               id: node.fields.id,
             },
@@ -45,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -57,13 +64,13 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.onCreateBabelConfig = ({ actions }) => {
+export const onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from',
   })
 }
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+export const onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {

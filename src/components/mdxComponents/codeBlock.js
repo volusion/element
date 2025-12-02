@@ -1,9 +1,10 @@
 import * as React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import prismTheme from 'prism-react-renderer/themes/github'
+import { Highlight, themes } from 'prism-react-renderer'
 import Loadable from 'react-loadable'
 import LoadingProvider from './loading'
 import '../styles.css'
+
+const prismTheme = themes.github
 
 /** Removes the last token from a code example if it's empty. */
 function cleanTokens(tokens) {
@@ -25,12 +26,15 @@ const LoadableComponent = Loadable({
 
 /* eslint-disable react/jsx-key */
 const CodeBlock = ({ children: exampleCode, ...props }) => {
+  if (typeof props.className === 'undefined') {
+    return <code {...props}>{exampleCode}</code>
+  }
+
   if (props['react-live']) {
     return <LoadableComponent code={exampleCode} />
   } else {
     return (
       <Highlight
-        {...defaultProps}
         code={exampleCode}
         language="javascript"
         theme={prismTheme}
